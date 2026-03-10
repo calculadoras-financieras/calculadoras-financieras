@@ -1,0 +1,32 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[redirects]]
+  from = "/calculadora-hipoteca"
+  to = "https://calculadora-hipoteca.es"
+  status = 301
+
+[[redirects]]
+  from = "/calculadora-irpf"
+  to = "https://calculadora-irpf.es"
+  status = 301
+
+[[redirects]]
+  from = "/calculadora-finiquito"
+  to = "https://calculadora-finiquito.es"
+  status = 301

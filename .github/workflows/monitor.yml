@@ -1,0 +1,76 @@
+name: 🔍 Monitor de Micrositios
+
+on:
+  schedule:
+    # Cada 15 minutos (mínimo posible en GitHub Actions)
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Motivo de ejecución manual'
+        required: false
+        default: 'Test manual'
+
+jobs:
+  monitor:
+    name: Verificar todos los micrositios
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    # Cache del estado para detectar fallos nuevos vs. persistentes
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Restaurar estado anterior del monitor
+      - name: Restaurar estado del monitor
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/monitor-state.json
+          key: monitor-state-${{ github.run_id }}
+          restore-keys: |
+            monitor-state-
+
+      - name: Ejecutar monitor
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+          # URLs de producción
+          URL_HUB:       ${{ secrets.URL_HUB       || 'https://calculadoras-financieras.es' }}
+          URL_HIPOTECA:  ${{ secrets.URL_HIPOTECA  || 'https://simular-hipoteca.es' }}
+          URL_IRPF:      ${{ secrets.URL_IRPF      || 'https://calculadora-irpf.es' }}
+          URL_FINIQUITO: ${{ secrets.URL_FINIQUITO || 'https://calculadora-finiquito.es' }}
+          URL_PENSION:   ${{ secrets.URL_PENSION   || 'https://calculadora-pension.es' }}
+          URL_INVERSION: ${{ secrets.URL_INVERSION || 'https://calculadora-inversion.es' }}
+          URL_AHORRO:    ${{ secrets.URL_AHORRO    || 'https://calculadora-ahorro.es' }}
+          URL_PRESTAMO:  ${{ secrets.URL_PRESTAMO  || 'https://calculadora-prestamo.es' }}
+          URL_SALARIO:   ${{ secrets.URL_SALARIO   || 'https://calculadora-salario.com' }}
+        run: node scripts/monitor.js
+
+      # Guardar estado actualizado
+      - name: Guardar estado del monitor
+        if: always()
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/monitor-state.json
+          key: monitor-state-${{ github.run_id }}
+
+      # Notificar si el workflow en sí falla (error de configuración, etc.)
+      - name: Notificar fallo del workflow
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          node -e "
+            const { sendAlert } = require('./scripts/notify-telegram.js');
+            sendAlert('Error en el workflow de monitorización', 
+              'El propio workflow de GitHub Actions ha fallado. Revisar logs en GitHub.')
+              .then(() => console.log('Alerta enviada'))
+              .catch(console.error);
+          "

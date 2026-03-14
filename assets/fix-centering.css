@@ -1,0 +1,179 @@
+/**
+ * CSS FIX: Centrado de calculadoras en desktop
+ * 
+ * Problema: Las calculadoras aparecen desplazadas a un lateral en desktop.
+ * Causa: Los contenedores .card y .calculator usaban max-width sin margin: auto,
+ *        o el layout estaba usando float/position sin compensar el ancho del nav.
+ *
+ * Solución: Forzar centrado correcto en todos los breakpoints de desktop.
+ * NO afecta a móvil (media query max-width: 768px excluido).
+ *
+ * Instrucciones de aplicación:
+ *   1. Añadir este bloque al final del <style> de cada app, justo antes de </style>
+ *   2. O cargar este archivo como <link rel="stylesheet" href="/assets/fix-centering.css">
+ */
+
+/* ═══════════════════════════════════════════════════
+   FIX GLOBAL: Contenedor principal centrado en desktop
+   ═══════════════════════════════════════════════════ */
+
+@media (min-width: 769px) {
+
+  /* Wrapper principal de la página */
+  body {
+    display: block; /* Evitar flex/grid inesperado en body */
+  }
+
+  /* Contenedor raíz de la app */
+  .container,
+  .app-container,
+  .main-container,
+  [class*="container"] {
+    max-width: 1100px;
+    margin-left:  auto !important;
+    margin-right: auto !important;
+    padding-left:  1.5rem;
+    padding-right: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Tarjetas de calculadora */
+  .card,
+  .calculator,
+  .calc-card,
+  .calculator-card,
+  [class*="calc"][class*="card"],
+  [class*="card"][class*="calc"] {
+    margin-left:  auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Sección de calculadoras con sidebar */
+  .calc-layout,
+  .layout-with-sidebar,
+  .two-col {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* Área principal vs sidebar */
+  .calc-main {
+    flex: 1;
+    min-width: 0; /* Evitar overflow */
+  }
+
+  .calc-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+  }
+
+  /* Grid de calculadoras (página hub) */
+  .calc-grid,
+  .calculators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* Hero / header sections */
+  .hero,
+  .page-header,
+  .calc-header {
+    text-align: center;
+    max-width: 1100px;
+    margin-left:  auto;
+    margin-right: auto;
+  }
+
+  /* Formularios dentro de calculadoras */
+  .calc-form,
+  form.calculator-form {
+    max-width: 600px;
+    margin-left:  auto;
+    margin-right: auto;
+  }
+
+  /* Resultado / output box */
+  .result-box,
+  .resultado,
+  .output-box,
+  [class*="result"],
+  [class*="resultado"] {
+    max-width: 600px;
+    margin-left:  auto;
+    margin-right: auto;
+  }
+
+  /* Sección de FAQ */
+  .faq-section,
+  .faq-container {
+    max-width: 800px;
+    margin-left:  auto;
+    margin-right: auto;
+  }
+
+  /* Tabs de navegación */
+  .calc-tabs,
+  .tab-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: 1100px;
+    margin: 0 auto 1.5rem;
+  }
+
+}
+
+/* ═══════════════════════════════════════════════════
+   FIX ESPECÍFICO: Corregir desplazamiento lateral
+   causado por scroll en modal/overlay
+   ═══════════════════════════════════════════════════ */
+
+html {
+  /* Reservar espacio para el scrollbar siempre
+     Evita el layout shift cuando aparece/desaparece */
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+/* ═══════════════════════════════════════════════════
+   FIX: Evitar que el navigation desplace el contenido
+   ═══════════════════════════════════════════════════ */
+
+@media (min-width: 769px) {
+
+  /* Si el nav es sticky/fixed y causa desplazamiento */
+  .main-content,
+  main,
+  #main,
+  #contenido {
+    /* Compensar nav fijo si lo hay */
+    /* Ajustar este valor al alto real del nav */
+    /* padding-top: 70px; */
+    
+    /* Asegurar que ocupa el ancho disponible centrado */
+    max-width: 1100px;
+    margin-left:  auto;
+    margin-right: auto;
+    padding-left:  1.5rem;
+    padding-right: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+}
+
+/* ═══════════════════════════════════════════════════
+   MOBILE: Sin cambios (mantener diseño existente)
+   ═══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* ← No tocar. Diseño móvil inalterado. */
+}

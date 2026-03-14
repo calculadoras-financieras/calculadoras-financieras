@@ -1,0 +1,32 @@
+name: 📋 Recordatorio de Tareas
+
+on:
+  schedule:
+    # 6:00 UTC = 7:00 Madrid (invierno) — antes del inicio del día laboral
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Ejecutar recordatorio manualmente'
+        required: false
+
+jobs:
+  check-tasks:
+    name: Verificar tareas pendientes
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verificar y notificar tareas
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/check-tasks.js

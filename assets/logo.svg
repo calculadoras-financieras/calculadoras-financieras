@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+  <defs>
+    <!-- Gradiente principal del icono -->
+    <linearGradient id="grad-icon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0F2A4A"/>
+      <stop offset="100%" stop-color="#1a4070"/>
+    </linearGradient>
+    <!-- Gradiente de la barra de acento -->
+    <linearGradient id="grad-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#00B894"/>
+      <stop offset="100%" stop-color="#00CEC9"/>
+    </linearGradient>
+    <!-- Sombra suave -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0F2A4A" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Icono: calculadora estilizada -->
+  <g filter="url(#shadow)">
+    <!-- Cuerpo calculadora -->
+    <rect x="4" y="4" width="52" height="62" rx="8" fill="url(#grad-icon)"/>
+    <!-- Pantalla -->
+    <rect x="10" y="10" width="40" height="14" rx="3" fill="#00B894" opacity="0.9"/>
+    <!-- Texto en pantalla: € -->
+    <text x="30" y="22" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-weight="bold" fill="#ffffff">€ calc</text>
+    <!-- Botones calculadora - fila 1 -->
+    <rect x="10" y="30" width="11" height="8" rx="2" fill="#ffffff" opacity="0.15"/>
+    <rect x="25" y="30" width="11" height="8" rx="2" fill="#ffffff" opacity="0.15"/>
+    <rect x="40" y="30" width="11" height="8" rx="2" fill="#00B894" opacity="0.7"/>
+    <!-- Botones calculadora - fila 2 -->
+    <rect x="10" y="42" width="11" height="8" rx="2" fill="#ffffff" opacity="0.15"/>
+    <rect x="25" y="42" width="11" height="8" rx="2" fill="#ffffff" opacity="0.15"/>
+    <rect x="40" y="42" width="11" height="8" rx="2" fill="#ffffff" opacity="0.15"/>
+    <!-- Botones calculadora - fila 3 -->
+    <rect x="10" y="54" width="26" height="8" rx="2" fill="#ffffff" opacity="0.2"/>
+    <rect x="40" y="54" width="11" height="8" rx="2" fill="#00B894" opacity="0.9"/>
+    <!-- Línea de tendencia encima del icono (chart overlay) -->
+    <polyline points="14,37 20,32 26,35 32,31 38,33" stroke="#00CEC9" stroke-width="1.5" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- Barra de acento inferior del icono -->
+  <rect x="4" y="63" width="52" height="3" rx="1.5" fill="url(#grad-accent)"/>
+
+  <!-- Texto principal -->
+  <g font-family="'Georgia', 'Times New Roman', serif">
+    <!-- "Calculadoras" -->
+    <text x="68" y="34" font-size="20" font-weight="700" fill="#0F2A4A" letter-spacing="-0.5">Calculadoras</text>
+    <!-- "Financieras" -->
+    <text x="68" y="56" font-size="20" font-weight="700" fill="#0F2A4A" letter-spacing="-0.5">Financieras</text>
+  </g>
+
+  <!-- ".es" accent -->
+  <text x="249" y="56" font-family="'Georgia', serif" font-size="20" font-weight="700" fill="#00B894">.es</text>
+
+  <!-- Tagline -->
+  <text x="68" y="72" font-family="'Arial', sans-serif" font-size="9" fill="#6B7280" letter-spacing="1.5">CALCULA TU FUTURO FINANCIERO</text>
+
+  <!-- Línea decorativa bajo el nombre -->
+  <rect x="68" y="60" width="176" height="2" rx="1" fill="url(#grad-accent)" opacity="0.4"/>
+</svg>

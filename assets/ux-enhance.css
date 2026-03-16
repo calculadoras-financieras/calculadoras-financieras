@@ -1,17 +1,16 @@
-/* CalculadorasFinancieras.es — UX Enhancement v4 */
+/* CF UX v5 */
 body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif!important;font-size:16px!important;line-height:1.65!important;color:#1a2e44!important;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif!important;color:#0F2A4A!important;font-weight:700!important;letter-spacing:-0.01em;line-height:1.25!important}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif!important;color:#0F2A4A!important;font-weight:700!important;line-height:1.25!important}
 h1{font-size:1.9rem!important}h2{font-size:1.5rem!important}h3{font-size:1.2rem!important}
 label,.label,legend{font-size:.95rem!important;font-weight:600!important;color:#374151!important;display:block;margin-bottom:6px!important}
 input[type=number],input[type=text],input[type=email],select,textarea{font-size:1.05rem!important;padding:10px 14px!important;border:2px solid #cbd5e1!important;border-radius:8px!important;color:#1a2e44!important;background:#fff!important;transition:border-color .2s!important;width:100%;box-sizing:border-box}
 input[type=number]:focus,input[type=text]:focus,select:focus{border-color:#00B894!important;outline:none!important;box-shadow:0 0 0 3px rgba(0,184,148,.15)!important}
-button[type=submit],.btn-calcular,button.primary,input[type=submit]{font-size:1.05rem!important;font-weight:700!important;padding:12px 28px!important;background:#0F2A4A!important;color:#fff!important;border:none!important;border-radius:8px!important;cursor:pointer!important;letter-spacing:.02em!important;transition:background .18s!important}
+button[type=submit],.btn-calcular,button.primary,input[type=submit]{font-size:1.05rem!important;font-weight:700!important;padding:12px 28px!important;background:#0F2A4A!important;color:#fff!important;border:none!important;border-radius:8px!important;cursor:pointer!important;transition:background .18s!important}
 button[type=submit]:hover,.btn-calcular:hover{background:#00B894!important}
-.resultado,.result,.output,[class*=result]{font-size:1.15rem!important;font-weight:600!important;color:#0F2A4A!important;background:#f0fdf9!important;border-left:4px solid #00B894!important;padding:14px 18px!important;border-radius:0 8px 8px 0!important;margin:12px 0!important}
 .cf-tooltip-wrap{position:relative;display:flex;align-items:center;gap:6px;margin-bottom:6px}
 .cf-tooltip-wrap label{margin-bottom:0!important}
-.cf-info-btn{width:18px;height:18px;border-radius:50%;background:#0F2A4A;color:#fff;font-size:11px;font-weight:700;line-height:18px;text-align:center;cursor:help;flex-shrink:0;user-select:none;display:inline-flex;align-items:center;justify-content:center}
+.cf-info-btn{width:18px;height:18px;border-radius:50%;background:#0F2A4A;color:#fff;font-size:11px;font-weight:700;cursor:help;flex-shrink:0;user-select:none;display:inline-flex;align-items:center;justify-content:center}
 .cf-info-btn:hover{background:#00B894}
-.cf-tooltip-box{position:absolute;left:0;top:110%;background:#0F2A4A;color:#e2eaf3;font-size:.82rem;line-height:1.5;padding:10px 14px;border-radius:8px;min-width:220px;max-width:300px;z-index:1000;box-shadow:0 4px 16px rgba(0,0,0,.2);pointer-events:none;opacity:0;transition:opacity .18s;font-weight:400}
-.cf-info-btn:hover+.cf-tooltip-box,.cf-info-btn:focus+.cf-tooltip-box{opacity:1}
+.cf-tooltip-box{position:absolute;left:0;top:110%;background:#0F2A4A;color:#e2eaf3;font-size:.82rem;line-height:1.5;padding:10px 14px;border-radius:8px;min-width:220px;max-width:300px;z-index:1000;box-shadow:0 4px 16px rgba(0,0,0,.2);pointer-events:none;opacity:0;transition:opacity .18s}
+.cf-info-btn:hover+.cf-tooltip-box{opacity:1}
 @media(max-width:768px){body{font-size:15px!important}h1{font-size:1.6rem!important}input[type=number],input[type=text],select{font-size:16px!important}}

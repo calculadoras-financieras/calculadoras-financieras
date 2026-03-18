@@ -1,4 +1,4 @@
-/* CF UX v7 */
+/* CF UX v8 */
 body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif!important;font-size:16px!important;line-height:1.65!important;color:#1a2e44!important;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif!important;color:#0F2A4A!important;font-weight:700!important;line-height:1.25!important}
 h1{font-size:1.9rem!important}h2{font-size:1.5rem!important}h3{font-size:1.2rem!important}
@@ -9,8 +9,8 @@ button[type=submit],.btn-calcular,button.primary,input[type=submit]{font-size:1.
 button[type=submit]:hover,.btn-calcular:hover{background:#00B894!important}
 .cf-tooltip-wrap{position:relative;display:flex;align-items:center;gap:6px;margin-bottom:6px}
 .cf-tooltip-wrap label{margin-bottom:0!important}
-.cf-info-btn{width:18px;height:18px;border-radius:50%;background:#0F2A4A;color:#fff;font-size:11px;font-weight:700;cursor:help;flex-shrink:0;user-select:none;display:inline-flex;align-items:center;justify-content:center}
+.cf-info-btn{width:18px;height:18px;border-radius:50%;background:#0F2A4A;color:#fff;font-size:11px;font-weight:700;cursor:help;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center}
 .cf-info-btn:hover{background:#00B894}
-.cf-tooltip-box{position:absolute;left:0;top:110%;background:#0F2A4A;color:#e2eaf3;font-size:.82rem;line-height:1.5;padding:10px 14px;border-radius:8px;min-width:220px;max-width:300px;z-index:1000;box-shadow:0 4px 16px rgba(0,0,0,.2);pointer-events:none;opacity:0;transition:opacity .18s}
+.cf-tooltip-box{position:absolute;left:0;top:110%;background:#0F2A4A;color:#e2eaf3;font-size:.82rem;padding:10px 14px;border-radius:8px;min-width:220px;max-width:300px;z-index:1000;box-shadow:0 4px 16px rgba(0,0,0,.2);pointer-events:none;opacity:0;transition:opacity .18s}
 .cf-info-btn:hover+.cf-tooltip-box{opacity:1}
 @media(max-width:768px){body{font-size:15px!important}h1{font-size:1.6rem!important}input[type=number],input[type=text],select{font-size:16px!important}}

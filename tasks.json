@@ -1,82 +1,50 @@
 [
   {
-    "id": "task-1",
-    "title": "Resolver DNS — DonDominio → Netlify",
-    "description": "Para cada dominio: abrir zona DNS en Netlify, copiar pXX exacto, actualizar en DonDominio. Afecta a los 9 dominios.",
-    "dueDate": "2026-03-16",
-    "priority": "alta",
-    "completed": false
-  },
-  {
-    "id": "task-2",
-    "title": "Rellenar [TUS DATOS] en páginas legales",
-    "description": "Abrir legal/aviso-legal.html y sustituir todos los placeholders: nombre, NIF, dirección, email, teléfono.",
-    "dueDate": "2026-03-16",
-    "priority": "alta",
-    "completed": false
-  },
-  {
-    "id": "task-3",
-    "title": "Configurar TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID",
-    "description": "Crear bot con @BotFather, obtener chat_id, añadir ambos como GitHub Secrets para activar el monitor automático.",
-    "dueDate": "2026-03-18",
-    "priority": "alta",
-    "completed": false
-  },
-  {
-    "id": "task-4",
-    "title": "Descomentar AdSense y GA4 antes de publicar",
-    "description": "Buscar comentarios <!-- ADSENSE --> y <!-- GA4 --> en cada micrositio y activarlos.",
+    "id": "task-secrets-telegram",
+    "title": "Añadir secrets Telegram en GitHub",
+    "description": "TELEGRAM_BOT_TOKEN y TELEGRAM_CHAT_ID en github.com/.../settings/secrets/actions",
     "dueDate": "2026-03-20",
     "priority": "alta",
-    "completed": false
+    "completed": true
   },
   {
-    "id": "task-5",
-    "title": "Aplicar parche CSS de centrado desktop",
-    "description": "Añadir <link rel='stylesheet' href='/assets/fix-centering.css'> en el head de cada micrositio con calculadoras descentradas.",
+    "id": "task-search-console",
+    "title": "Google Search Console: verificar dominios y enviar sitemaps",
+    "description": "9 dominios x verificar TXT en DonDominio + enviar sitemap.xml",
     "dueDate": "2026-03-22",
+    "priority": "alta",
+    "completed": false
+  },
+  {
+    "id": "task-adsense",
+    "title": "Solicitar cuenta AdSense",
+    "description": "adsense.google.com → Crear cuenta → añadir todos los dominios",
+    "dueDate": "2026-03-22",
+    "priority": "alta",
+    "completed": false
+  },
+  {
+    "id": "task-iahorro",
+    "title": "Registrarse en iAhorro afiliados",
+    "description": "iahorro.com/colaboradores — esperar a tener +500 visitas/día en hipoteca",
+    "dueDate": "2026-06-01",
     "priority": "media",
     "completed": false
   },
   {
-    "id": "task-6",
-    "title": "Enviar sitemap.xml a Google Search Console",
-    "description": "Verificar propiedad en Search Console para cada dominio y enviar sitemap. Necesario para indexación rápida.",
-    "dueDate": "2026-03-25",
+    "id": "task-degiro",
+    "title": "Registrarse en DeGiro afiliados",
+    "description": "degiro.es/afiliados — esperar a tener +500 visitas/día en inversión",
+    "dueDate": "2026-06-01",
     "priority": "media",
     "completed": false
   },
   {
-    "id": "task-7",
-    "title": "Generar og-image.jpg con IA (Midjourney o DALL-E)",
-    "description": "Usar el prompt del dossier técnico sección 8. Imagen 1200x630px. Subir a /assets/ en todos los sitios.",
-    "dueDate": "2026-03-28",
-    "priority": "media",
-    "completed": false
-  },
-  {
-    "id": "task-8",
-    "title": "Configurar GA4 Data API para informes diarios",
-    "description": "Crear cuenta de servicio en Google Cloud, asignar acceso en GA4, codificar en base64 y añadir como GitHub Secret.",
-    "dueDate": "2026-04-01",
-    "priority": "media",
-    "completed": false
-  },
-  {
-    "id": "task-9",
-    "title": "Hacer App 1 responsive para móvil",
-    "description": "La app calculadora-financiera/index.html (~70KB) necesita media queries y layout adaptado para pantallas < 768px.",
-    "dueDate": "2026-04-05",
-    "priority": "media",
-    "completed": false
-  },
-  {
-    "id": "task-10",
-    "title": "Implementar afiliación en calculadora hipoteca",
-    "description": "Añadir CTA 'Compara hipotecas gratis' con enlace de afiliado de iAhorro.com o HipotecaPlus después del resultado.",
-    "dueDate": "2026-04-15",
-    "priority": "baja",
+    "id": "task-irpf-2027",
+    "title": "Actualizar datos fiscales IRPF 2027",
+    "description": "Revisar tramos IRPF, bases SS, pensión máxima, SMI en el BOE y actualizar todos los HTMLs. Ver github.com/.../issues para automatización pendiente.",
+    "dueDate": "2026-12-25",
+    "priority": "alta",
     "completed": false
   }
 ]

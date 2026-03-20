@@ -1,40 +1,516 @@
 <!DOCTYPE html>
 <html lang="es" itemscope itemtype="https://schema.org/WebPage">
 <head>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBGMkE0QSIvPjx0ZXh0IHg9IjE2IiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDBCODk0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DPC90ZXh0Pjwvc3ZnPg=="><link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBGMkE0QSIvPjx0ZXh0IHg9IjE2IiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDBCODk0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DPC90ZXh0Pjwvc3ZnPg==">
-
-<meta property="og:image" content="https://calculadora-irpf.es/assets/og-image.jpg">
-<link rel="stylesheet" href="/assets/ux-enhance.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculadora IRPF 2026 ÃÂ¢ÃÂÃÂ Renta por Comunidad AutÃÂÃÂ³noma y SituaciÃÂÃÂ³n Familiar</title>
-<meta name="description" content="Calcula tu IRPF 2026 con los tramos reales de las 17 CCAA. Soltero, casado, hijos, autÃÂÃÂ³nomos, discapacidad y plan de pensiones.">
-<meta name="keywords" content="calculadora irpf 2026, calcular sueldo neto, bruto a neto, sueldo neto 2000 euros brutos 12 pagas, retenciÃÂÃÂ³n irpf autÃÂÃÂ³nomos 2026, calcular irpf por comunidad autÃÂÃÂ³noma, declaraciÃÂÃÂ³n renta 2026">
+<title>Calculadora IRPF 2026 — Renta por Comunidad Autónoma y Situación Familiar</title>
+<meta name="description" content="Calcula tu IRPF 2026 con los tramos reales de las 17 CCAA. Soltero, casado, hijos, autónomos, discapacidad y plan de pensiones.">
+<meta name="keywords" content="calculadora irpf 2026, calcular sueldo neto, bruto a neto, sueldo neto 2000 euros brutos 12 pagas, retención irpf autónomos 2026, calcular irpf por comunidad autónoma, declaración renta 2026">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta property="og:title" content="Calculadora IRPF 2026 ÃÂ¢ÃÂÃÂ Renta por Comunidad AutÃÂÃÂ³noma y SituaciÃÂÃÂ³n Familiar">
-<meta property="og:description" content="Calcula tu IRPF 2026 con los tramos reales de las 17 CCAA. Soltero, casado, hijos, autÃÂÃÂ³nomos, discapacidad y plan de pensiones.">
+<meta property="og:title" content="Calculadora IRPF 2026 — Renta por Comunidad Autónoma y Situación Familiar">
+<meta property="og:description" content="Calcula tu IRPF 2026 con los tramos reales de las 17 CCAA. Soltero, casado, hijos, autónomos, discapacidad y plan de pensiones.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
 <meta property="og:url" content="https://calculadora-irpf.es/">
 <link rel="canonical" href="https://calculadora-irpf.es/">
 
+<!-- Schema: FAQPage (Featured Snippets) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"sueldo neto 2000 euros brutos 12 pagas 2026","acceptedAnswer":{"@type":"Answer","text":"Con 2.000 €/mes brutos (24.000 €/año), soltero sin hijos: Madrid ~1.660 €/mes, Andalucía ~1.650 €, Cataluña ~1.620 €, C. Valenciana ~1.615 €. La calculadora da el resultado exacto con los tramos reales de cada comunidad."}},{"@type":"Question","name":"retención IRPF autónomos 2026 ¿cómo se calcula?","acceptedAnswer":{"@type":"Answer","text":"Los autónomos aplican retención del 15% en facturas (7% los primeros 3 años). Con el nuevo sistema de cotización por ingresos reales en 2026, muchos autónomos ajustan su retención al alza para no deber a Hacienda en la declaración anual."}},{"@type":"Question","name":"calcular IRPF por comunidad autónoma diferencia Madrid vs Cataluña","acceptedAnswer":{"@type":"Answer","text":"Para un salario de 40.000 €, la diferencia de IRPF entre Madrid (tarifa baja) y Cataluña (tarifa alta) es de aproximadamente 1.600-2.000 €/año. Madrid es la comunidad con menor presión fiscal sobre rentas del trabajo."}},{"@type":"Question","name":"¿Cuánto me ahorra aportar al plan de pensiones en IRPF 2026?","acceptedAnswer":{"@type":"Answer","text":"El límite es 1.500 €/año al plan individual (o el 30% de rendimientos netos). Cada 1.000 € aportados reducen la base imponible en 1.000 €, ahorrando entre 190 € y 240 € en IRPF según tu tramo marginal."}},{"@type":"Question","name":"¿Hay cambios en el IRPF 2026 respecto a 2025?","acceptedAnswer":{"@type":"Answer","text":"En 2026 se mantienen los tramos generales. Las principales novedades son la actualización de la reducción por rendimientos del trabajo para rentas inferiores a 15.000 € (hasta 6.498 €) y los cambios en deducciones autonómicas de algunas comunidades."}}]}
+</script>
 
-<div class="faq-wrap" itemscope itemtype="https://schema.org/FAQPage">
-  <h2>Preguntas frecuentes</h2>
-<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">sueldo neto 2000 euros brutos 12 pagas 2026</h3><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Con 2.000 ÃÂ¢ÃÂÃÂ¬/mes brutos (24.000 ÃÂ¢ÃÂÃÂ¬/aÃÂÃÂ±o), soltero sin hijos: <strong>Madrid ~1.660 ÃÂ¢ÃÂÃÂ¬/mes</strong>, AndalucÃÂÃÂ­a ~1.650 ÃÂ¢ÃÂÃÂ¬, CataluÃÂÃÂ±a ~1.620 ÃÂ¢ÃÂÃÂ¬, C. Valenciana ~1.615 ÃÂ¢ÃÂÃÂ¬. La calculadora da el resultado exacto con los tramos reales de cada comunidad.</p></div></div>
-<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">retenciÃÂÃÂ³n IRPF autÃÂÃÂ³nomos 2026 ÃÂÃÂ¿cÃÂÃÂ³mo se calcula?</h3><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Los autÃÂÃÂ³nomos aplican retenciÃÂÃÂ³n del 15% en facturas (7% los primeros 3 aÃÂÃÂ±os). Con el nuevo sistema de cotizaciÃÂÃÂ³n por ingresos reales en 2026, muchos autÃÂÃÂ³nomos ajustan su retenciÃÂÃÂ³n al alza para no deber a Hacienda en la declaraciÃÂÃÂ³n anual.</p></div></div>
-<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">calcular IRPF por comunidad autÃÂÃÂ³noma diferencia Madrid vs CataluÃÂÃÂ±a</h3><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Para un salario de 40.000 ÃÂ¢ÃÂÃÂ¬, la diferencia de IRPF entre Madrid (tarifa baja) y CataluÃÂÃÂ±a (tarifa alta) es de aproximadamente <strong>1.600-2.000 ÃÂ¢ÃÂÃÂ¬/aÃÂÃÂ±o</strong>. Madrid es la comunidad con menor presiÃÂÃÂ³n fiscal sobre rentas del trabajo.</p></div></div>
-<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">ÃÂÃÂ¿CuÃÂÃÂ¡nto me ahorra aportar al plan de pensiones en IRPF 2026?</h3><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">El lÃÂÃÂ­mite es 1.500 ÃÂ¢ÃÂÃÂ¬/aÃÂÃÂ±o al plan individual (o el 30% de rendimientos netos). Cada 1.000 ÃÂ¢ÃÂÃÂ¬ aportados reducen la base imponible en 1.000 ÃÂ¢ÃÂÃÂ¬, ahorrando entre 190 ÃÂ¢ÃÂÃÂ¬ y 240 ÃÂ¢ÃÂÃÂ¬ en IRPF segÃÂÃÂºn tu tramo marginal.</p></div></div>
-<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">ÃÂÃÂ¿Hay cambios en el IRPF 2026 respecto a 2025?</h3><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">En 2026 se mantienen los tramos generales. Las principales novedades son la actualizaciÃÂÃÂ³n de la reducciÃÂÃÂ³n por rendimientos del trabajo para rentas inferiores a 15.000 ÃÂ¢ÃÂÃÂ¬ (hasta 6.498 ÃÂ¢ÃÂÃÂ¬) y los cambios en deducciones autonÃÂÃÂ³micas de algunas comunidades.</p></div></div>
+<!-- Schema: FinancialProduct (Rich Snippets con interestRate dinámico) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FinancialProduct",
+  "name": "Calculadora IRPF 2026 — Renta por Comunidad Autónoma y Situación Familiar",
+  "description": "Calcula tu IRPF 2026 con los tramos reales de las 17 CCAA. Soltero, casado, hijos, autónomos, discapacidad y plan de pensiones.",
+  "url": "https://calculadora-irpf.es/",
+  "feesAndCommissionsSpecification": "Datos AEAT 2026",
+  "provider": {
+    "@type": "Organization",
+    "name": "Calculadoras Financieras España",
+    "url": "https://calculadoras-financieras.es"
+  },
+  "areaServed": {"@type": "Country", "name": "España"},
+  "inLanguage": "es"
+}
+</script>
+
+<!-- Schema: BreadcrumbList -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Calculadoras Financieras España","item":"https://calculadoras-financieras.es"},
+  {"@type":"ListItem","position":2,"name":"Calculadora IRPF 2026","item":"https://calculadora-irpf.es"}
+]}
+</script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VG8GK7M31B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-VG8GK7M31B',{anonymize_ip:true});</script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4048225183995754" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ── Design tokens ── */
+:root {
+  --bg:#0a0a0f; --surface:#13131a; --surface2:#1c1c28; --border:#2a2a3d;
+  --gold:#5b8dee; --gold-l:color-mix(in srgb,#5b8dee 60%,white);
+  --gold-dim:color-mix(in srgb,#5b8dee 12%,transparent);
+  --text:#e8e8f0; --text-dim:#8888aa; --text-muted:#555566;
+  --green:#4ecb71; --red:#e05252; --blue:#5b8dee;
+  --radius:16px; --radius-sm:10px;
+}
+:root {
+  --bg:#0a0a0f; --surface:#13131a; --surface2:#1c1c28; --border:#2a2a3d;
+  --gold:#c9a84c; --gold-light:#e8c96a; --gold-dim:rgba(201,168,76,0.15);
+  --text:#e8e8f0; --text-dim:#8888aa; --text-muted:#555566;
+  --green:#4ecb71; --red:#e05252; --blue:#5b8dee;
+  --radius:16px; --radius-sm:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:400;line-height:1.6;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 10%,rgba(201,168,76,.04) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 90%,rgba(91,141,238,.04) 0%,transparent 60%);pointer-events:none;z-index:0}
+header{position:relative;z-index:10;padding:44px 24px 36px;text-align:center;border-bottom:1px solid var(--border)}
+.logo-line{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:12px}
+h1{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,50px);font-weight:900;letter-spacing:-.02em;color:var(--text);line-height:1.1}
+h1 span{color:var(--gold)}
+.subtitle{margin-top:10px;color:var(--text-dim);font-size:14px;font-weight:300;max-width:560px;margin-inline:auto}
+.badge{display:inline-block;background:var(--gold-dim);border:1px solid var(--gold);color:var(--gold);font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;margin-top:10px;letter-spacing:.06em}
+.nav-wrap{position:sticky;top:0;z-index:100;background:rgba(10,10,15,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);overflow-x:auto}
+.nav-tabs{display:flex;max-width:1200px;margin:0 auto;padding:0 16px;white-space:nowrap}
+.tab-btn{padding:17px 18px;background:none;border:none;color:var(--text-muted);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.tab-btn:hover{color:var(--text-dim)}
+.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
+main{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:36px 20px 80px}
+.calc-panel{display:none}
+.calc-panel.active{display:block}
+.section-header{margin-bottom:28px}
+.section-header h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--text);margin-bottom:5px}
+.section-header p{color:var(--text-dim);font-size:13px;font-weight:300}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+@media(max-width:760px){.calc-grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px}
+.card-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.field{margin-bottom:16px}
+label{display:block;font-size:11px;font-weight:600;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.input-wrap{position:relative}
+.unit{position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--text-muted);pointer-events:none}
+input[type=number],input[type=text],select{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 42px 11px 13px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;outline:none;transition:border-color .2s;-moz-appearance:textfield}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+input:focus,select:focus{border-color:var(--gold)}
+select{appearance:none;padding-right:13px;cursor:pointer}
+select option{background:var(--surface2)}
+input[type=range]{width:100%;height:4px;background:var(--border);border-radius:2px;appearance:none;cursor:pointer;padding:0;margin-top:6px}
+input[type=range]::-webkit-slider-thumb{appearance:none;width:17px;height:17px;background:var(--gold);border-radius:50%;cursor:pointer;box-shadow:0 0 0 3px rgba(201,168,76,.2)}
+.range-val{font-size:20px;font-weight:600;color:var(--gold);font-family:'Playfair Display',serif;margin-bottom:3px}
+.btn-calc{width:100%;padding:13px;background:var(--gold);color:#0a0a0f;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .1s;margin-top:4px}
+.btn-calc:hover{background:var(--gold-light)}
+.btn-calc:active{transform:scale(.98)}
+.results{display:none;margin-top:20px;animation:fadeUp .4s ease}
+.results.show{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:14px}
+.result-item{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 12px;text-align:center}
+.result-item.highlight{border-color:var(--gold);background:var(--gold-dim)}
+.result-item .r-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.result-item .r-value{font-size:17px;font-weight:700;font-family:'Playfair Display',serif;color:var(--text)}
+.result-item.highlight .r-value{color:var(--gold)}
+.result-item .r-value.green{color:var(--green)}
+.result-item .r-value.red{color:var(--red)}
+.insight{background:var(--surface2);border-left:3px solid var(--gold);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:13px 16px;font-size:13px;color:var(--text-dim);line-height:1.65}
+.insight strong{color:var(--text)}
+.info-box{background:rgba(91,141,238,.08);border:1px solid rgba(91,141,238,.25);border-radius:var(--radius-sm);padding:12px 14px;font-size:12px;color:var(--text-dim);margin-bottom:14px;line-height:1.6}
+.info-box strong{color:var(--blue)}
+.table-wrap{overflow-x:auto;border-radius:var(--radius-sm);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:var(--surface2);padding:9px 12px;text-align:right;font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border)}
+th:first-child{text-align:left}
+td{padding:8px 12px;text-align:right;border-bottom:1px solid rgba(42,42,61,.4);color:var(--text-dim)}
+td:first-child{text-align:left;color:var(--text-muted);font-size:11px}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
+td.interest{color:var(--red)}
+td.principal{color:var(--green)}
+.bar-chart{display:flex;align-items:flex-end;gap:3px;height:72px;margin-top:14px;padding:0 2px}
+.bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.bar{width:100%;border-radius:3px 3px 0 0;transition:height .6s ease;min-height:2px}
+.bar.principal-bar{background:var(--green);opacity:.8}
+.bar.interest-bar{background:var(--red);opacity:.7}
+.tramo-row{display:flex;justify-content:space-between;align-items:center;padding:8px 13px;border-bottom:1px solid rgba(42,42,61,.35);font-size:12px}
+.tramo-row:last-child{border-bottom:none}
+.tramo-row .tramo-range{color:var(--text-muted)}
+.tramo-row .tramo-pct{color:var(--gold);font-weight:600}
+.tramo-row .tramo-tax{color:var(--red)}
+.donut-wrap{display:flex;align-items:center;gap:22px;margin-top:14px}
+.donut-legend{font-size:12px}
+.legend-item{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.legend-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.growth-chart{position:relative;height:110px;margin-top:14px}
+.growth-chart svg{width:100%;height:100%}
+.compare-box{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px}
+.compare-item{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;text-align:center}
+.compare-item .c-label{font-size:10px;color:var(--text-muted);margin-bottom:4px}
+.compare-item .c-val{font-size:15px;font-weight:700;font-family:'Playfair Display',serif}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;font-size:13px;color:var(--text-dim)}
+.toggle{position:relative;width:38px;height:21px}
+.toggle input{opacity:0;width:0;height:0}
+.toggle-slider{position:absolute;cursor:pointer;inset:0;background:var(--border);border-radius:11px;transition:.2s}
+.toggle-slider::before{content:'';position:absolute;width:15px;height:15px;left:3px;top:3px;background:var(--text-muted);border-radius:50%;transition:.2s}
+input:checked+.toggle-slider{background:var(--gold-dim);border:1px solid var(--gold)}
+input:checked+.toggle-slider::before{transform:translateX(17px);background:var(--gold)}
+.salary-history{margin-top:10px}
+.salary-entry{display:grid;grid-template-columns:1fr 1fr 40px;gap:8px;margin-bottom:8px;align-items:end}
+.salary-entry input{margin:0}
+.btn-add{background:var(--surface2);border:1px solid var(--border);color:var(--text-dim);border-radius:var(--radius-sm);padding:8px 14px;font-size:12px;cursor:pointer;margin-top:4px;transition:border-color .2s}
+.btn-add:hover{border-color:var(--gold);color:var(--gold)}
+.btn-rm{background:rgba(224,82,82,.1);border:1px solid rgba(224,82,82,.25);color:var(--red);border-radius:6px;padding:7px;cursor:pointer;font-size:13px;transition:.2s;line-height:1}
+.btn-rm:hover{background:rgba(224,82,82,.2)}
+.section-sub{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em;margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--border)}
+.tooltip-wrap{position:relative;display:inline-block}
+.tooltip-icon{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;background:var(--border);border-radius:50%;font-size:9px;color:var(--text-muted);cursor:help;margin-left:4px;vertical-align:middle}
+.tooltip-text{visibility:hidden;position:absolute;bottom:120%;left:50%;transform:translateX(-50%);background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--text-dim);white-space:nowrap;z-index:200;line-height:1.5;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.tooltip-wrap:hover .tooltip-text{visibility:visible}
+footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-top:1px solid var(--border);color:var(--text-muted);font-size:12px;line-height:1.8}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.dis-section{background:rgba(91,141,238,.05);border:1px solid rgba(91,141,238,.15);border-radius:var(--radius-sm);padding:14px;margin-top:4px}
+.dis-section label{color:var(--blue)}
+
+
+/* ── Micrositio additions ── */
+*,*::before,*::after{box-sizing:border-box}
+body::before{content:'';position:fixed;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 15% 10%,
+    color-mix(in srgb,#5b8dee 5%,transparent) 0%,transparent 55%);
+  pointer-events:none;z-index:0}
+
+/* Crosslinks nav */
+.cl-bar{background:var(--surface);border-bottom:1px solid var(--border);
+  overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.cl-bar::-webkit-scrollbar{display:none}
+.cl-inner{display:inline-flex;padding:0 16px}
+.cl{display:inline-block;padding:10px 12px;font-size:11.5px;color:var(--text-muted);
+  text-decoration:none;border-bottom:2px solid transparent;transition:.2s;white-space:nowrap;
+  font-family:'DM Sans',sans-serif;font-weight:500}
+.cl:hover{color:var(--gold)}
+.cl.active{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* Hero */
+.hero{text-align:center;padding:clamp(36px,5vw,64px) clamp(16px,5vw,48px) clamp(28px,4vw,48px);
+  position:relative;z-index:1;border-bottom:1px solid var(--border)}
+.hero-icon{font-size:clamp(32px,5vw,48px);margin-bottom:16px;display:block}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(22px,4.5vw,46px);
+  font-weight:900;letter-spacing:-.02em;line-height:1.1;color:var(--text)}
+.hero h1 span{color:var(--gold)}
+.hero-sub{color:var(--text-dim);font-size:clamp(12px,1.8vw,14px);margin-top:10px;
+  max-width:600px;margin-inline:auto;line-height:1.65}
+.hero-badges{display:flex;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:4px;background:var(--gold-dim);
+  border:1px solid var(--gold);color:var(--gold);font-size:11px;font-weight:600;
+  padding:4px 12px;border-radius:20px;letter-spacing:.04em;font-family:'DM Sans',sans-serif}
+.badge-n{display:inline-flex;align-items:center;gap:4px;background:var(--surface);
+  border:1px solid var(--border);color:var(--text-muted);font-size:11px;
+  padding:4px 12px;border-radius:20px;font-family:'DM Sans',sans-serif}
+
+/* Quick Answer box — Featured Snippet bait */
+.qa-wrap{max-width:860px;margin:28px auto 0;padding:0 clamp(16px,4vw,40px)}
+.qa-box{background:color-mix(in srgb,#5b8dee 7%,var(--surface));
+  border:1px solid color-mix(in srgb,#5b8dee 35%,transparent);
+  border-radius:var(--radius-sm);padding:18px 22px}
+.qa-label{font-size:10px;font-weight:700;color:var(--gold);
+  text-transform:uppercase;letter-spacing:.12em;margin-bottom:4px}
+.qa-q{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px}
+.qa-a{font-size:14px;color:var(--text-dim);line-height:1.75;margin:0}
+.qa-a strong{color:var(--text)}
+
+/* Ad slots */
+.ad-wrap{max-width:860px;margin:20px auto;padding:0 clamp(16px,4vw,40px)}
+.ad-label{font-size:9px;color:var(--text-muted);text-align:center;
+  margin-bottom:3px;letter-spacing:.1em;text-transform:uppercase}
+
+/* Calculator */
+.calc-wrap{max-width:1200px;margin:32px auto 0;padding:0 clamp(16px,4vw,40px)}
+
+/* Visual Journey: scenarios table */
+.vj-wrap{max-width:860px;margin:36px auto 0;padding:0 clamp(16px,4vw,40px)}
+.vj-wrap h2{font-family:'Playfair Display',serif;font-size:clamp(17px,2.8vw,22px);
+  font-weight:700;color:var(--text);margin-bottom:16px;padding-bottom:10px;
+  border-bottom:1px solid var(--border)}
+.table-scroll{overflow-x:auto;border-radius:var(--radius-sm);border:1px solid var(--border)}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;white-space:nowrap}
+.data-table thead th{background:var(--surface2);padding:10px 14px;text-align:left;
+  color:var(--text-dim);font-size:10.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.07em;border-bottom:1px solid var(--border)}
+.data-table tbody td{padding:10px 14px;border-bottom:1px solid rgba(42,42,61,.4);
+  color:var(--text-muted);font-size:13px}
+.data-table tbody tr:last-child td{border-bottom:none}
+.data-table tbody tr:hover td{background:rgba(255,255,255,.02);color:var(--text-dim)}
+
+/* SEO content */
+.seo-wrap{max-width:860px;margin:36px auto 0;padding:0 clamp(16px,4vw,40px)}
+.seo-wrap h2{font-family:'Playfair Display',serif;font-size:clamp(17px,2.8vw,22px);
+  font-weight:700;color:var(--text);margin-bottom:14px;padding-bottom:10px;
+  border-bottom:1px solid var(--border)}
+.seo-wrap h3{font-size:clamp(13px,2vw,16px);font-weight:600;color:var(--text-dim);
+  margin:22px 0 10px}
+.seo-wrap p{color:var(--text-muted);font-size:14px;line-height:1.8;margin-bottom:12px}
+.seo-wrap strong{color:var(--text-dim)}
+
+/* Legal/E-E-A-T box */
+.legal-box{background:var(--surface);border:1px solid var(--border);
+  border-left:3px solid var(--gold);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  padding:14px 18px;margin-top:20px}
+.legal-box .lb-label{font-size:9.5px;font-weight:700;color:var(--gold);
+  text-transform:uppercase;letter-spacing:.12em;margin-bottom:5px}
+.legal-box p{font-size:12px;color:var(--text-muted);line-height:1.6;margin:0}
+
+/* FAQ */
+.faq-wrap{max-width:860px;margin:32px auto;padding:0 clamp(16px,4vw,40px) 48px}
+.faq-wrap h2{font-family:'Playfair Display',serif;font-size:clamp(17px,2.8vw,22px);
+  font-weight:700;color:var(--text);margin-bottom:20px;padding-bottom:10px;
+  border-bottom:1px solid var(--border)}
+.faq-item{background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:18px 22px;margin-bottom:10px;
+  transition:border-color .2s,background .2s}
+.faq-item:hover{border-color:var(--gold);
+  background:color-mix(in srgb,#5b8dee 3%,var(--surface))}
+.faq-item h3{font-size:clamp(13px,2vw,15px);font-weight:600;color:var(--text);
+  margin:0 0 8px;line-height:1.45}
+.faq-item p{font-size:13px;color:var(--text-muted);line-height:1.75;margin:0}
+.faq-item p strong{color:var(--text-dim)}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--border);padding:28px clamp(16px,4vw,40px);
+  text-align:center;color:var(--text-muted);font-size:12px;line-height:1.9;
+  position:relative;z-index:1}
+.ft-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-bottom:8px}
+.ft-links a{color:var(--text-muted);text-decoration:none;transition:color .2s}
+.ft-links a:hover{color:var(--gold)}
+
+/* Responsive */
+@media(max-width:600px){
+  .hero-badges{gap:6px}
+  .qa-box{padding:14px 16px}
+  .faq-item{padding:14px 16px}
+}
+</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBGMkE0QSIvPjx0ZXh0IHg9IjE2IiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDBCODk0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DPC90ZXh0Pjwvc3ZnPg=="><link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBGMkE0QSIvPjx0ZXh0IHg9IjE2IiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDBCODk0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DPC90ZXh0Pjwvc3ZnPg==">
+<link rel="stylesheet" href="/assets/ux-enhance.css">
+</head>
+
+<body itemscope itemtype="https://schema.org/WebPage">
+
+<!-- ── Crosslinks ─────────────────────────── -->
+<nav class="cl-bar" aria-label="Otras calculadoras financieras">
+  <div class="cl-inner">
+    <a href="https://simular-hipoteca.es" class="cl">🏠 Hipoteca</a>
+    <a href="/" class="cl active">📋 IRPF</a>
+    <a href="https://calculadora-finiquito.es" class="cl">📄 Finiquito</a>
+    <a href="https://calculadora-pension.es" class="cl">👴 Pensión</a>
+    <a href="https://calculadora-inversion.es" class="cl">📈 Inversión</a>
+    <a href="https://calculadora-ahorro.es" class="cl">🏦 Ahorro</a>
+    <a href="https://calculadora-prestamo.es" class="cl">💳 Préstamo</a>
+    <a href="https://calculadora-salario.com" class="cl">💰 Salario</a>
+    <a href="https://calculadoras-financieras.es" class="cl">🏠 Suite completa</a>
+  </div>
+</nav>
+
+<!-- ── Hero ─────────────────────────────────── -->
+<header class="hero" itemscope itemtype="https://schema.org/WPHeader">
+  <span class="hero-icon" role="img" aria-label="📋">📋</span>
+  <h1 itemprop="headline">Calculadora <span>IRPF 2026</span></h1>
+  <p class="hero-sub">Tramos reales · 17 CCAA · Situación familiar · Autónomos · Plan de pensiones · Discapacidad</p>
+  <div class="hero-badges">
+    <span class="badge">✦ Actualizado Enero 2026</span>
+    <span class="badge-n">🔒 Sin datos personales</span>
+    <span class="badge-n">⚡ Cálculo instantáneo</span>
+    <span class="badge-n">🏦 Neutral e independiente</span>
+  </div>
+</header>
+
+<!-- ── Quick Answer (Featured Snippet) ────── -->
+<div class="qa-wrap">
+  <div class="qa-box">
+    <div class="qa-label">Respuesta rápida</div>
+    <p class="qa-q">Sueldo neto con 2.000 € brutos al mes (12 pagas)</p>
+    <p class="qa-a">Con 2.000 €/mes brutos (24.000 €/año), soltero sin hijos en <strong>Madrid: ~1.660 €/mes netos</strong>. En Cataluña: ~1.620 €/mes. La diferencia entre comunidades puede llegar a 600-800 €/año para este salario.</p>
+  </div>
+</div>
+
+<!-- ── Anuncio superior ───────────────────── -->
+<!--
+<div class="ad-wrap">
+  <div class="ad-label">publicidad</div>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4048225183995754"
+    data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+-->
+
+<!-- ── Calculadora ───────────────────────── -->
+<div class="calc-wrap">
+  <div class="calc-panel active" role="main">
+  <div class="section-header">
+    <h2>Simulador IRPF 2025</h2>
+    <p>Tramos reales por comunidad autónoma, discapacidad, situación familiar y deducciones</p>
+  </div>
+  <div class="calc-grid">
+    <div class="card">
+      <div class="card-title">⚙️ Datos fiscales</div>
+      <div class="field"><label>Salario bruto anual</label><div class="input-wrap"><input type="number" id="i-bruto" value="35000" min="0"><span class="unit">€</span></div></div>
+      <div class="field"><label>Comunidad Autónoma</label><div class="input-wrap"><select id="i-ccaa">
+        <option value="mad">Madrid</option>
+        <option value="and">Andalucía</option>
+        <option value="cat">Cataluña</option>
+        <option value="val">Comunitat Valenciana</option>
+        <option value="gal">Galicia</option>
+        <option value="cas">Castilla y León</option>
+        <option value="clm">Castilla-La Mancha</option>
+        <option value="ara">Aragón</option>
+        <option value="ext">Extremadura</option>
+        <option value="mur">Región de Murcia</option>
+        <option value="bal">Illes Balears</option>
+        <option value="can">Canarias</option>
+        <option value="rio">La Rioja</option>
+        <option value="nav">Navarra (régimen foral)</option>
+        <option value="pvs">País Vasco (régimen foral)</option>
+        <option value="ast">Asturias</option>
+        <option value="cnt">Cantabria</option>
+      </select></div></div>
+      <div class="field"><label>Situación personal</label><div class="input-wrap"><select id="i-situacion"><option value="soltero">Soltero/a sin hijos</option><option value="casado">Casado/a sin hijos</option><option value="hijo1">Con 1 hijo menor</option><option value="hijo2">Con 2 hijos menores</option><option value="hijo3">Con 3 o más hijos</option><option value="mono">Familia monoparental (1 hijo)</option></select></div></div>
+      <div class="field"><label>Aportación plan de pensiones</label><div class="input-wrap"><input type="number" id="i-pension-ap" value="0" min="0" max="1500"><span class="unit">€/año</span></div></div>
+      <div class="field"><label>Deducción hipoteca pre-2013</label><div class="input-wrap"><input type="number" id="i-hip-ded" value="0" min="0"><span class="unit">€/año</span></div></div>
+      <div class="section-sub">Discapacidad</div>
+      <div class="dis-section">
+        <div class="field"><label style="color:var(--blue)">Grado de discapacidad</label><div class="input-wrap"><select id="i-dis"><option value="0">Sin discapacidad</option><option value="33">33% – 64% (reducción trabajo: +3.500 €)</option><option value="65">65% o superior (reducción trabajo: +7.750 €)</option></select></div></div>
+        <div class="toggle-row"><span>¿Necesitas ayuda de terceras personas?</span><label class="toggle"><input type="checkbox" id="i-dis-movilidad"><span class="toggle-slider"></span></label></div>
+      </div>
+      <button class="btn-calc" onclick="calcIRPF()">Calcular IRPF 2025</button>
+    </div>
+    <div>
+      <div id="i-results" class="results card">
+        <div class="card-title">📊 Tu IRPF desglosado</div>
+        <div class="result-grid" id="i-result-grid"></div>
+        <div id="i-tramos-wrap"></div>
+        <div class="insight" id="i-insight"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
+  </div>
+</div>
+
+<!-- ── Anuncio medio ─────────────────────── -->
+<!--
+<div class="ad-wrap">
+  <div class="ad-label">publicidad</div>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4048225183995754"
+    data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+-->
+
+<!-- ── Visual Journey: Simulaciones precalculadas ── -->
+<div class="vj-wrap">
+  <h2>📊 Simulaciones precalculadas — Escenarios más consultados</h2>
+  <div class="table-scroll"><table class="data-table">
+<thead><tr><th>Bruto anual</th><th>CCAA</th><th>Situación</th><th>Retención %</th><th>IRPF anual</th><th>Neto anual</th></tr></thead>
+<tbody><tr><td>20.000 €/año</td><td>Madrid</td><td>Soltero</td><td>~14%</td><td>2.800 €</td><td>17.200 €</td></tr><tr><td>30.000 €/año</td><td>Madrid</td><td>Soltero</td><td>~18%</td><td>5.400 €</td><td>24.600 €</td></tr><tr><td>40.000 €/año</td><td>Cataluña</td><td>Soltero</td><td>~25%</td><td>10.000 €</td><td>30.000 €</td></tr><tr><td>50.000 €/año</td><td>Madrid</td><td>2 hijos</td><td>~22%</td><td>11.000 €</td><td>39.000 €</td></tr><tr><td>60.000 €/año</td><td>Madrid</td><td>Soltero</td><td>~29%</td><td>17.400 €</td><td>42.600 €</td></tr></tbody>
+</table></div>
+</div>
+
+<!-- ── Contenido SEO + E-E-A-T ───────────── -->
+<div class="seo-wrap">
+  <h2>IRPF 2026: la diferencia entre comunidades autónomas</h2>
+  <p>El IRPF en España combina una tarifa estatal idéntica para todos con una tarifa autonómica que fija cada comunidad. En 2026, la diferencia entre la comunidad más barata (Madrid) y las más caras (Cataluña, C. Valenciana) puede suponer <strong>más de 2.000 €/año</strong> para un salario de 40.000 €.</p>
+<p>Con el nuevo sistema de cotización de autónomos por ingresos reales (plenamente consolidado en 2026), esta calculadora incluye el tramo de retención para autónomos basado en la previsión de beneficios netos del año.</p>
+<h3>Reducción por rendimientos del trabajo 2026</h3>
+<p>Los trabajadores con ingresos inferiores a 15.000 € brutos anuales tienen una reducción especial de hasta <strong>6.498 €</strong> sobre la base imponible, lo que puede hacer que su IRPF efectivo sea del 0-5%. Esta calculadora la aplica automáticamente.</p>
+  <div class="legal-box">
+    <div class="lb-label">⚖️ Base legal y fuentes</div>
+    <p>Ley 35/2006, de 28 de noviembre, del IRPF (BOE-A-2006-20764). Orden HFP/1359/2023 (modelo 100). Ley de PGE 2026 para tramos y deducciones autonómicas.</p>
+  </div>
+</div>
+
+<!-- ── FAQ (Schema + Featured Snippets) ─── -->
+<div class="faq-wrap" itemscope itemtype="https://schema.org/FAQPage">
+  <h2>Preguntas frecuentes</h2>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">sueldo neto 2000 euros brutos 12 pagas 2026</h3><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Con 2.000 €/mes brutos (24.000 €/año), soltero sin hijos: <strong>Madrid ~1.660 €/mes</strong>, Andalucía ~1.650 €, Cataluña ~1.620 €, C. Valenciana ~1.615 €. La calculadora da el resultado exacto con los tramos reales de cada comunidad.</p></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">retención IRPF autónomos 2026 ¿cómo se calcula?</h3><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Los autónomos aplican retención del 15% en facturas (7% los primeros 3 años). Con el nuevo sistema de cotización por ingresos reales en 2026, muchos autónomos ajustan su retención al alza para no deber a Hacienda en la declaración anual.</p></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">calcular IRPF por comunidad autónoma diferencia Madrid vs Cataluña</h3><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Para un salario de 40.000 €, la diferencia de IRPF entre Madrid (tarifa baja) y Cataluña (tarifa alta) es de aproximadamente <strong>1.600-2.000 €/año</strong>. Madrid es la comunidad con menor presión fiscal sobre rentas del trabajo.</p></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">¿Cuánto me ahorra aportar al plan de pensiones en IRPF 2026?</h3><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">El límite es 1.500 €/año al plan individual (o el 30% de rendimientos netos). Cada 1.000 € aportados reducen la base imponible en 1.000 €, ahorrando entre 190 € y 240 € en IRPF según tu tramo marginal.</p></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">¿Hay cambios en el IRPF 2026 respecto a 2025?</h3><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">En 2026 se mantienen los tramos generales. Las principales novedades son la actualización de la reducción por rendimientos del trabajo para rentas inferiores a 15.000 € (hasta 6.498 €) y los cambios en deducciones autonómicas de algunas comunidades.</p></div></div>
+</div>
+
+<!-- ── Anuncio inferior ───────────────────── -->
+<!--
+<div class="ad-wrap" style="margin-bottom:32px">
+  <div class="ad-label">publicidad</div>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4048225183995754"
+    data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+-->
+
+<!-- ── Footer ────────────────────────────── -->
+<footer class="site-footer">
+  <div class="ft-links">
+    <a href="/aviso-legal.html">Aviso legal</a>
+    <a href="/privacidad.html">Privacidad</a>
+    <a href="/cookies.html">Cookies</a>
+    <a href="/terminos.html">Términos de uso</a>
+    <a href="https://calculadoras-financieras.es">Suite completa</a>
+  </div>
+  <p>© 2026 Calculadora IRPF 2026</p>
+  <p style="font-size:11px;margin-top:3px;color:#3a3a55">
+    Resultados orientativos. Para decisiones financieras importantes, consulta siempre con un profesional cualificado.
+  </p>
+</footer>
+
+<!-- ── Cookie Banner RGPD ─────────────────── -->
+<div id="cb" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;
+background:#13131a;border-top:2px solid #2a2a3d;padding:18px 24px;align-items:center;
+gap:16px;flex-wrap:wrap;box-shadow:0 -4px 32px rgba(0,0,0,.6)">
+<div style="flex:1;min-width:260px">
+  <p style="margin:0 0 3px;font-size:13px;font-weight:600;color:#e8e8f0">🍪 Cookies y privacidad</p>
+  <p style="margin:0;font-size:12px;color:#8888aa;line-height:1.55">
+    Usamos cookies de Google Analytics y AdSense para estadísticas y publicidad relevante.
+    Todo el cálculo es local — ningún dato financiero tuyo sale de tu navegador.
+    <a href="/cookies.html" style="color:#c9a84c;text-decoration:none">Política de cookies</a> ·
+    <a href="/privacidad.html" style="color:#c9a84c;text-decoration:none">Privacidad</a>
+  </p>
+</div>
+<div style="display:flex;gap:10px;flex-shrink:0">
+  <button onclick="ckNo()" style="background:transparent;border:1px solid #555;color:#888;
+    padding:9px 18px;border-radius:8px;cursor:pointer;font-size:12px;font-family:inherit">Rechazar</button>
+  <button onclick="ckYes()" style="background:#c9a84c;border:none;color:#0a0a0f;
+    padding:9px 20px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:700;font-family:inherit">Aceptar</button>
+</div>
+</div>
+<script>
+(function(){if(!localStorage.getItem('ck'))document.getElementById('cb').style.display='flex';})();
+function ckYes(){localStorage.setItem('ck','y');document.getElementById('cb').style.display='none';}
+function ckNo(){localStorage.setItem('ck','n');document.getElementById('cb').style.display='none';}
+</script>
+
+<!-- ── JavaScript compartido ─────────────── -->
 <script>
 /* showTab stub: micrositios solo tienen 1 calculadora activa */
 function showTab() {}
-// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ UTILS ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
+// ── UTILS ──────────────────────────────────────────────────────────────────
 const fmt=(n,d=0)=>new Intl.NumberFormat('es-ES',{minimumFractionDigits:d,maximumFractionDigits:d}).format(n);
-const fmtE=(n,d=0)=>fmt(n,d)+' ÃÂ¢ÃÂÃÂ¬';
+const fmtE=(n,d=0)=>fmt(n,d)+' €';
 const fmtP=(n,d=1)=>fmt(n,d)+' %';
 
 function showTab(name,btn){
@@ -52,7 +528,7 @@ function resultGrid(items){
   return items.map(it=>`<div class="result-item ${it.h?'highlight':''}"><div class="r-label">${it.l}</div><div class="r-value ${it.c||''}">${it.v}</div></div>`).join('');
 }
 
-// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ CCAA TIPO AUTONÃÂÃÂMICO (tramos simplificados 2025) ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
+// ── CCAA TIPO AUTONÓMICO (tramos simplificados 2025) ───────────────────────
 // Valor = ajuste sobre tipo base estatal (puntos porcentuales)
 const CCAA_ADJ={
   mad:-1.5, and:-1.0, rio:-1.2, can:-0.8,  // bajas
@@ -62,10 +538,10 @@ const CCAA_ADJ={
   nav:0,   pvs:0                           // forales (tipo propio)
 };
 const CCAA_LABEL={
-  mad:'Madrid',and:'AndalucÃÂÃÂ­a',cat:'CataluÃÂÃÂ±a',val:'Comunitat Valenciana',
-  gal:'Galicia',cas:'Castilla y LeÃÂÃÂ³n',clm:'Castilla-La Mancha',ara:'AragÃÂÃÂ³n',
+  mad:'Madrid',and:'Andalucía',cat:'Cataluña',val:'Comunitat Valenciana',
+  gal:'Galicia',cas:'Castilla y León',clm:'Castilla-La Mancha',ara:'Aragón',
   ext:'Extremadura',mur:'Murcia',bal:'Illes Balears',can:'Canarias',
-  rio:'La Rioja',nav:'Navarra',pvs:'PaÃÂÃÂ­s Vasco',ast:'Asturias',cnt:'Cantabria'
+  rio:'La Rioja',nav:'Navarra',pvs:'País Vasco',ast:'Asturias',cnt:'Cantabria'
 };
 
 // Tramos IRPF estatal 2025 (escala general)
@@ -79,7 +555,7 @@ function calcTramos(base,adj){
   for(const t of TRAMOS_EST){
     if(base<=prev)break;
     const slice=Math.min(base,t.h)-prev;
-    const tipo=t.t+adj/2; // adj repartido entre estatal y autonÃÂÃÂ³mico
+    const tipo=t.t+adj/2; // adj repartido entre estatal y autonómico
     const imp=slice*tipo/100;
     if(slice>0)det.push({desde:prev,hasta:Math.min(base,t.h),tipo:tipo,imp:imp});
     total+=imp;
@@ -88,21 +564,21 @@ function calcTramos(base,adj){
   return{total,det};
 }
 
-// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ HIPOTECA 2025 ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
+// ── HIPOTECA 2025 ──────────────────────────────────────────────────────────
 function updateEntrada(){
   const pct=+document.getElementById('h-entrada-pct').value;
   const precio=+document.getElementById('h-precio').value||250000;
-  document.getElementById('h-entrada-val').textContent=pct+'% ÃÂ¢ÃÂÃÂ '+fmtE(Math.round(precio*pct/100));
+  document.getElementById('h-entrada-val').textContent=pct+'% — '+fmtE(Math.round(precio*pct/100));
 }
 
 document.getElementById('h-dis').addEventListener('change',function(){
   const info=document.getElementById('h-dis-info');
   if(this.value==='33'){
     info.style.display='block';
-    info.innerHTML='<strong style="color:var(--blue)">Discapacidad 33ÃÂ¢ÃÂÃÂ64%:</strong> Posible deducciÃÂÃÂ³n autonÃÂÃÂ³mica en la cuota ÃÂÃÂ­ntegra (varÃÂÃÂ­a por CCAA). En algunas comunidades, bonificaciÃÂÃÂ³n del ITP en la compra hasta el 4%. Consulta a un gestor.';
+    info.innerHTML='<strong style="color:var(--blue)">Discapacidad 33–64%:</strong> Posible deducción autonómica en la cuota íntegra (varía por CCAA). En algunas comunidades, bonificación del ITP en la compra hasta el 4%. Consulta a un gestor.';
   }else if(this.value==='65'){
     info.style.display='block';
-    info.innerHTML='<strong style="color:var(--blue)">Discapacidad ÃÂ¢ÃÂÃÂ¥65%:</strong> En muchas CCAA, tipo reducido de ITP (4% en Madrid, 4% en AndalucÃÂÃÂ­aÃÂ¢ÃÂÃÂ¦). Posible exenciÃÂÃÂ³n parcial del IBI municipal. Condiciones especiales en financiaciÃÂÃÂ³n pÃÂÃÂºblica (ICO). La hipoteca inversa tambiÃÂÃÂ©n tiene ventajas.';
+    info.innerHTML='<strong style="color:var(--blue)">Discapacidad ≥65%:</strong> En muchas CCAA, tipo reducido de ITP (4% en Madrid, 4% en Andalucía…). Posible exención parcial del IBI municipal. Condiciones especiales en financiación pública (ICO). La hipoteca inversa también tiene ventajas.';
   }else{
     info.style.display='none';
   }
@@ -127,7 +603,7 @@ function calcHipoteca(){
   const totalIntereses=totalPagado-capital;
   const taeReal=(Math.pow(1+(tae+comision/capital/anos),1)-1)*100;
 
-  // AmortizaciÃÂÃÂ³n por aÃÂÃÂ±os
+  // Amortización por años
   let saldo=capital,rows='',chartBars='';
   for(let y=1;y<=Math.min(anos,30);y++){
     let intA=0,prinA=0;
@@ -137,9 +613,9 @@ function calcHipoteca(){
       saldo=Math.max(0,saldo-prinM);
     }
     const pctPrin=Math.round(prinA/(prinA+intA)*100);
-    rows+=`<tr><td>AÃÂÃÂ±o ${y}</td><td class="principal">${fmtE(prinA,0)}</td><td class="interest">${fmtE(intA,0)}</td><td>${fmtE(Math.max(0,saldo),0)}</td><td>${pctPrin}%</td></tr>`;
+    rows+=`<tr><td>Año ${y}</td><td class="principal">${fmtE(prinA,0)}</td><td class="interest">${fmtE(intA,0)}</td><td>${fmtE(Math.max(0,saldo),0)}</td><td>${pctPrin}%</td></tr>`;
     const hInt=Math.min(60,intA/capital*250), hPrin=Math.min(60,prinA/capital*250);
-    chartBars+=`<div class="bar-wrap" title="AÃÂÃÂ±o ${y}"><div class="bar interest-bar" style="height:${hInt}px"></div><div class="bar principal-bar" style="height:${hPrin}px"></div></div>`;
+    chartBars+=`<div class="bar-wrap" title="Año ${y}"><div class="bar interest-bar" style="height:${hInt}px"></div><div class="bar principal-bar" style="height:${hPrin}px"></div></div>`;
   }
 
   document.getElementById('h-result-grid').innerHTML=resultGrid([
@@ -152,13 +628,13 @@ function calcHipoteca(){
   ]);
 
   const pctInt=Math.round(totalIntereses/totalPagado*100);
-  document.getElementById('h-insight').innerHTML=`<strong>Lo que debes saber:</strong> PagarÃÂÃÂ¡s <strong>${fmtE(totalIntereses,0)}</strong> solo en intereses (${pctInt}% del total pagado). Si aumentaras la cuota a <strong>${fmtE(cuota*1.2,0)}/mes</strong> (+20%), ahorrarÃÂÃÂ­as ~<strong>${fmtE(totalIntereses*0.22,0)}</strong> y terminarÃÂÃÂ­as <strong>${Math.round(anos*0.17)} aÃÂÃÂ±os antes</strong>. Tu esfuerzo inicial (entrada + gastos + comisiÃÂÃÂ³n) es <strong>${fmtE(entrada+gastos+comision,0)}</strong>, que necesitas tener ahorrado ANTES de pedir la hipoteca.`;
+  document.getElementById('h-insight').innerHTML=`<strong>Lo que debes saber:</strong> Pagarás <strong>${fmtE(totalIntereses,0)}</strong> solo en intereses (${pctInt}% del total pagado). Si aumentaras la cuota a <strong>${fmtE(cuota*1.2,0)}/mes</strong> (+20%), ahorrarías ~<strong>${fmtE(totalIntereses*0.22,0)}</strong> y terminarías <strong>${Math.round(anos*0.17)} años antes</strong>. Tu esfuerzo inicial (entrada + gastos + comisión) es <strong>${fmtE(entrada+gastos+comision,0)}</strong>, que necesitas tener ahorrado ANTES de pedir la hipoteca.`;
 
-  document.getElementById('h-amort-wrap').innerHTML=`<div class="bar-chart">${chartBars}</div><div style="display:flex;gap:14px;font-size:10px;color:var(--text-muted);margin-top:5px"><span><span style="color:var(--green)">ÃÂ¢ÃÂÃÂ </span> AmortizaciÃÂÃÂ³n</span><span><span style="color:var(--red)">ÃÂ¢ÃÂÃÂ </span> Intereses</span></div><div class="table-wrap" style="margin-top:12px;max-height:220px;overflow-y:auto"><table><thead><tr><th>AÃÂÃÂ±o</th><th>Amortizado</th><th>Intereses</th><th>Saldo pendiente</th><th>%capital</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  document.getElementById('h-amort-wrap').innerHTML=`<div class="bar-chart">${chartBars}</div><div style="display:flex;gap:14px;font-size:10px;color:var(--text-muted);margin-top:5px"><span><span style="color:var(--green)">■</span> Amortización</span><span><span style="color:var(--red)">■</span> Intereses</span></div><div class="table-wrap" style="margin-top:12px;max-height:220px;overflow-y:auto"><table><thead><tr><th>Año</th><th>Amortizado</th><th>Intereses</th><th>Saldo pendiente</th><th>%capital</th></tr></thead><tbody>${rows}</tbody></table></div>`;
   showResults('h-results');
 }
 
-// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ IRPF 2025 ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
+// ── IRPF 2025 ──────────────────────────────────────────────────────────────
 function calcIRPF(){
   const bruto=+document.getElementById('i-bruto').value;
   const ccaa=document.getElementById('i-ccaa').value;
@@ -169,35 +645,35 @@ function calcIRPF(){
   const disMovilidad=document.getElementById('i-dis-movilidad').checked;
   const adj=CCAA_ADJ[ccaa]||0;
 
-  // ReducciÃÂÃÂ³n por trabajo 2025 (actualizada)
+  // Reducción por trabajo 2025 (actualizada)
   let redTrabajo=2400;
   if(bruto<=15000)redTrabajo=6498;
   else if(bruto<=21000)redTrabajo=6498-1.15*(bruto-15000);
 
-  // ReducciÃÂÃÂ³n extra por discapacidad
+  // Reducción extra por discapacidad
   const redDis={0:0,33:3500,65:7750}[dis]||0;
   const redDisMovilidad=disMovilidad&&dis>0?3100:0;
 
-  // MÃÂÃÂ­nimo personal y familiar 2025
+  // Mínimo personal y familiar 2025
   let minPersonal=5550;
   if(dis==33)minPersonal+=3000;
   if(dis==65)minPersonal+=9000;
   if(disMovilidad&&dis>0)minPersonal+=3100;
   const minFamiliar={soltero:0,casado:0,hijo1:2400,hijo2:5100,hijo3:9100,mono:2400}[sit]||0;
 
-  // SS cotizaciÃÂÃÂ³n trabajador 6.47% (2025)
+  // SS cotización trabajador 6.47% (2025)
   const ss=bruto*0.0647;
 
   // Base imponible general
   const baseImp=Math.max(0,bruto-redTrabajo-redDis-redDisMovilidad-ss-pensionAp);
 
-  // Calcular cuota ÃÂÃÂ­ntegra
+  // Calcular cuota íntegra
   const res=calcTramos(baseImp,adj);
 
-  // DeducciÃÂÃÂ³n por mÃÂÃÂ­nimo personal/familiar
+  // Deducción por mínimo personal/familiar
   const dedMin=(minPersonal+minFamiliar)*(TRAMOS_EST[0].t+adj/2)/100;
 
-  // Cuota lÃÂÃÂ­quida
+  // Cuota líquida
   let cuota=Math.max(0,res.total-dedMin-hipDed);
 
   // Tipo medio efectivo
@@ -208,7 +684,7 @@ function calcIRPF(){
   // Tramos detalle HTML
   let tramosHTML='<div style="margin-top:14px"><div class="section-sub">Tramos aplicados (base imponible '+fmtE(baseImp,0)+')</div><div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;overflow:hidden">';
   for(const t of res.det){
-    tramosHTML+=`<div class="tramo-row"><span class="tramo-range">${fmtE(t.desde)} ÃÂ¢ÃÂÃÂ ${fmtE(Math.min(t.hasta,baseImp))}</span><span class="tramo-pct">${fmtP(t.tipo)}</span><span class="tramo-tax">${fmtE(t.imp,0)}</span></div>`;
+    tramosHTML+=`<div class="tramo-row"><span class="tramo-range">${fmtE(t.desde)} – ${fmtE(Math.min(t.hasta,baseImp))}</span><span class="tramo-pct">${fmtP(t.tipo)}</span><span class="tramo-tax">${fmtE(t.imp,0)}</span></div>`;
   }
   tramosHTML+='</div></div>';
 
@@ -224,13 +700,13 @@ function calcIRPF(){
 
   const ccaaLabel=CCAA_LABEL[ccaa]||ccaa;
   let disMsg='';
-  if(dis>0)disMsg=` Con discapacidad ${dis}%+, tu reducciÃÂÃÂ³n en trabajo es <strong>${fmtE(redDis,0)}</strong> adicional y tu mÃÂÃÂ­nimo personal es <strong>${fmtE(minPersonal,0)}</strong>.`;
+  if(dis>0)disMsg=` Con discapacidad ${dis}%+, tu reducción en trabajo es <strong>${fmtE(redDis,0)}</strong> adicional y tu mínimo personal es <strong>${fmtE(minPersonal,0)}</strong>.`;
 
-  document.getElementById('i-insight').innerHTML=`<strong>${ccaaLabel} 2025:</strong> De cada 100 ÃÂ¢ÃÂÃÂ¬ brutos recibes <strong>${fmt(neto/bruto*100,0)} ÃÂ¢ÃÂÃÂ¬</strong> netos.${disMsg} ${pensionAp>0?`Tu aportaciÃÂÃÂ³n al plan de pensiones te ahorra <strong>${fmtE(pensionAp*tipoMedio/100,0)}</strong> en IRPF.`:'Si aportaras 1.500 ÃÂ¢ÃÂÃÂ¬/aÃÂÃÂ±o al plan de pensiones, ahorrarÃÂÃÂ­as ~'+fmtE(1500*tipoMedio/100,0)+' en impuestos.'}`;
+  document.getElementById('i-insight').innerHTML=`<strong>${ccaaLabel} 2025:</strong> De cada 100 € brutos recibes <strong>${fmt(neto/bruto*100,0)} €</strong> netos.${disMsg} ${pensionAp>0?`Tu aportación al plan de pensiones te ahorra <strong>${fmtE(pensionAp*tipoMedio/100,0)}</strong> en IRPF.`:'Si aportaras 1.500 €/año al plan de pensiones, ahorrarías ~'+fmtE(1500*tipoMedio/100,0)+' en impuestos.'}`;
   showResults('i-results');
 }
 
-// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ FINIQUITO 2025 ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
+// ── FINIQUITO 2025 ────────────────────────────────────────────────────────
 let salaryEntries=[{desde:'01/01/2020',salario:24000},{desde:'01/01/2023',salario:30000}];
 
 function addSalaryEntry(){
@@ -240,7 +716,7 @@ function addSalaryEntry(){
   const div=document.createElement('div');
   div.className='salary-entry';
   div.dataset.idx=idx;
-  div.innerHTML=`<div><label>Desde</label><div class="input-wrap"><input type="text" class="sh-desde" placeholder="DD/MM/AAAA"><span class="unit">ÃÂ°ÃÂÃÂÃÂ</span></div></div><div><label>Bruto anual</label><div class="input-wrap"><input type="number" class="sh-salario" value="0" min="0"><span class="unit">ÃÂ¢ÃÂÃÂ¬</span></div></div><div style="padding-top:20px"><button class="btn-rm" onclick="removeSalaryEntry(this)" title="Eliminar">ÃÂ¢ÃÂÃÂ</button></div>`;
+  div.innerHTML=`<div><label>Desde</label><div class="input-wrap"><input type="text" class="sh-desde" placeholder="DD/MM/AAAA"><span class="unit">📅</span></div></div><div><label>Bruto anual</label><div class="input-wrap"><input type="number" class="sh-salario" value="0" min="0"><span class="unit">€</span></div></div><div style="padding-top:20px"><button class="btn-rm" onclick="removeSalaryEntry(this)" title="Eliminar">✕</button></div>`;
   container.appendChild(div);
 }
 
@@ -267,7 +743,7 @@ function calcFiniquito(){
     const sal=+row.querySelector('.sh-salario').value;
     if(desde&&sal>0)entries.push({desde,sal});
   });
-  if(entries.length===0){alert('Introduce al menos un perÃÂÃÂ­odo salarial.');return;}
+  if(entries.length===0){alert('Introduce al menos un período salarial.');return;}
   entries.sort((a,b)=>a.desde-b.desde);
 
   const finStr=document.getElementById('f-fin').value;
@@ -281,12 +757,12 @@ function calcFiniquito(){
   const diasTotales=Math.max(1,(fin-inicio)/(1000*60*60*24));
   const anosCompletos=Math.floor(diasTotales/365);
 
-  // Salario actual (ÃÂÃÂºltimo perÃÂÃÂ­odo)
+  // Salario actual (último período)
   const salarioActual=entries[entries.length-1].sal;
   const salarioDiario=salarioActual/365;
   const salarioMensual=salarioActual/12;
 
-  // Salario medio ponderado para indemnizaciÃÂÃÂ³n
+  // Salario medio ponderado para indemnización
   let totalMs=0,totalSalPond=0;
   for(let i=0;i<entries.length;i++){
     const desde=entries[i].desde;
@@ -312,7 +788,7 @@ function calcFiniquito(){
     const diasDesdeDic=mesActual===0?diaActual:(mesActual<6?(mesActual*30+diaActual):0);
     const pagsExtraUnit=salarioActual/2;
     importePagas=pagsExtraUnit*(Math.min(diasDesdeJun,180)/180)+pagsExtraUnit*(Math.min(diasDesdeDic+((fin.getFullYear()-inicio.getFullYear())*0),180)/180);
-    // Simplificado: dÃÂÃÂ­as proporcionales en el semestre actual
+    // Simplificado: días proporcionales en el semestre actual
     const diasSem=(mesActual%6)*30+diaActual;
     importePagas=(salarioActual/pagas)*(diasSem/180);
   }
@@ -321,7 +797,7 @@ function calcFiniquito(){
   const diasMes=new Date(fin.getFullYear(),fin.getMonth()+1,0).getDate();
   const salPend=salarioMensual*(fin.getDate()/diasMes);
 
-  // IndemnizaciÃÂÃÂ³n
+  // Indemnización
   const diasX={despido_improcedente:33,obj_individual:20,obj_colectivo:20,mutuo_acuerdo:20,despido_procedente:0,baja_voluntaria:0,erte:0};
   const exento={despido_improcedente:true,obj_individual:true,obj_colectivo:true,mutuo_acuerdo:false,despido_procedente:false,baja_voluntaria:false,erte:false};
   const topeMeses={despido_improcedente:24,obj_individual:12,obj_colectivo:12,mutuo_acuerdo:12};
@@ -343,25 +819,25 @@ function calcFiniquito(){
 
   document.getElementById('f-result-grid').innerHTML=resultGrid([
     {l:'Total finiquito neto',v:fmtE(totalNeto,2),h:true},
-    {l:'Vacaciones pend.',v:`${vacPend}d ÃÂ¢ÃÂÃÂ ${fmtE(importeVac,0)}`},
+    {l:'Vacaciones pend.',v:`${vacPend}d → ${fmtE(importeVac,0)}`},
     {l:'Pagas prop.',v:fmtE(importePagas,0)},
     {l:'Salario pendiente',v:fmtE(salPend,0)},
-    {l:'IndemnizaciÃÂÃÂ³n',v:fmtE(indemnizacion,0),c:indemnizacion>0?'green':''},
-    {l:'RetenciÃÂÃÂ³n IRPF',v:fmtE(retencion,0),c:'red'},
+    {l:'Indemnización',v:fmtE(indemnizacion,0),c:indemnizacion>0?'green':''},
+    {l:'Retención IRPF',v:fmtE(retencion,0),c:'red'},
   ]);
 
-  const histMsg=entries.length>1?`Usando <strong>salario medio ponderado de ${fmtE(salarioMedioPonderado,0)}/aÃÂÃÂ±o</strong> para la indemnizaciÃÂÃÂ³n (${entries.length} perÃÂÃÂ­odos salariales).`:'';
+  const histMsg=entries.length>1?`Usando <strong>salario medio ponderado de ${fmtE(salarioMedioPonderado,0)}/año</strong> para la indemnización (${entries.length} períodos salariales).`:'';
   const disMsg=dis>0&&diasXAno>0?` Por discapacidad ${dis}%+, te corresponden <strong>${fmtE(extraDis,0)} adicionales</strong>.`:'';
-  const exMsg=esExenta?' La indemnizaciÃÂÃÂ³n <strong>estÃÂÃÂ¡ exenta de IRPF</strong>.':' La indemnizaciÃÂÃÂ³n tributa normalmente.';
+  const exMsg=esExenta?' La indemnización <strong>está exenta de IRPF</strong>.':' La indemnización tributa normalmente.';
 
-  document.getElementById('f-insight').innerHTML=`${histMsg} ${diasXAno>0?`IndemnizaciÃÂÃÂ³n: <strong>${diasXAno} dÃÂÃÂ­as/aÃÂÃÂ±o ÃÂÃÂ ${fmt(anosInd,2)} aÃÂÃÂ±os = ${fmtE(indBase,0)}</strong>.${disMsg}${exMsg}`:'Sin indemnizaciÃÂÃÂ³n por esta causa.'} Te corresponden <strong>${vacCorr} dÃÂÃÂ­as</strong> de vacaciones en ${fin.getFullYear()}, disfrutaste ${vacDisfrutadas}, quedan <strong>${vacPend}</strong>. RetenciÃÂÃÂ³n estimada: ${fmtE(retencion,0)} (15% sobre base tributable ${fmtE(baseTributable,0)}).`;
+  document.getElementById('f-insight').innerHTML=`${histMsg} ${diasXAno>0?`Indemnización: <strong>${diasXAno} días/año × ${fmt(anosInd,2)} años = ${fmtE(indBase,0)}</strong>.${disMsg}${exMsg}`:'Sin indemnización por esta causa.'} Te corresponden <strong>${vacCorr} días</strong> de vacaciones en ${fin.getFullYear()}, disfrutaste ${vacDisfrutadas}, quedan <strong>${vacPend}</strong>. Retención estimada: ${fmtE(retencion,0)} (15% sobre base tributable ${fmtE(baseTributable,0)}).`;
   showResults('f-results');
 }
 
 // Init fecha fin finiquito
 document.getElementById('f-fin').value=new Date().toLocaleDateString('es-ES',{day:'2-digit',month:'2-digit',year:'numeric'});
 
-// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ PENSIÃÂÃÂN 2025 ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
+// ── PENSIÓN 2025 ──────────────────────────────────────────────────────────
 function calcPension(){
   const salario=+document.getElementById('p-salario').value;
   const cotizados=+document.getElementById('p-cotizados').value;
@@ -376,10 +852,10 @@ function calcPension(){
   if(contrato==='aut_med')salFuturo=1600*12;
   if(contrato==='parcial')salFuturo*=0.75;
 
-  // Base reguladora: media ponderada ÃÂÃÂºltimos 25 aÃÂÃÂ±os cotizados (2025)
+  // Base reguladora: media ponderada últimos 25 años cotizados (2025)
   const baseReg=(salario*0.4+salFuturo*0.6)/12;
 
-  // Porcentaje segÃÂÃÂºn aÃÂÃÂ±os cotizados (escala 2025)
+  // Porcentaje según años cotizados (escala 2025)
   let pct=0;
   if(totalCot>=15){
     pct=50;
@@ -391,8 +867,8 @@ function calcPension(){
 
   // Coeficiente por discapacidad (tiempo cotizado se multiplica)
   let coefDis=1, edadJubilacion=67, mensajeDis='';
-  if(dis==='45'){coefDis=1.25;edadJubilacion=65;mensajeDis=` Con discapacidad ÃÂ¢ÃÂÃÂ¥45%, cada aÃÂÃÂ±o cotizado cuenta ÃÂÃÂ1,25 y puedes jubilarte a los <strong>65</strong>.`;}
-  if(dis==='65'){coefDis=2.0;edadJubilacion=60;mensajeDis=` Con discapacidad ÃÂ¢ÃÂÃÂ¥65%, cada aÃÂÃÂ±o cotizado cuenta ÃÂÃÂ2,0 y puedes jubilarte a los <strong>60</strong>.`;}
+  if(dis==='45'){coefDis=1.25;edadJubilacion=65;mensajeDis=` Con discapacidad ≥45%, cada año cotizado cuenta ×1,25 y puedes jubilarte a los <strong>65</strong>.`;}
+  if(dis==='65'){coefDis=2.0;edadJubilacion=60;mensajeDis=` Con discapacidad ≥65%, cada año cotizado cuenta ×2,0 y puedes jubilarte a los <strong>60</strong>.`;}
   const cotAjustados=Math.min(totalCot*coefDis,35);
   if(dis!=='0'){
     pct=50;
@@ -402,7 +878,7 @@ function calcPension(){
   }
 
   const pensionMensual=baseReg*pct/100;
-  const tope=3267.06; // tope mÃÂÃÂ¡ximo pensiÃÂÃÂ³n contributiva 2025
+  const tope=3267.06; // tope máximo pensión contributiva 2025
   const minPension=900;
   const pensionFinal=Math.max(Math.min(pensionMensual,tope),totalCot>=15?minPension:0);
   const tasaSust=pensionFinal/(salFuturo/12)*100;
@@ -410,19 +886,19 @@ function calcPension(){
   const capitalNec=gap*12*20;
 
   document.getElementById('p-result-grid').innerHTML=resultGrid([
-    {l:'PensiÃÂÃÂ³n estimada/mes',v:fmtE(pensionFinal,0),h:true},
+    {l:'Pensión estimada/mes',v:fmtE(pensionFinal,0),h:true},
     {l:'Anual (14 pagas)',v:fmtE(pensionFinal*14,0)},
-    {l:'AÃÂÃÂ±os cotizados',v:totalCot+(dis!=='0'?` (ÃÂÃÂ${coefDis})`:'')},
+    {l:'Años cotizados',v:totalCot+(dis!=='0'?` (×${coefDis})`:'')},
     {l:'% base reguladora',v:fmtP(pct,1)},
-    {l:'Tasa sustituciÃÂÃÂ³n',v:fmtP(tasaSust,1)},
+    {l:'Tasa sustitución',v:fmtP(tasaSust,1)},
     {l:'Base reguladora/mes',v:fmtE(baseReg,0)},
   ]);
 
-  document.getElementById('p-insight').innerHTML=`Tu pensiÃÂÃÂ³n cubrirÃÂÃÂ¡ el <strong>${fmtP(tasaSust,0)}</strong> de tu ÃÂÃÂºltimo sueldo. Brecha mensual: <strong>${fmtE(gap,0)}</strong>. Para cubrirla 20 aÃÂÃÂ±os necesitarÃÂÃÂ­as ahorrar <strong>${fmtE(capitalNec,0)}</strong>.${mensajeDis} ${totalCot<35?`ÃÂ¢ÃÂÃÂ ÃÂ¯ÃÂ¸ÃÂ Con ${totalCot} aÃÂÃÂ±os cotizados no alcanzas el 100% de la base. Te faltan <strong>${35-totalCot} aÃÂÃÂ±os</strong> para el mÃÂÃÂ¡ximo.`:'ÃÂ¢ÃÂÃÂ Alcanzas el 100% de la base reguladora.'}`;
+  document.getElementById('p-insight').innerHTML=`Tu pensión cubrirá el <strong>${fmtP(tasaSust,0)}</strong> de tu último sueldo. Brecha mensual: <strong>${fmtE(gap,0)}</strong>. Para cubrirla 20 años necesitarías ahorrar <strong>${fmtE(capitalNec,0)}</strong>.${mensajeDis} ${totalCot<35?`⚠️ Con ${totalCot} años cotizados no alcanzas el 100% de la base. Te faltan <strong>${35-totalCot} años</strong> para el máximo.`:'✅ Alcanzas el 100% de la base reguladora.'}`;
   showResults('p-results');
 }
 
-// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ INVERSIÃÂÃÂN 2025 ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
+// ── INVERSIÓN 2025 ────────────────────────────────────────────────────────
 function calcInversion(){
   const inicial=+document.getElementById('inv-inicial').value;
   const mensual=+document.getElementById('inv-mensual').value;
@@ -452,23 +928,23 @@ function calcInversion(){
   const fill=`0,${H} `+pts.map(p=>`${(p.y/anos)*W},${H-(p.v/maxV)*(H-4)}`).join(' ')+` ${W},${H}`;
   const lineAp=pts.map(p=>`${(p.y/anos)*W},${H-(p.ap/maxV)*(H-4)}`).join(' ');
 
-  document.getElementById('inv-chart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><defs><linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c9a84c" stop-opacity=".25"/><stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/></linearGradient></defs><polygon points="${fill}" fill="url(#gg)"/><polyline points="${line}" fill="none" stroke="#c9a84c" stroke-width="2"/><polyline points="${lineAp}" fill="none" stroke="#4ecb71" stroke-width="1.5" stroke-dasharray="4,3"/></svg><div style="display:flex;gap:14px;font-size:10px;color:var(--text-muted);margin-top:5px"><span><span style="color:var(--gold)">ÃÂ¢ÃÂÃÂ</span> Capital</span><span><span style="color:var(--green)">--</span> Aportado</span></div>`;
+  document.getElementById('inv-chart').innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><defs><linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c9a84c" stop-opacity=".25"/><stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/></linearGradient></defs><polygon points="${fill}" fill="url(#gg)"/><polyline points="${line}" fill="none" stroke="#c9a84c" stroke-width="2"/><polyline points="${lineAp}" fill="none" stroke="#4ecb71" stroke-width="1.5" stroke-dasharray="4,3"/></svg><div style="display:flex;gap:14px;font-size:10px;color:var(--text-muted);margin-top:5px"><span><span style="color:var(--gold)">—</span> Capital</span><span><span style="color:var(--green)">--</span> Aportado</span></div>`;
 
   document.getElementById('inv-result-grid').innerHTML=resultGrid([
     {l:'Capital neto final',v:fmtE(capitalNeto,0),h:true},
-    {l:'Capital real (inflaciÃÂÃÂ³n)',v:fmtE(capitalReal,0)},
+    {l:'Capital real (inflación)',v:fmtE(capitalReal,0)},
     {l:'Total aportado',v:fmtE(aportado,0),c:'green'},
     {l:'Ganancia bruta',v:fmtE(ganancia,0),c:'green'},
-    {l:'Impuestos plusvalÃÂÃÂ­as',v:fmtE(impuesto,0),c:'red'},
+    {l:'Impuestos plusvalías',v:fmtE(impuesto,0),c:'red'},
     {l:'Renta mensual (4%)',v:fmtE(renta4,0)},
   ]);
 
   const mult=capitalNeto/aportado;
-  document.getElementById('inv-insight').innerHTML=`Tu dinero se multiplica <strong>ÃÂÃÂ${fmt(mult,1)}</strong>. Aportas <strong>${fmtE(aportado,0)}</strong> y obtienes <strong>${fmtE(capitalNeto,0)}</strong>. En tÃÂÃÂ©rminos reales (ajustado por inflaciÃÂÃÂ³n): <strong>${fmtE(capitalReal,0)}</strong>. Con la regla del 4% podrÃÂÃÂ­as retirar <strong>${fmtE(renta4,0)}/mes</strong> de forma indefinida sin agotar el capital. ÃÂ¢ÃÂÃÂ¡ El factor mÃÂÃÂ¡s determinante es el <strong>tiempo</strong>, no la rentabilidad.`;
+  document.getElementById('inv-insight').innerHTML=`Tu dinero se multiplica <strong>×${fmt(mult,1)}</strong>. Aportas <strong>${fmtE(aportado,0)}</strong> y obtienes <strong>${fmtE(capitalNeto,0)}</strong>. En términos reales (ajustado por inflación): <strong>${fmtE(capitalReal,0)}</strong>. Con la regla del 4% podrías retirar <strong>${fmtE(renta4,0)}/mes</strong> de forma indefinida sin agotar el capital. ⚡ El factor más determinante es el <strong>tiempo</strong>, no la rentabilidad.`;
   showResults('inv-results');
 }
 
-// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ AHORRO 2025 ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
+// ── AHORRO 2025 ───────────────────────────────────────────────────────────
 function updateMetaTipo(){
   const tipo=document.getElementById('a-meta-tipo').value;
   const metas={entrada_piso:60000,coche:20000,emergencia:12000,viaje:3000};
@@ -491,7 +967,7 @@ function calcAhorro(){
   const intereses=Math.max(0,objetivo-totalAp);
 
   document.getElementById('a-result-grid').innerHTML=resultGrid([
-    {l:'Lo conseguirÃÂÃÂ¡s en',v:`${anos}a ${mesR}m`,h:true},
+    {l:'Lo conseguirás en',v:`${anos}a ${mesR}m`,h:true},
     {l:'Fecha estimada',v:fechaFin.toLocaleDateString('es-ES',{month:'short',year:'numeric'})},
     {l:'Total aportado',v:fmtE(totalAp,0)},
     {l:'Intereses ganados',v:fmtE(intereses,0),c:'green'},
@@ -500,15 +976,15 @@ function calcAhorro(){
   ]);
 
   const meses20=Math.ceil(Math.max(0,objetivo-actual)/(mensual*1.2));
-  document.getElementById('a-insight').innerHTML=`Ahorrando <strong>${fmtE(mensual,0)}/mes</strong> llegarÃÂÃÂ¡s a <strong>${fmtE(objetivo,0)}</strong> en <strong>${anos>0?anos+' aÃÂÃÂ±os y ':''} ${mesR} meses</strong> (${fechaFin.toLocaleDateString('es-ES',{month:'long',year:'numeric'})}). ${intereses>0?`Los intereses te regalan <strong>${fmtE(intereses,0)}</strong>.`:''} Si ahorraras <strong>${fmtE(mensual*1.2,0)}/mes</strong> (+20%), llegarÃÂÃÂ­as <strong>${meses-meses20} meses antes</strong>.`;
+  document.getElementById('a-insight').innerHTML=`Ahorrando <strong>${fmtE(mensual,0)}/mes</strong> llegarás a <strong>${fmtE(objetivo,0)}</strong> en <strong>${anos>0?anos+' años y ':''} ${mesR} meses</strong> (${fechaFin.toLocaleDateString('es-ES',{month:'long',year:'numeric'})}). ${intereses>0?`Los intereses te regalan <strong>${fmtE(intereses,0)}</strong>.`:''} Si ahorraras <strong>${fmtE(mensual*1.2,0)}/mes</strong> (+20%), llegarías <strong>${meses-meses20} meses antes</strong>.`;
   showResults('a-results');
 }
 
-// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ PRÃÂÃÂSTAMO 2025 ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
+// ── PRÉSTAMO 2025 ─────────────────────────────────────────────────────────
 function updatePlazoLabel(){
   const m=+document.getElementById('pr-meses').value;
   const y=Math.floor(m/12),mo=m%12;
-  document.getElementById('pr-meses-val').textContent=m+' meses'+(y>0?' ('+y+(mo?' a '+mo+'m':' aÃÂÃÂ±os')+')':'');
+  document.getElementById('pr-meses-val').textContent=m+' meses'+(y>0?' ('+y+(mo?' a '+mo+'m':' años')+')':'');
 }
 
 function calcPrestamo(){
@@ -526,7 +1002,7 @@ function calcPrestamo(){
   const totalIntereses=totalPagado-imp;
 
   // TAE real incluyendo comisiones
-  // AproximaciÃÂÃÂ³n Newton-Raphson
+  // Aproximación Newton-Raphson
   let taeM=tin/12;
   for(let i=0;i<50;i++){
     const fn=imp*(taeM*(1+taeM)**meses/((1+taeM)**meses-1))-(cuota+comision/meses+seguro/12);
@@ -548,17 +1024,17 @@ function calcPrestamo(){
     {l:'Total a pagar',v:fmtE(totalPagado,0)},
     {l:'Total intereses',v:fmtE(cuota*meses-imp,0),c:'red'},
     {l:'TAE real',v:fmtP(taeReal,2),c:'red'},
-    {l:'ComisiÃÂÃÂ³n apertura',v:fmtE(comision,0)},
+    {l:'Comisión apertura',v:fmtE(comision,0)},
     {l:'Precio del dinero',v:fmtP(totalIntereses/imp*100)},
   ]);
 
   document.getElementById('pr-compare').innerHTML=comparativa.map(c=>`<div class="compare-item ${c.pm===meses?'highlight':''}"><div class="c-label">${c.pm} meses</div><div class="c-val" style="color:${c.pm===meses?'var(--gold)':'var(--text)'}">${fmtE(c.c2,0)}/mes</div><div style="font-size:10px;color:var(--text-muted);margin-top:3px">Total: ${fmtE(c.tot,0)}</div></div>`).join('');
 
-  document.getElementById('pr-insight').innerHTML=`PedirÃÂÃÂ¡s <strong>${fmtE(imp,0)}</strong> y devolverÃÂÃÂ¡s <strong>${fmtE(totalPagado,0)}</strong>. Solo en intereses pagas <strong>${fmtE(cuota*meses-imp,0)}</strong>. El TAE real (con comisiones${seguro>0?' y seguro':''}) es <strong>${fmtP(taeReal,2)}</strong>. Compara siempre el TAE, no el TIN, entre diferentes ofertas.`;
+  document.getElementById('pr-insight').innerHTML=`Pedirás <strong>${fmtE(imp,0)}</strong> y devolverás <strong>${fmtE(totalPagado,0)}</strong>. Solo en intereses pagas <strong>${fmtE(cuota*meses-imp,0)}</strong>. El TAE real (con comisiones${seguro>0?' y seguro':''}) es <strong>${fmtP(taeReal,2)}</strong>. Compara siempre el TAE, no el TIN, entre diferentes ofertas.`;
   showResults('pr-results');
 }
 
-// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ SALARIO NETO 2025 ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
+// ── SALARIO NETO 2025 ─────────────────────────────────────────────────────
 function calcSalario(){
   const bruto=+document.getElementById('s-bruto').value;
   const pagas=+document.getElementById('s-pagas').value;
@@ -593,7 +1069,7 @@ function calcSalario(){
 
   const neto=bruto-irpf-ss;
   const pagaSize=neto/pagas;
-  const ssEmpresa=bruto*0.311; // 2025: 23.6% CC + 5.5% desempleo + 0.6% FOGASA + 0.7% FP ÃÂ¢ÃÂÃÂ 31.1%
+  const ssEmpresa=bruto*0.311; // 2025: 23.6% CC + 5.5% desempleo + 0.6% FOGASA + 0.7% FP ≈ 31.1%
   const costoEmpresa=bruto+ssEmpresa;
 
   document.getElementById('s-result-grid').innerHTML=resultGrid([
@@ -617,18 +1093,17 @@ function calcSalario(){
   document.getElementById('s-donut').innerHTML=`<div class="donut-wrap"><svg width="104" height="104" viewBox="0 0 104 104"><path d="${arc(pN,0)}" fill="#4ecb71" opacity=".85"/><path d="${arc(pI,pN)}" fill="#e05252" opacity=".8"/><path d="${arc(pS,pN+pI)}" fill="#5b8dee" opacity=".8"/><circle cx="52" cy="52" r="24" fill="var(--surface)"/><text x="52" y="55" text-anchor="middle" fill="var(--text)" font-size="11" font-family="Playfair Display" font-weight="700">${fmt(pN*100,0)}%</text></svg><div class="donut-legend"><div class="legend-item"><div class="legend-dot" style="background:#4ecb71"></div><span style="color:var(--text-dim)">Neto: ${fmtE(neto,0)} (${fmt(pN*100,1)}%)</span></div><div class="legend-item"><div class="legend-dot" style="background:#e05252"></div><span style="color:var(--text-dim)">IRPF: ${fmtE(irpf,0)} (${fmt(pI*100,1)}%)</span></div><div class="legend-item"><div class="legend-dot" style="background:#5b8dee"></div><span style="color:var(--text-dim)">SS: ${fmtE(ss,0)} (${fmt(pS*100,1)}%)</span></div></div></div>`;
 
   const ccaaLabel=CCAA_LABEL[ccaa]||ccaa;
-  const disMsg=dis>0?` Con discapacidad ${dis}%+, tu mÃÂÃÂ­nimo personal es <strong>${fmtE(minPersonal,0)}</strong> y tienes reducciÃÂÃÂ³n extra en rendimientos de trabajo.`:'';
+  const disMsg=dis>0?` Con discapacidad ${dis}%+, tu mínimo personal es <strong>${fmtE(minPersonal,0)}</strong> y tienes reducción extra en rendimientos de trabajo.`:'';
   document.getElementById('s-insight').innerHTML=`<strong>${ccaaLabel} 2025:</strong> De ${fmtE(bruto,0)} brutos te quedan <strong>${fmtE(neto,0)}</strong> netos. A tu empresa te cuesta <strong>${fmtE(costoEmpresa,0)}</strong> (pagas <strong>${fmtE(ssEmpresa,0)}</strong> de SS sin saberlo). Solo ves el <strong>${fmt(neto/costoEmpresa*100,1)}%</strong> del coste total.${disMsg}`;
   showResults('s-results');
 }
 
-// ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ INIT ÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂÃÂ¢ÃÂÃÂ
+// ── INIT ──────────────────────────────────────────────────────────────────
 window.addEventListener('load',()=>{
   updateEntrada();
   calcHipoteca();
 
 </script>
 
-<script src="/assets/ux-tooltips.js"></script>
 </body>
 </html>

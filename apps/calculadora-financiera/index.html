@@ -149,6 +149,39 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
   h1{font-size:22px}
   .tab-btn{padding:11px 10px;font-size:11px}
 }
+
+/* ═══ RESPONSIVE MÓVIL — calculadora-financiera ═══ */
+@media(max-width:900px){
+  .calc-grid{grid-template-columns:1fr!important}
+  main{padding:20px 14px 60px!important}
+  .card{padding:16px 14px!important}
+}
+@media(max-width:600px){
+  header{padding:20px 14px 16px!important}
+  h1{font-size:clamp(20px,6vw,32px)!important;letter-spacing:-.01em}
+  .subtitle{font-size:12px!important}
+  .nav-wrap .nav-tabs{gap:0}
+  .tab-btn{padding:13px 10px!important;font-size:11px!important;gap:4px!important}
+  .result-grid{grid-template-columns:repeat(2,1fr)!important}
+  .result-item .r-value{font-size:14px!important}
+  .result-item.highlight .r-value{font-size:16px!important}
+  .compare-box{grid-template-columns:1fr 1fr!important}
+  .bar-chart{height:52px!important}
+  .donut-wrap{flex-direction:column!important;gap:10px!important}
+  input[type=number],input[type=text],select{font-size:16px!important;min-height:44px!important}
+  input[type=range]::-webkit-slider-thumb{width:22px!important;height:22px!important}
+  .btn-calc{font-size:15px!important;padding:14px!important}
+  .table-wrap{font-size:11px!important}
+  .salary-entry{grid-template-columns:1fr 1fr 36px!important}
+  .tooltip-text{min-width:180px!important;white-space:normal!important;left:0!important;transform:none!important;right:0!important}
+  .section-header h2{font-size:18px!important}
+  .card-title{font-size:13px!important}
+}
+@media(max-width:380px){
+  .result-grid{grid-template-columns:1fr 1fr!important}
+  .compare-box{grid-template-columns:1fr!important}
+  .tab-btn{padding:11px 8px!important;font-size:10px!important}
+}
 </style>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG8GK7M31B"></script>

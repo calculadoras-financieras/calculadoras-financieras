@@ -303,8 +303,9 @@ body::before{content:'';position:fixed;inset:0;
   .faq-item{padding:14px 16px}
 }
 </style>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBGMkE0QSIvPjx0ZXh0IHg9IjE2IiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDBCODk0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DPC90ZXh0Pjwvc3ZnPg=="><link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBGMkE0QSIvPjx0ZXh0IHg9IjE2IiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDBCODk0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DPC90ZXh0Pjwvc3ZnPg==">
+
 <link rel="stylesheet" href="/assets/ux-enhance.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBGMkE0QSIvPjx0ZXh0IHg9IjE2IiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDBCODk0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DPC90ZXh0Pjwvc3ZnPg=="><link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBGMkE0QSIvPjx0ZXh0IHg9IjE2IiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDBCODk0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DPC90ZXh0Pjwvc3ZnPg==">
 </head>
 
 <body itemscope itemtype="https://schema.org/WebPage">
@@ -464,18 +465,15 @@ body::before{content:'';position:fixed;inset:0;
 -->
 
 <!-- ── Footer ────────────────────────────── -->
-<footer class="site-footer">
-  <div class="ft-links">
-    <a href="/aviso-legal.html">Aviso legal</a>
-    <a href="/privacidad.html">Privacidad</a>
-    <a href="/cookies.html">Cookies</a>
-    <a href="/terminos.html">Términos de uso</a>
-    <a href="https://calculadoras-financieras.es">Suite completa</a>
+<footer style="text-align:center;padding:28px 20px;border-top:1px solid var(--border,#30363d);color:var(--text-muted,#484f58);font-size:.8rem;line-height:1.9">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;margin-bottom:8px">
+    <a href="aviso-legal.html" style="color:var(--text-dim,#8b949e);text-decoration:none">Aviso legal</a>
+    <a href="privacidad.html"  style="color:var(--text-dim,#8b949e);text-decoration:none">Privacidad</a>
+    <a href="cookies.html"     style="color:var(--text-dim,#8b949e);text-decoration:none">Cookies</a>
+    <a href="terminos.html"    style="color:var(--text-dim,#8b949e);text-decoration:none">Términos de uso</a>
   </div>
-  <p>© 2026 Calculadora IRPF 2026</p>
-  <p style="font-size:11px;margin-top:3px;color:#3a3a55">
-    Resultados orientativos. Para decisiones financieras importantes, consulta siempre con un profesional cualificado.
-  </p>
+  <p>© 2026 Calculadoras Financieras España · Datos actualizados enero 2026</p>
+  <p>Resultados orientativos. Consulta siempre con un profesional para decisiones importantes.</p>
 </footer>
 
 <!-- ── Cookie Banner RGPD ─────────────────── -->
@@ -1105,5 +1103,6 @@ window.addEventListener('load',()=>{
 
 </script>
 
+<script src="/assets/ux-tooltips.js"></script>
 </body>
 </html>

@@ -125,6 +125,30 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 .dis-section{background:rgba(91,141,238,.05);border:1px solid rgba(91,141,238,.15);border-radius:var(--radius-sm);padding:14px;margin-top:4px}
 .dis-section label{color:var(--blue)}
+
+/* ── Responsive móvil extra ── */
+@media(max-width:760px){
+  header{padding:24px 16px 20px}
+  main{padding:20px 12px 60px}
+  .card{padding:16px}
+  .tab-btn{padding:13px 12px;font-size:12px}
+  .result-grid{grid-template-columns:repeat(auto-fit,minmax(100px,1fr))}
+  .result-item .r-value{font-size:14px}
+  .compare-box{grid-template-columns:1fr 1fr}
+  .donut-wrap{flex-direction:column;align-items:flex-start;gap:10px}
+  .tooltip-text{min-width:180px;white-space:normal;left:0;transform:none}
+  .salary-entry{grid-template-columns:1fr 1fr 36px}
+  .bar-chart{height:56px}
+  .section-header h2{font-size:20px}
+  input[type=range]{height:6px}
+  input[type=range]::-webkit-slider-thumb{width:20px;height:20px}
+}
+@media(max-width:400px){
+  .result-grid{grid-template-columns:1fr 1fr}
+  .compare-box{grid-template-columns:1fr}
+  h1{font-size:22px}
+  .tab-btn{padding:11px 10px;font-size:11px}
+}
 </style>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG8GK7M31B"></script>
@@ -132,6 +156,9 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
 gtag('js',new Date());gtag('config','G-VG8GK7M31B',{anonymize_ip:true});</script>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4048225183995754" crossorigin="anonymous"></script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBGMkE0QSIvPjx0ZXh0IHg9IjE2IiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDBCODk0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DPC90ZXh0Pjwvc3ZnPg=="><link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBGMkE0QSIvPjx0ZXh0IHg9IjE2IiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDBCODk0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DPC90ZXh0Pjwvc3ZnPg==">
+<link rel="stylesheet" href="/assets/ux-enhance.css">
+<meta property="og:image" content="https://calculadoras-financieras.es/assets/og-image.jpg">
 </head>
 <body>
 <header>
@@ -1080,5 +1107,6 @@ window.addEventListener('load',()=>{
   calcHipoteca();
 });
 </script>
+<script src="/assets/ux-tooltips.js"></script>
 </body>
 </html>

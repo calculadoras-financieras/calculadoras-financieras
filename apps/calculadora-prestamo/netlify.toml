@@ -1,3 +1,8 @@
+[build]
+  base    = "apps/calculadora-prestamo"
+  publish = "."
+  command = ""
+
 [[headers]]
   for = "/*"
   [headers.values]

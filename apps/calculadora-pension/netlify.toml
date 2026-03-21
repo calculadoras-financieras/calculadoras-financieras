@@ -1,3 +1,8 @@
+[build]
+  base    = "apps/calculadora-pension"
+  publish = "."
+  command = ""
+
 [[headers]]
   for = "/*"
   [headers.values]

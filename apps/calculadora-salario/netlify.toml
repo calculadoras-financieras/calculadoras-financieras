@@ -1,3 +1,8 @@
+[build]
+  base    = "apps/calculadora-salario"
+  publish = "."
+  command = ""
+
 [[headers]]
   for = "/*"
   [headers.values]

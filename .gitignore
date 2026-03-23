@@ -1,4 +1,17 @@
-scripts/.credentials
+# Tokens y credenciales — NUNCA versionar
+.tokens
+scripts/deploy/.credentials
+*.env
+.env*
+
+# Deploy logs (locales)
+scripts/deploy/logs/
+
+# Sistema operativo
 .DS_Store
+Thumbs.db
+
+# Node
+node_modules/
 *.log
 __pycache__/

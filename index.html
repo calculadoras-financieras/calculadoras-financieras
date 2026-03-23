@@ -9,25 +9,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:#0a0a0f; --surface:#13131a; --surface2:#1c1c28; --border:#2a2a3d;
-  --gold:#c9a84c; --gold-light:#e8c96a; --gold-dim:rgba(201,168,76,0.15);
-  --text:#e8e8f0; --text-dim:#8888aa; --text-muted:#555566;
-  --green:#4ecb71; --red:#e05252; --blue:#5b8dee;
+  --bg:#0e1521; --surface:#162336; --surface2:#1c2d47; --border:#2a3f5f;
+  --gold:#00d4a0; --gold-light:#3df0bc; --gold-dim:rgba(0,212,160,0.13);
+  --text:#e8f0f8; --text-dim:#8ca4bf; --text-muted:#4c6885;
+  --green:#34d399; --red:#f87171; --blue:#60a5fa;
   --radius:16px; --radius-sm:10px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:400;line-height:1.6;min-height:100vh;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 10%,rgba(201,168,76,.04) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 90%,rgba(91,141,238,.04) 0%,transparent 60%);pointer-events:none;z-index:0}
-header{position:relative;z-index:10;padding:44px 24px 36px;text-align:center;border-bottom:1px solid var(--border)}
-.logo-line{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:12px}
-h1{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,50px);font-weight:900;letter-spacing:-.02em;color:var(--text);line-height:1.1}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 10%,rgba(0,212,160,.04) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 90%,rgba(76,142,255,.04) 0%,transparent 60%);pointer-events:none;z-index:0}
+header{position:relative;z-index:10;padding:52px 24px 40px;text-align:center;border-bottom:1px solid var(--border);background:linear-gradient(160deg,#0e1521 0%,#112040 50%,#0e1521 100%);overflow:hidden}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 25% 20%,rgba(0,212,160,.07) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 80% 80%,rgba(76,142,255,.05) 0%,transparent 60%);pointer-events:none}
+.logo-line{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)}
+h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5.5vw,54px);font-weight:900;letter-spacing:-.02em;color:var(--text);line-height:1.1;position:relative}
 h1 span{color:var(--gold)}
-.subtitle{margin-top:10px;color:var(--text-dim);font-size:14px;font-weight:300;max-width:560px;margin-inline:auto}
-.badge{display:inline-block;background:var(--gold-dim);border:1px solid var(--gold);color:var(--gold);font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;margin-top:10px;letter-spacing:.06em}
-.nav-wrap{position:sticky;top:0;z-index:100;background:rgba(10,10,15,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);overflow-x:auto}
+.subtitle{margin-top:12px;color:var(--text-dim);font-size:15px;font-weight:300;max-width:600px;margin-inline:auto;line-height:1.7}
+.badge{display:inline-flex;align-items:center;gap:5px;background:var(--gold-dim);border:1px solid var(--gold);color:var(--gold);font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;margin-top:12px;letter-spacing:.06em}
+.nav-wrap{position:sticky;top:0;z-index:100;background:rgba(14,21,33,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
+.nav-wrap::-webkit-scrollbar{display:none}
 .nav-tabs{display:flex;max-width:1200px;margin:0 auto;padding:0 16px;white-space:nowrap}
-.tab-btn{padding:17px 18px;background:none;border:none;color:var(--text-muted);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.tab-btn{padding:16px 18px;background:none;border:none;color:var(--text-muted);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px;white-space:nowrap}
 .tab-btn:hover{color:var(--text-dim)}
 .tab-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
 main{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:36px 20px 80px}
@@ -38,15 +40,16 @@ main{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:36px 20p
 .section-header p{color:var(--text-dim);font-size:13px;font-weight:300}
 .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
 @media(max-width:760px){.calc-grid{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px}
-.card-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:0 1px 4px rgba(0,0,0,.45),0 1px 2px rgba(0,0,0,.28);transition:box-shadow .2s,border-color .2s}
+.card:hover{border-color:rgba(58,82,117,.9);box-shadow:0 4px 16px rgba(0,0,0,.5),0 2px 6px rgba(0,0,0,.3)}
+.card-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--gold);margin-bottom:22px;display:flex;align-items:center;gap:8px}
 .field{margin-bottom:16px}
 label{display:block;font-size:11px;font-weight:600;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
 .input-wrap{position:relative}
 .unit{position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--text-muted);pointer-events:none}
-input[type=number],input[type=text],select{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 42px 11px 13px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;outline:none;transition:border-color .2s;-moz-appearance:textfield}
+input[type=number],input[type=text],select{width:100%;min-height:44px;background:var(--surface2);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:11px 42px 11px 13px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;outline:none;transition:border-color .2s,box-shadow .2s;-moz-appearance:textfield}
 input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
-input:focus,select:focus{border-color:var(--gold)}
+input:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(0,212,160,.12)}
 select{appearance:none;padding-right:13px;cursor:pointer}
 select option{background:var(--surface2)}
 input[type=range]{width:100%;height:4px;background:var(--border);border-radius:2px;appearance:none;cursor:pointer;padding:0;margin-top:6px}
@@ -59,11 +62,11 @@ input[type=range]::-webkit-slider-thumb{appearance:none;width:17px;height:17px;b
 .results.show{display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:14px}
-.result-item{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 12px;text-align:center}
-.result-item.highlight{border-color:var(--gold);background:var(--gold-dim)}
-.result-item .r-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
-.result-item .r-value{font-size:17px;font-weight:700;font-family:'Playfair Display',serif;color:var(--text)}
-.result-item.highlight .r-value{color:var(--gold)}
+.result-item{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 12px;text-align:center;transition:border-color .2s}
+.result-item.highlight{border-color:var(--gold);background:var(--gold-dim);box-shadow:0 2px 12px rgba(0,212,160,.12)}
+.result-item .r-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.result-item .r-value{font-size:18px;font-weight:700;font-family:'Playfair Display',serif;color:var(--text);line-height:1.2}
+.result-item.highlight .r-value{color:var(--gold);font-size:20px}
 .result-item .r-value.green{color:var(--green)}
 .result-item .r-value.red{color:var(--red)}
 .insight{background:var(--surface2);border-left:3px solid var(--gold);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:13px 16px;font-size:13px;color:var(--text-dim);line-height:1.65}
@@ -152,19 +155,70 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
 </head>
 <body>
 
-<div style="background:#13131a;border-bottom:1px solid #2a2a3d;padding:9px 16px;
-  overflow-x:auto;white-space:nowrap;text-align:center;font-size:12px;color:#555566;
-  scrollbar-width:none">
-  <span style="margin-right:8px;color:#555566">Micrositios especializados →</span>
-  <a href="https://simular-hipoteca.es" style="color:#c9a84c;text-decoration:none;margin:0 8px;white-space:nowrap">🏠 Hipoteca</a><a href="https://calculadora-irpf.es" style="color:#5b8dee;text-decoration:none;margin:0 8px;white-space:nowrap">📋 IRPF</a><a href="https://calculadora-finiquito.es" style="color:#ee8844;text-decoration:none;margin:0 8px;white-space:nowrap">📄 Finiquito</a><a href="https://calculadora-pension.es" style="color:#44bb88;text-decoration:none;margin:0 8px;white-space:nowrap">👴 Pensión</a><a href="https://calculadora-inversion.es" style="color:#aa66ee;text-decoration:none;margin:0 8px;white-space:nowrap">📈 Inversión</a><a href="https://calculadora-ahorro.es" style="color:#ee5577;text-decoration:none;margin:0 8px;white-space:nowrap">🏦 Ahorro</a><a href="https://calculadora-prestamo.es" style="color:#ffaa33;text-decoration:none;margin:0 8px;white-space:nowrap">💳 Préstamo</a><a href="https://calculadora-salario.com" style="color:#33ccaa;text-decoration:none;margin:0 8px;white-space:nowrap">💰 Salario</a>
+<div class="cf-related-section" id="micrositios-hub" style="margin-top:0;border-top:none;border-bottom:1px solid var(--border)">
+  <div class="cf-related-inner">
+    <h2 class="cf-related-title" style="font-family:'Playfair Display',serif">Suite de Calculadoras Especializadas</h2>
+    <p class="cf-related-sub">Cada micrositio incluye calculadora avanzada, guía actualizada 2026 y blog de referencia en España</p>
+    <div class="cf-sites-grid">
+      <a href="https://simular-hipoteca.es" class="cf-site-card">
+        <span class="cf-site-icon">🏠</span>
+        <div class="cf-site-title">Simulador de Hipoteca</div>
+        <div class="cf-site-desc">Cuota mensual, amortización real, efectos de la discapacidad y comparativa de tipos</div>
+        <div class="cf-site-arrow">Abrir calculadora →</div>
+      </a>
+      <a href="https://calculadora-irpf.es" class="cf-site-card">
+        <span class="cf-site-icon">📋</span>
+        <div class="cf-site-title">Calculadora IRPF 2026</div>
+        <div class="cf-site-desc">Tramos reales por comunidad autónoma, situación familiar y deducciones actualizadas</div>
+        <div class="cf-site-arrow">Abrir calculadora →</div>
+      </a>
+      <a href="https://calculadora-finiquito.es" class="cf-site-card">
+        <span class="cf-site-icon">📄</span>
+        <div class="cf-site-title">Calculadora de Finiquito</div>
+        <div class="cf-site-desc">Finiquito y liquidación según causa de baja, historial salarial y días pendientes</div>
+        <div class="cf-site-arrow">Abrir calculadora →</div>
+      </a>
+      <a href="https://calculadora-pension.es" class="cf-site-card">
+        <span class="cf-site-icon">👴</span>
+        <div class="cf-site-title">Calculadora de Pensión</div>
+        <div class="cf-site-desc">Estimación de pensión de jubilación, tasa de sustitución y brecha de ingresos</div>
+        <div class="cf-site-arrow">Abrir calculadora →</div>
+      </a>
+      <a href="https://calculadora-inversion.es" class="cf-site-card">
+        <span class="cf-site-icon">📈</span>
+        <div class="cf-site-title">Calculadora de Inversión</div>
+        <div class="cf-site-desc">Capital final, rentabilidad real descontando inflación y comparativa de escenarios</div>
+        <div class="cf-site-arrow">Abrir calculadora →</div>
+      </a>
+      <a href="https://calculadora-ahorro.es" class="cf-site-card">
+        <span class="cf-site-icon">🏦</span>
+        <div class="cf-site-title">Calculadora de Ahorro</div>
+        <div class="cf-site-desc">Plazo para alcanzar tu meta, entrada para piso, fondo de emergencia o jubilación</div>
+        <div class="cf-site-arrow">Abrir calculadora →</div>
+      </a>
+      <a href="https://calculadora-prestamo.es" class="cf-site-card">
+        <span class="cf-site-icon">💳</span>
+        <div class="cf-site-title">Calculadora de Préstamo</div>
+        <div class="cf-site-desc">Cuota, TAE real con comisiones, coste total y tabla de amortización</div>
+        <div class="cf-site-arrow">Abrir calculadora →</div>
+      </a>
+      <a href="https://calculadora-salario.com" class="cf-site-card">
+        <span class="cf-site-icon">💰</span>
+        <div class="cf-site-title">Calculadora Salario Neto</div>
+        <div class="cf-site-desc">Bruto a neto, IRPF, Seguridad Social y coste real para la empresa por CCAA</div>
+        <div class="cf-site-arrow">Abrir calculadora →</div>
+      </a>
+    </div>
+  </div>
 </div>
 <header>
   <div class="logo-line">
-    <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#c9a84c" stroke-width="1.5"/><path d="M14 7v14M9 11h7a3 3 0 010 6H9" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#00d4a0" stroke-width="1.5"/><path d="M14 7v14M9 11h7a3 3 0 010 6H9" stroke="#00d4a0" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <span>CalculadorasFinancieras.es</span>
   </div>
   <h1>Calculadora <span>Financiera</span> España</h1>
-  <p class="subtitle">Hipoteca · IRPF · Finiquito · Pensión · Inversión · Salario Neto — Con discapacidad, historial salarial y todas las CCAA</p>
-  <div class="badge">✦ Actualizado 2026</div>
+  <p class="subtitle">Hipoteca · IRPF · Finiquito · Pensión · Inversión · Salario Neto — Datos 2026, todas las CCAA, con discapacidad</p>
+  <div class="badge">✦ Actualizado enero 2026</div>
 </header>
 
 <nav class="nav-wrap">
@@ -1111,27 +1165,27 @@ window.addEventListener('load',()=>{
 });
 </script>
 <footer style="position:relative;z-index:1;text-align:center;padding:36px 20px;
-  border-top:1px solid #2a2a3d;color:#555566;font-size:12px;line-height:1.9">
+  border-top:1px solid #2a3f5f;color:#4c6885;font-size:12px;line-height:1.9">
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-bottom:10px">
-    <a href="/aviso-legal.html" style="color:#555566;text-decoration:none">Aviso legal</a>
-    <a href="/privacidad.html" style="color:#555566;text-decoration:none">Privacidad</a>
-    <a href="/cookies.html" style="color:#555566;text-decoration:none">Cookies</a>
-    <a href="/terminos.html" style="color:#555566;text-decoration:none">Términos de uso</a>
+    <a href="/aviso-legal.html" style="color:#8ca4bf;text-decoration:none;transition:color .2s">Aviso legal</a>
+    <a href="/privacidad.html" style="color:#8ca4bf;text-decoration:none;transition:color .2s">Privacidad</a>
+    <a href="/cookies.html" style="color:#8ca4bf;text-decoration:none;transition:color .2s">Cookies</a>
+    <a href="/terminos.html" style="color:#8ca4bf;text-decoration:none;transition:color .2s">Términos de uso</a>
   </div>
-  <p>© 2026 Calculadoras Financieras España · Datos actualizados enero 2026</p>
-  <p style="margin-top:4px;font-size:11px;color:#3a3a55">Resultados orientativos. Consulta siempre con un profesional para decisiones importantes.</p>
+  <p style="color:#4c6885">© 2026 Calculadoras Financieras España · Datos actualizados enero 2026</p>
+  <p style="margin-top:4px;font-size:11px;color:#2a3f5f">Resultados orientativos. Consulta siempre con un profesional para decisiones importantes.</p>
 </footer>
 <div id="cb" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;
-background:#13131a;border-top:2px solid #2a2a3d;padding:18px 24px;align-items:center;
+background:#162336;border-top:2px solid #2a3f5f;padding:18px 24px;align-items:center;
 gap:16px;flex-wrap:wrap;box-shadow:0 -4px 32px rgba(0,0,0,.6)">
 <div style="flex:1;min-width:260px">
-  <p style="margin:0 0 3px;font-size:13px;font-weight:600;color:#e8e8f0">🍪 Cookies</p>
-  <p style="margin:0;font-size:12px;color:#8888aa;line-height:1.55">Usamos Google Analytics y AdSense. Todo el cálculo es local en tu navegador.
-    <a href="/cookies.html" style="color:#c9a84c;text-decoration:none">Política de cookies</a></p>
+  <p style="margin:0 0 3px;font-size:13px;font-weight:600;color:#e8f0f8">🍪 Cookies</p>
+  <p style="margin:0;font-size:12px;color:#8ca4bf;line-height:1.55">Usamos Google Analytics y AdSense. Todo el cálculo es local en tu navegador.
+    <a href="/cookies.html" style="color:#00d4a0;text-decoration:none">Política de cookies</a></p>
 </div>
 <div style="display:flex;gap:10px;flex-shrink:0">
-  <button onclick="ckNo()" style="background:transparent;border:1px solid #555;color:#888;padding:9px 18px;border-radius:8px;cursor:pointer;font-size:12px;font-family:inherit">Rechazar</button>
-  <button onclick="ckYes()" style="background:#c9a84c;border:none;color:#0a0a0f;padding:9px 20px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:700;font-family:inherit">Aceptar</button>
+  <button onclick="ckNo()" style="background:transparent;border:1px solid #3a5275;color:#8ca4bf;padding:9px 18px;border-radius:8px;cursor:pointer;font-size:12px;font-family:inherit">Rechazar</button>
+  <button onclick="ckYes()" style="background:#00d4a0;border:none;color:#0e1521;padding:9px 20px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:700;font-family:inherit">Aceptar</button>
 </div>
 </div>
 <script>

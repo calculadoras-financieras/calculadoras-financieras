@@ -8,25 +8,33 @@
     "completed": true
   },
   {
-    "id": "task-search-console",
-    "title": "Google Search Console: verificar dominios y enviar sitemaps",
-    "description": "9 dominios x verificar TXT en DonDominio + enviar sitemap.xml",
-    "dueDate": "2026-03-22",
+    "id": "task-secrets-cf",
+    "title": "Añadir secrets Cloudflare en GitHub",
+    "description": "CF_API_TOKEN y CF_ACCOUNT_ID en github.com/calculadoras-financieras/calculadoras-financieras/settings/secrets/actions — necesario para que deploy.yml y deploy-dev.yml funcionen automáticamente",
+    "dueDate": "2026-03-23",
+    "priority": "alta",
+    "completed": false
+  },
+  {
+    "id": "task-search-console-sitemaps",
+    "title": "Reenviar sitemaps en Search Console",
+    "description": "Los sitemaps ahora incluyen los 88 artículos del blog. Ir a search.google.com/search-console → cada dominio → Sitemaps → reenviar sitemap.xml",
+    "dueDate": "2026-03-25",
     "priority": "alta",
     "completed": false
   },
   {
     "id": "task-adsense",
-    "title": "Solicitar cuenta AdSense",
-    "description": "adsense.google.com → Crear cuenta → añadir todos los dominios",
-    "dueDate": "2026-03-22",
+    "title": "Activar AdSense cuando se apruebe la cuenta",
+    "description": "Cuenta solicitada el 16/03/2026. Cuando Google apruebe, descomentar código AdSense en todos los index.html buscando '<!-- ADSENSE PENDIENTE APROBACIÓN'.",
+    "dueDate": "2026-04-15",
     "priority": "alta",
     "completed": false
   },
   {
     "id": "task-iahorro",
     "title": "Registrarse en iAhorro afiliados",
-    "description": "iahorro.com/colaboradores — esperar a tener +500 visitas/día en hipoteca",
+    "description": "iahorro.com/colaboradores — activar cuando simular-hipoteca.es tenga +500 visitas/día",
     "dueDate": "2026-06-01",
     "priority": "media",
     "completed": false
@@ -34,7 +42,7 @@
   {
     "id": "task-degiro",
     "title": "Registrarse en DeGiro afiliados",
-    "description": "degiro.es/afiliados — esperar a tener +500 visitas/día en inversión",
+    "description": "degiro.es/afiliados — activar cuando calculadora-inversion.es tenga +500 visitas/día",
     "dueDate": "2026-06-01",
     "priority": "media",
     "completed": false
@@ -42,7 +50,7 @@
   {
     "id": "task-irpf-2027",
     "title": "Actualizar datos fiscales IRPF 2027",
-    "description": "Revisar tramos IRPF, bases SS, pensión máxima, SMI en el BOE y actualizar todos los HTMLs. Ver github.com/.../issues para automatización pendiente.",
+    "description": "Revisar tramos IRPF, bases SS, pensión máxima, SMI en BOE y actualizar todos los HTMLs. Previsión enero 2027.",
     "dueDate": "2026-12-25",
     "priority": "alta",
     "completed": false

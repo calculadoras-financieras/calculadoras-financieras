@@ -62,18 +62,10 @@ gtag('js',new Date());gtag('config','G-VG8GK7M31B',{anonymize_ip:true});</script
 <style>
 /* ── Design tokens ── */
 :root {
-  --bg:#0a0a0f; --surface:#13131a; --surface2:#1c1c28; --border:#2a2a3d;
-  --gold:#ee8844; --gold-l:color-mix(in srgb,#ee8844 60%,white);
-  --gold-dim:color-mix(in srgb,#ee8844 12%,transparent);
-  --text:#e8e8f0; --text-dim:#8888aa; --text-muted:#555566;
-  --green:#4ecb71; --red:#e05252; --blue:#5b8dee;
-  --radius:16px; --radius-sm:10px;
-}
-:root {
-  --bg:#0a0a0f; --surface:#13131a; --surface2:#1c1c28; --border:#2a2a3d;
-  --gold:#c9a84c; --gold-light:#e8c96a; --gold-dim:rgba(201,168,76,0.15);
-  --text:#e8e8f0; --text-dim:#8888aa; --text-muted:#555566;
-  --green:#4ecb71; --red:#e05252; --blue:#5b8dee;
+  --bg:#1b2838; --surface:#253545; --surface2:#2e4055; --border:#3d5470;
+  --gold:#00e5a8; --gold-light:#33ffca; --gold-dim:rgba(0,229,168,0.14);
+  --text:#f0f6ff; --text-dim:#a8c4d8; --text-muted:#5c7a96;
+  --green:#2ecc71; --red:#ff6b6b; --blue:#74b9ff;
   --radius:16px; --radius-sm:10px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -176,10 +168,7 @@ input:checked+.toggle-slider::before{transform:translateX(17px);background:var(-
 .btn-rm{background:rgba(224,82,82,.1);border:1px solid rgba(224,82,82,.25);color:var(--red);border-radius:6px;padding:7px;cursor:pointer;font-size:13px;transition:.2s;line-height:1}
 .btn-rm:hover{background:rgba(224,82,82,.2)}
 .section-sub{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em;margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--border)}
-.tooltip-wrap{position:relative;display:inline-block}
-.tooltip-icon{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;background:var(--border);border-radius:50%;font-size:9px;color:var(--text-muted);cursor:help;margin-left:4px;vertical-align:middle}
-.tooltip-text{visibility:hidden;position:absolute;bottom:120%;left:50%;transform:translateX(-50%);background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--text-dim);white-space:nowrap;z-index:200;line-height:1.5;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,.5)}
-.tooltip-wrap:hover .tooltip-text{visibility:visible}
+
 footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-top:1px solid var(--border);color:var(--text-muted);font-size:12px;line-height:1.8}
 ::-webkit-scrollbar{width:6px;height:6px}
 ::-webkit-scrollbar-track{background:var(--bg)}
@@ -196,15 +185,11 @@ body::before{content:'';position:fixed;inset:0;
   pointer-events:none;z-index:0}
 
 /* Crosslinks nav */
-.cl-bar{background:var(--surface);border-bottom:1px solid var(--border);
-  overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.cl-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px;overflow-x:auto}
 .cl-bar::-webkit-scrollbar{display:none}
-.cl-inner{display:inline-flex;padding:0 16px}
-.cl{display:inline-block;padding:10px 12px;font-size:11.5px;color:var(--text-muted);
-  text-decoration:none;border-bottom:2px solid transparent;transition:.2s;white-space:nowrap;
-  font-family:'DM Sans',sans-serif;font-weight:500}
-.cl:hover{color:var(--gold)}
-.cl.active{color:var(--gold);border-bottom-color:var(--gold)}
+.cl{display:inline-flex;align-items:center;padding:7px 14px;font-size:12px;color:var(--text-dim);text-decoration:none;border:1.5px solid var(--border);border-radius:8px;transition:all .2s;white-space:nowrap;font-family:'DM Sans',sans-serif;font-weight:600;background:var(--surface2)}
+.cl:hover{color:var(--text);border-color:var(--gold);background:rgba(0,229,168,.08)}
+.cl.active{color:var(--gold);border-color:var(--gold);background:rgba(0,229,168,.1)}
 
 /* Hero */
 .hero{text-align:center;padding:clamp(36px,5vw,64px) clamp(16px,5vw,48px) clamp(28px,4vw,48px);
@@ -304,6 +289,10 @@ body::before{content:'';position:fixed;inset:0;
   .qa-box{padding:14px 16px}
   .faq-item{padding:14px 16px}
 }
+.tooltip-wrap{position:relative;display:inline-block}
+.tooltip-icon{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;background:var(--surface2);border:1px solid var(--border);border-radius:50%;font-size:10px;color:var(--gold);cursor:help;margin-left:5px;vertical-align:middle;font-style:normal}
+.tooltip-text{visibility:hidden;position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--text-dim);white-space:nowrap;z-index:200;line-height:1.5;min-width:200px;max-width:280px;white-space:normal;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.tooltip-wrap:hover .tooltip-text{visibility:visible}
 </style>
 
 <link rel="stylesheet" href="/assets/ux-enhance.css">
@@ -315,7 +304,7 @@ body::before{content:'';position:fixed;inset:0;
 
 <!-- ── Crosslinks ─────────────────────────── -->
 <nav class="cl-bar" aria-label="Otras calculadoras financieras">
-  <div class="cl-inner">
+  
     <a href="https://simular-hipoteca.es" class="cl">🏠 Hipoteca</a>
     <a href="https://calculadora-irpf.es" class="cl">📋 IRPF</a>
     <a href="/" class="cl active">📄 Finiquito</a>
@@ -325,7 +314,7 @@ body::before{content:'';position:fixed;inset:0;
     <a href="https://calculadora-prestamo.es" class="cl">💳 Préstamo</a>
     <a href="https://calculadora-salario.com" class="cl">💰 Salario</a>
     <a href="https://calculadoras-financieras.es" class="cl">🏠 Suite completa</a>
-  </div>
+  
 </nav>
 
 <!-- ── Hero ─────────────────────────────────── -->
@@ -391,9 +380,9 @@ body::before{content:'';position:fixed;inset:0;
       <button class="btn-add" onclick="addSalaryEntry()">+ Añadir período</button>
 
       <div class="section-sub" style="margin-top:18px">Datos de la baja</div>
-      <div class="field"><label>Fecha de fin del contrato</label><div class="input-wrap"><input type="text" id="f-fin" placeholder="DD/MM/AAAA"><span class="unit">📅</span></div></div>
-      <div class="field"><label>Días de vacaciones disfrutados este año</label><div class="input-wrap"><input type="number" id="f-vac-dis" value="8" min="0" max="30"><span class="unit">días</span></div></div>
-      <div class="field"><label>Causa de la baja</label><div class="input-wrap"><select id="f-causa">
+      <div class="field"><label>Fecha de fin del contrato <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Fecha efectiva de fin del contrato. Es la que determina los días de antigüedad para calcular la indemnización.</span></span></label><div class="input-wrap"><input type="text" id="f-fin" placeholder="DD/MM/AAAA"><span class="unit">📅</span></div></div>
+      <div class="field"><label>Días de vacaciones disfrutados este año <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Días de vacaciones anuales que ya has disfrutado en el año en curso. Los no disfrutados se abonan en el finiquito.</span></span></label><div class="input-wrap"><input type="number" id="f-vac-dis" value="8" min="0" max="30"><span class="unit">días</span></div></div>
+      <div class="field"><label>Causa de la baja <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Determina si tienes derecho a indemnización y su cuantía: 20 días/año (despido improcedente), 33 días/año (para contratos anteriores a 2012), etc.</span></span></label><div class="input-wrap"><select id="f-causa">
         <option value="despido_improcedente">Despido improcedente (33 días/año)</option>
         <option value="obj_individual">Despido objetivo individual (20 días/año)</option>
         <option value="obj_colectivo">ERE / Despido colectivo (20 días/año)</option>
@@ -402,7 +391,7 @@ body::before{content:'';position:fixed;inset:0;
         <option value="mutuo_acuerdo">Mutuo acuerdo (negociable)</option>
         <option value="erte">ERTE / Suspensión temporal</option>
       </select></div></div>
-      <div class="field"><label>Pagas extra anuales</label><div class="input-wrap"><select id="f-pagas"><option value="2">2 pagas extra (junio y diciembre)</option><option value="0">Prorrateadas (incluidas en nómina)</option></select></div></div>
+      <div class="field"><label>Pagas extra anuales <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Si tu convenio tiene pagas extras separadas (junio y diciembre) o ya incluidas en el salario mensual (prorrateadas).</span></span></label><div class="input-wrap"><select id="f-pagas"><option value="2">2 pagas extra (junio y diciembre)</option><option value="0">Prorrateadas (incluidas en nómina)</option></select></div></div>
 
       <div class="section-sub">Discapacidad</div>
       <div class="dis-section">
@@ -486,63 +475,7 @@ body::before{content:'';position:fixed;inset:0;
 </div>
 -->
 
-<!-- ── Otras calculadoras relacionadas ──── -->
-<section class="cf-related-section">
-  <div class="cf-related-inner">
-    <h2 class="cf-related-title">Otras calculadoras financieras</h2>
-    <p class="cf-related-sub">Completa tu análisis con el resto de herramientas de la suite</p>
-    <div class="cf-sites-grid">
-      <a href="https://simular-hipoteca.es" class="cf-site-card">
-        <span class="cf-site-icon">🏠</span>
-        <div class="cf-site-title">Simulador de Hipoteca</div>
-        <div class="cf-site-desc">Cuota mensual, coste real y tabla de amortización</div>
-        <div class="cf-site-arrow">Abrir →</div>
-      </a>
-      <a href="https://calculadora-irpf.es" class="cf-site-card">
-        <span class="cf-site-icon">📋</span>
-        <div class="cf-site-title">Calculadora IRPF</div>
-        <div class="cf-site-desc">Tramos reales por comunidad autónoma 2026</div>
-        <div class="cf-site-arrow">Abrir →</div>
-      </a>
-      <a href="https://calculadora-finiquito.es" class="cf-site-card">
-        <span class="cf-site-icon">📄</span>
-        <div class="cf-site-title">Calculadora de Finiquito</div>
-        <div class="cf-site-desc">Finiquito y liquidación con historial salarial</div>
-        <div class="cf-site-arrow">Abrir →</div>
-      </a>
-      <a href="https://calculadora-pension.es" class="cf-site-card">
-        <span class="cf-site-icon">👴</span>
-        <div class="cf-site-title">Calculadora de Pensión</div>
-        <div class="cf-site-desc">Estimación de pensión de jubilación 2026</div>
-        <div class="cf-site-arrow">Abrir →</div>
-      </a>
-      <a href="https://calculadora-inversion.es" class="cf-site-card">
-        <span class="cf-site-icon">📈</span>
-        <div class="cf-site-title">Calculadora de Inversión</div>
-        <div class="cf-site-desc">Capital final, rentabilidad real e inflación</div>
-        <div class="cf-site-arrow">Abrir →</div>
-      </a>
-      <a href="https://calculadora-ahorro.es" class="cf-site-card">
-        <span class="cf-site-icon">🏦</span>
-        <div class="cf-site-title">Calculadora de Ahorro</div>
-        <div class="cf-site-desc">Plazo para alcanzar tu meta financiera</div>
-        <div class="cf-site-arrow">Abrir →</div>
-      </a>
-      <a href="https://calculadora-prestamo.es" class="cf-site-card">
-        <span class="cf-site-icon">💳</span>
-        <div class="cf-site-title">Calculadora de Préstamo</div>
-        <div class="cf-site-desc">Cuota, TAE real y coste total del préstamo</div>
-        <div class="cf-site-arrow">Abrir →</div>
-      </a>
-      <a href="https://calculadora-salario.com" class="cf-site-card">
-        <span class="cf-site-icon">💰</span>
-        <div class="cf-site-title">Calculadora Salario Neto</div>
-        <div class="cf-site-desc">Bruto a neto, IRPF y SS por comunidad autónoma</div>
-        <div class="cf-site-arrow">Abrir →</div>
-      </a>
-    </div>
-  </div>
-</section>
+
 
 <!-- ── Footer ────────────────────────────── -->
 <footer style="text-align:center;padding:28px 20px;border-top:1px solid var(--border,#30363d);color:var(--text-muted,#484f58);font-size:.8rem;line-height:1.9">

@@ -9,10 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:#0e1521; --surface:#162336; --surface2:#1c2d47; --border:#2a3f5f;
-  --gold:#00d4a0; --gold-light:#3df0bc; --gold-dim:rgba(0,212,160,0.13);
-  --text:#e8f0f8; --text-dim:#8ca4bf; --text-muted:#4c6885;
-  --green:#34d399; --red:#f87171; --blue:#60a5fa;
+  --bg:#1b2838; --surface:#253545; --surface2:#2e4055; --border:#3d5470;
+  --gold:#00e5a8; --gold-light:#33ffca; --gold-dim:rgba(0,229,168,0.14);
+  --text:#f0f6ff; --text-dim:#a8c4d8; --text-muted:#5c7a96;
+  --green:#2ecc71; --red:#ff6b6b; --blue:#74b9ff;
   --radius:16px; --radius-sm:10px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -26,12 +26,12 @@ h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5.5vw,54px);font-we
 h1 span{color:var(--gold)}
 .subtitle{margin-top:12px;color:var(--text-dim);font-size:15px;font-weight:300;max-width:600px;margin-inline:auto;line-height:1.7}
 .badge{display:inline-flex;align-items:center;gap:5px;background:var(--gold-dim);border:1px solid var(--gold);color:var(--gold);font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;margin-top:12px;letter-spacing:.06em}
-.nav-wrap{position:sticky;top:0;z-index:100;background:rgba(14,21,33,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
+.nav-wrap{position:sticky;top:0;z-index:100;background:rgba(27,40,56,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);overflow-x:auto;scrollbar-width:none}
 .nav-wrap::-webkit-scrollbar{display:none}
-.nav-tabs{display:flex;max-width:1200px;margin:0 auto;padding:0 16px;white-space:nowrap}
-.tab-btn{padding:16px 18px;background:none;border:none;color:var(--text-muted);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px;white-space:nowrap}
-.tab-btn:hover{color:var(--text-dim)}
-.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
+.nav-tabs{display:flex;max-width:1200px;margin:0 auto;padding:8px 16px;flex-wrap:wrap;gap:4px}
+.tab-btn{padding:10px 18px;background:var(--surface2);border:1.5px solid var(--border);border-radius:8px;color:var(--text-dim);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px;white-space:nowrap;margin:8px 4px}
+.tab-btn:hover{color:var(--text);border-color:var(--gold);background:var(--surface)}
+.tab-btn.active{color:var(--gold);border-color:var(--gold);background:rgba(0,229,168,.1);box-shadow:0 0 0 1px var(--gold)}
 main{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:36px 20px 80px}
 .calc-panel{display:none}
 .calc-panel.active{display:block}
@@ -118,16 +118,20 @@ input:checked+.toggle-slider::before{transform:translateX(17px);background:var(-
 .btn-rm{background:rgba(224,82,82,.1);border:1px solid rgba(224,82,82,.25);color:var(--red);border-radius:6px;padding:7px;cursor:pointer;font-size:13px;transition:.2s;line-height:1}
 .btn-rm:hover{background:rgba(224,82,82,.2)}
 .section-sub{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em;margin:14px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--border)}
-.tooltip-wrap{position:relative;display:inline-block}
-.tooltip-icon{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;background:var(--border);border-radius:50%;font-size:9px;color:var(--text-muted);cursor:help;margin-left:4px;vertical-align:middle}
-.tooltip-text{visibility:hidden;position:absolute;bottom:120%;left:50%;transform:translateX(-50%);background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--text-dim);white-space:nowrap;z-index:200;line-height:1.5;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,.5)}
-.tooltip-wrap:hover .tooltip-text{visibility:visible}
+
 footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-top:1px solid var(--border);color:var(--text-muted);font-size:12px;line-height:1.8}
 ::-webkit-scrollbar{width:6px;height:6px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 .dis-section{background:rgba(91,141,238,.05);border:1px solid rgba(91,141,238,.15);border-radius:var(--radius-sm);padding:14px;margin-top:4px}
 .dis-section label{color:var(--blue)}
+.tooltip-wrap{position:relative;display:inline-block}
+.tooltip-icon{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;background:var(--surface2);border:1px solid var(--border);border-radius:50%;font-size:10px;color:var(--gold);cursor:help;margin-left:5px;vertical-align:middle;font-style:normal}
+.tooltip-text{visibility:hidden;position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--text-dim);white-space:nowrap;z-index:200;line-height:1.5;min-width:200px;max-width:280px;white-space:normal;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.tooltip-wrap:hover .tooltip-text{visibility:visible}
+.cf-site-card{display:flex;flex-direction:column;align-items:flex-start;background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:22px 20px;text-decoration:none;color:var(--text);transition:all .25s;cursor:pointer}
+.cf-site-card:hover{border-color:var(--gold);background:var(--surface2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,229,168,.12)}
+.cf-site-arrow{margin-top:auto;padding-top:12px;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.04em}
 </style>
 
 <meta name="robots" content="index, follow, max-snippet:-1">
@@ -246,21 +250,21 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
   <div class="calc-grid">
     <div class="card">
       <div class="card-title">⚙️ Tu hipoteca</div>
-      <div class="field"><label>Precio del inmueble</label><div class="input-wrap"><input type="number" id="h-precio" value="250000" min="10000" oninput="updateEntrada()"><span class="unit">€</span></div></div>
-      <div class="field"><label>Entrada aportada</label><div class="range-val" id="h-entrada-val">20% — 50.000 €</div><input type="range" id="h-entrada-pct" min="5" max="60" value="20" oninput="updateEntrada()"></div>
-      <div class="field"><label>Plazo</label><div class="range-val" id="h-years-val">30 años</div><input type="range" id="h-years" min="5" max="40" value="30" oninput="document.getElementById('h-years-val').textContent=this.value+' años'"></div>
+      <div class="field"><label>Precio del inmueble <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Precio total de compra. Incluye parking y trastero si van en la misma escritura.</span></span></label><div class="input-wrap"><input type="number" id="h-precio" value="250000" min="10000" oninput="updateEntrada()"><span class="unit">€</span></div></div>
+      <div class="field"><label>Entrada aportada <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Porcentaje que pagas tú. Los bancos financian máx. el 80% del valor de tasación. Lo habitual es aportar 20% + gastos (ITP, notaría).</span></span></label><div class="range-val" id="h-entrada-val">20% — 50.000 €</div><input type="range" id="h-entrada-pct" min="5" max="60" value="20" oninput="updateEntrada()"></div>
+      <div class="field"><label>Plazo <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Meses para devolver el préstamo. A más plazo, cuota mensual más baja pero mucho más intereses en total.</span></span></label><div class="range-val" id="h-years-val">30 años</div><input type="range" id="h-years" min="5" max="40" value="30" oninput="document.getElementById('h-years-val').textContent=this.value+' años'"></div>
 
       <div class="section-sub">Tipo de interés
         <span class="tooltip-wrap"><span class="tooltip-icon">?</span><span class="tooltip-text"><strong>TIN</strong>: Tipo de Interés Nominal. El porcentaje puro que el banco cobra sobre tu deuda cada año. Es el que usas para calcular la cuota.<br><br><strong>TAE</strong>: Tasa Anual Equivalente. Incluye TIN + comisiones + gastos. Es el coste REAL de la hipoteca. Siempre compara por TAE, no por TIN.<br><br>¿Dónde encontrarlos? En la FEIN (Ficha Europea de Información Normalizada) que el banco está obligado a entregarte antes de firmar.</span></span>
       </div>
-      <div class="field"><label>TIN anual</label><div class="range-val" id="h-tae-val">3.20%</div><input type="range" id="h-tae" min="1" max="8" step="0.05" value="3.20" oninput="document.getElementById('h-tae-val').textContent=parseFloat(this.value).toFixed(2)+'%'"></div>
-      <div class="field"><label>Comisión de apertura</label><div class="range-val" id="h-com-val">0%</div><input type="range" id="h-com" min="0" max="2" step="0.1" value="0" oninput="document.getElementById('h-com-val').textContent=parseFloat(this.value).toFixed(1)+'%'"></div>
-      <div class="field"><label>Tipo de hipoteca</label><div class="input-wrap"><select id="h-tipo"><option value="fijo">Fija</option><option value="variable">Variable (Euríbor + diferencial)</option><option value="mixto">Mixta (primeros años fija)</option></select></div></div>
-      <div class="field"><label>Gastos compraventa estimados</label><div class="range-val" id="h-gastos-val">10%</div><input type="range" id="h-gastos-pct" min="5" max="20" value="10" oninput="document.getElementById('h-gastos-val').textContent=this.value+'%'"></div>
+      <div class="field"><label>TIN anual <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Tipo de Interés Nominal. El % aplicado sobre la deuda cada año. Compara hipotecas siempre por TAE, no por TIN.</span></span></label><div class="range-val" id="h-tae-val">3.20%</div><input type="range" id="h-tae" min="1" max="8" step="0.05" value="3.20" oninput="document.getElementById('h-tae-val').textContent=parseFloat(this.value).toFixed(2)+'%'"></div>
+      <div class="field"><label>Comisión de apertura <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Porcentaje del importe que cobra el banco al conceder el préstamo. Añade coste real aunque parezca pequeño.</span></span></label><div class="range-val" id="h-com-val">0%</div><input type="range" id="h-com" min="0" max="2" step="0.1" value="0" oninput="document.getElementById('h-com-val').textContent=parseFloat(this.value).toFixed(1)+'%'"></div>
+      <div class="field"><label>Tipo de hipoteca <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Fija: cuota constante toda la vida. Variable: cuota cambia con Euríbor + diferencial. Mixta: primeros años fija, el resto variable.</span></span></label><div class="input-wrap"><select id="h-tipo"><option value="fijo">Fija</option><option value="variable">Variable (Euríbor + diferencial)</option><option value="mixto">Mixta (primeros años fija)</option></select></div></div>
+      <div class="field"><label>Gastos compraventa estimados <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">ITP o AJD (6-10% según CCAA) + notaría (~0,5%) + registro (~0,3%) + gestoría (~0,3%). En total suele ser un 10-13% del precio.</span></span></label><div class="range-val" id="h-gastos-val">10%</div><input type="range" id="h-gastos-pct" min="5" max="20" value="10" oninput="document.getElementById('h-gastos-val').textContent=this.value+'%'"></div>
 
       <div class="section-sub">Discapacidad (deducciones especiales)</div>
       <div class="dis-section">
-        <div class="field"><label style="color:var(--blue)">Grado de discapacidad</label><div class="input-wrap"><select id="h-dis"><option value="0">Sin discapacidad</option><option value="33">33% – 64%</option><option value="65">65% o superior</option></select></div></div>
+        <div class="field"><label style="color:var(--blue)">Grado de discapacidad <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Las personas con discapacidad reconocida tienen acceso a financiación ICO específica, tipos más bajos y algunas deducciones fiscales adicionales.</span></span></label><div class="input-wrap"><select id="h-dis"><option value="0">Sin discapacidad</option><option value="33">33% – 64%</option><option value="65">65% o superior</option></select></div></div>
         <div class="info-box" id="h-dis-info" style="display:none"></div>
       </div>
       <button class="btn-calc" onclick="calcHipoteca()">Calcular hipoteca</button>
@@ -285,8 +289,8 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
   <div class="calc-grid">
     <div class="card">
       <div class="card-title">⚙️ Datos fiscales</div>
-      <div class="field"><label>Salario bruto anual</label><div class="input-wrap"><input type="number" id="i-bruto" value="35000" min="0"><span class="unit">€</span></div></div>
-      <div class="field"><label>Comunidad Autónoma</label><div class="input-wrap"><select id="i-ccaa">
+      <div class="field"><label>Salario bruto anual <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Tu retribución bruta anual total antes de retenciones. Lo encuentras en la última nómina del año o en tu contrato.</span></span></label><div class="input-wrap"><input type="number" id="i-bruto" value="35000" min="0"><span class="unit">€</span></div></div>
+      <div class="field"><label>Comunidad Autónoma <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Donde tienes tu domicilio fiscal el 31 de diciembre. Puede suponer hasta 4 puntos de diferencia en el IRPF.</span></span></label><div class="input-wrap"><select id="i-ccaa">
         <option value="mad">Madrid</option>
         <option value="and">Andalucía</option>
         <option value="cat">Cataluña</option>
@@ -305,12 +309,12 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
         <option value="ast">Asturias</option>
         <option value="cnt">Cantabria</option>
       </select></div></div>
-      <div class="field"><label>Situación personal</label><div class="input-wrap"><select id="i-situacion"><option value="soltero">Soltero/a sin hijos</option><option value="casado">Casado/a sin hijos</option><option value="hijo1">Con 1 hijo menor</option><option value="hijo2">Con 2 hijos menores</option><option value="hijo3">Con 3 o más hijos</option><option value="mono">Familia monoparental (1 hijo)</option></select></div></div>
+      <div class="field"><label>Situación personal <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Tu estado civil y situación familiar a 31 de diciembre. Reduce la base imponible del IRPF.</span></span></label><div class="input-wrap"><select id="i-situacion"><option value="soltero">Soltero/a sin hijos</option><option value="casado">Casado/a sin hijos</option><option value="hijo1">Con 1 hijo menor</option><option value="hijo2">Con 2 hijos menores</option><option value="hijo3">Con 3 o más hijos</option><option value="mono">Familia monoparental (1 hijo)</option></select></div></div>
       <div class="field"><label>Aportación plan de pensiones</label><div class="input-wrap"><input type="number" id="i-pension-ap" value="0" min="0" max="1500"><span class="unit">€/año</span></div></div>
       <div class="field"><label>Deducción hipoteca pre-2013</label><div class="input-wrap"><input type="number" id="i-hip-ded" value="0" min="0"><span class="unit">€/año</span></div></div>
       <div class="section-sub">Discapacidad</div>
       <div class="dis-section">
-        <div class="field"><label style="color:var(--blue)">Grado de discapacidad</label><div class="input-wrap"><select id="i-dis"><option value="0">Sin discapacidad</option><option value="33">33% – 64% (reducción trabajo: +3.500 €)</option><option value="65">65% o superior (reducción trabajo: +7.750 €)</option></select></div></div>
+        <div class="field"><label style="color:var(--blue)">Grado de discapacidad <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Con certificado oficial de discapacidad ≥33% tienes reducción extra del rendimiento del trabajo. A mayor grado, mayor reducción.</span></span></label><div class="input-wrap"><select id="i-dis"><option value="0">Sin discapacidad</option><option value="33">33% – 64% (reducción trabajo: +3.500 €)</option><option value="65">65% o superior (reducción trabajo: +7.750 €)</option></select></div></div>
         <div class="toggle-row"><span>¿Necesitas ayuda de terceras personas?</span><label class="toggle"><input type="checkbox" id="i-dis-movilidad"><span class="toggle-slider"></span></label></div>
       </div>
       <button class="btn-calc" onclick="calcIRPF()">Calcular IRPF 2025</button>
@@ -354,9 +358,9 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
       <button class="btn-add" onclick="addSalaryEntry()">+ Añadir período</button>
 
       <div class="section-sub" style="margin-top:18px">Datos de la baja</div>
-      <div class="field"><label>Fecha de fin del contrato</label><div class="input-wrap"><input type="text" id="f-fin" placeholder="DD/MM/AAAA"><span class="unit">📅</span></div></div>
-      <div class="field"><label>Días de vacaciones disfrutados este año</label><div class="input-wrap"><input type="number" id="f-vac-dis" value="8" min="0" max="30"><span class="unit">días</span></div></div>
-      <div class="field"><label>Causa de la baja</label><div class="input-wrap"><select id="f-causa">
+      <div class="field"><label>Fecha de fin del contrato <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Fecha efectiva de fin del contrato. Es la que determina los días de antigüedad para calcular la indemnización.</span></span></label><div class="input-wrap"><input type="text" id="f-fin" placeholder="DD/MM/AAAA"><span class="unit">📅</span></div></div>
+      <div class="field"><label>Días de vacaciones disfrutados este año <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Días de vacaciones anuales que ya has disfrutado en el año en curso. Los no disfrutados se abonan en el finiquito.</span></span></label><div class="input-wrap"><input type="number" id="f-vac-dis" value="8" min="0" max="30"><span class="unit">días</span></div></div>
+      <div class="field"><label>Causa de la baja <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Determina si tienes derecho a indemnización y su cuantía: 20 días/año (despido improcedente), 33 días/año (para contratos anteriores a 2012), etc.</span></span></label><div class="input-wrap"><select id="f-causa">
         <option value="despido_improcedente">Despido improcedente (33 días/año)</option>
         <option value="obj_individual">Despido objetivo individual (20 días/año)</option>
         <option value="obj_colectivo">ERE / Despido colectivo (20 días/año)</option>
@@ -365,7 +369,7 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
         <option value="mutuo_acuerdo">Mutuo acuerdo (negociable)</option>
         <option value="erte">ERTE / Suspensión temporal</option>
       </select></div></div>
-      <div class="field"><label>Pagas extra anuales</label><div class="input-wrap"><select id="f-pagas"><option value="2">2 pagas extra (junio y diciembre)</option><option value="0">Prorrateadas (incluidas en nómina)</option></select></div></div>
+      <div class="field"><label>Pagas extra anuales <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Si tu convenio tiene pagas extras separadas (junio y diciembre) o ya incluidas en el salario mensual (prorrateadas).</span></span></label><div class="input-wrap"><select id="f-pagas"><option value="2">2 pagas extra (junio y diciembre)</option><option value="0">Prorrateadas (incluidas en nómina)</option></select></div></div>
 
       <div class="section-sub">Discapacidad</div>
       <div class="dis-section">
@@ -397,11 +401,11 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
   <div class="calc-grid">
     <div class="card">
       <div class="card-title">⚙️ Tu historial laboral</div>
-      <div class="field"><label>Salario bruto actual (anual)</label><div class="input-wrap"><input type="number" id="p-salario" value="32000" min="0"><span class="unit">€</span></div></div>
-      <div class="field"><label>Años cotizados actualmente</label><div class="range-val" id="p-cotizados-val">20 años</div><input type="range" id="p-cotizados" min="1" max="45" value="20" oninput="document.getElementById('p-cotizados-val').textContent=this.value+' años'"></div>
-      <div class="field"><label>Años que te quedan para jubilarte</label><div class="range-val" id="p-restantes-val">15 años</div><input type="range" id="p-restantes" min="0" max="40" value="15" oninput="document.getElementById('p-restantes-val').textContent=this.value+' años'"></div>
-      <div class="field"><label>Incremento salarial anual esperado</label><div class="range-val" id="p-inc-val">2.0%</div><input type="range" id="p-inc" min="0" max="5" step="0.5" value="2" oninput="document.getElementById('p-inc-val').textContent=parseFloat(this.value).toFixed(1)+'%'"></div>
-      <div class="field"><label>Tipo de cotización</label><div class="input-wrap"><select id="p-contrato"><option value="completo">Cuenta ajena, jornada completa</option><option value="parcial">Parcialmente a tiempo parcial</option><option value="aut_min">Autónomo base mínima (1.109 €/mes)</option><option value="aut_med">Autónomo base media (1.600 €/mes)</option><option value="aut_alto">Autónomo base alta (según ingresos)</option></select></div></div>
+      <div class="field"><label>Salario bruto actual (anual) <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Tu retribución bruta anual. Se usa para estimar la base de cotización actual y proyectar la pensión futura.</span></span></label><div class="input-wrap"><input type="number" id="p-salario" value="32000" min="0"><span class="unit">€</span></div></div>
+      <div class="field"><label>Años cotizados actualmente <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Total de años que llevas cotizando a la Seguridad Social hasta hoy. Los periodos de paro con prestación también cuentan.</span></span></label><div class="range-val" id="p-cotizados-val">20 años</div><input type="range" id="p-cotizados" min="1" max="45" value="20" oninput="document.getElementById('p-cotizados-val').textContent=this.value+' años'"></div>
+      <div class="field"><label>Años que te quedan para jubilarte <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Años hasta alcanzar la edad de jubilación ordinaria (66 años y 8 meses en 2026, 67 en 2027 en adelante).</span></span></label><div class="range-val" id="p-restantes-val">15 años</div><input type="range" id="p-restantes" min="0" max="40" value="15" oninput="document.getElementById('p-restantes-val').textContent=this.value+' años'"></div>
+      <div class="field"><label>Incremento salarial anual esperado <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Tu estimación de subida de sueldo anual. La inflación histórica es ~2%. Si no sabes qué poner, usa 2-2,5%.</span></span></label><div class="range-val" id="p-inc-val">2.0%</div><input type="range" id="p-inc" min="0" max="5" step="0.5" value="2" oninput="document.getElementById('p-inc-val').textContent=parseFloat(this.value).toFixed(1)+'%'"></div>
+      <div class="field"><label>Tipo de cotización <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Define las bases de cotización usadas para el cálculo. Los autónomos en sistema RETA cotizan por bases elegidas según ingresos estimados.</span></span></label><div class="input-wrap"><select id="p-contrato"><option value="completo">Cuenta ajena, jornada completa</option><option value="parcial">Parcialmente a tiempo parcial</option><option value="aut_min">Autónomo base mínima (1.109 €/mes)</option><option value="aut_med">Autónomo base media (1.600 €/mes)</option><option value="aut_alto">Autónomo base alta (según ingresos)</option></select></div></div>
 
       <div class="section-sub">Discapacidad (jubilación anticipada)</div>
       <div class="dis-section">
@@ -428,12 +432,12 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
   <div class="calc-grid">
     <div class="card">
       <div class="card-title">⚙️ Parámetros</div>
-      <div class="field"><label>Capital inicial</label><div class="input-wrap"><input type="number" id="inv-inicial" value="10000" min="0"><span class="unit">€</span></div></div>
-      <div class="field"><label>Aportación mensual</label><div class="input-wrap"><input type="number" id="inv-mensual" value="300" min="0"><span class="unit">€</span></div></div>
-      <div class="field"><label>Rentabilidad anual esperada</label><div class="range-val" id="inv-rent-val">7.0%</div><input type="range" id="inv-rent" min="1" max="15" step="0.5" value="7" oninput="document.getElementById('inv-rent-val').textContent=parseFloat(this.value).toFixed(1)+'%'"></div>
-      <div class="field"><label>Horizonte temporal</label><div class="range-val" id="inv-years-val">20 años</div><input type="range" id="inv-years" min="1" max="50" value="20" oninput="document.getElementById('inv-years-val').textContent=this.value+' años'"></div>
-      <div class="field"><label>Inflación anual estimada</label><div class="range-val" id="inv-inf-val">2.5%</div><input type="range" id="inv-inf" min="0" max="6" step="0.5" value="2.5" oninput="document.getElementById('inv-inf-val').textContent=parseFloat(this.value).toFixed(1)+'%'"></div>
-      <div class="field"><label>Impuesto plusvalías (19–28% en España)</label><div class="range-val" id="inv-tax-val">19%</div><input type="range" id="inv-tax" min="0" max="28" step="1" value="19" oninput="document.getElementById('inv-tax-val').textContent=this.value+'%'"></div>
+      <div class="field"><label>Capital inicial <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">El dinero que invertirás en el momento 0. Si empiezas desde cero puedes poner 0 y usar solo aportaciones mensuales.</span></span></label><div class="input-wrap"><input type="number" id="inv-inicial" value="10000" min="0"><span class="unit">€</span></div></div>
+      <div class="field"><label>Aportación mensual <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Dinero adicional que aportarás cada mes. La regularidad es más importante que el importe inicial gracias al interés compuesto.</span></span></label><div class="input-wrap"><input type="number" id="inv-mensual" value="300" min="0"><span class="unit">€</span></div></div>
+      <div class="field"><label>Rentabilidad anual esperada <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Rentabilidad anual media esperada. Renta variable histórica: 7-10%. Renta fija: 3-5%. Depósito: 2-4%. Fondos mixtos: 4-6%.</span></span></label><div class="range-val" id="inv-rent-val">7.0%</div><input type="range" id="inv-rent" min="1" max="15" step="0.5" value="7" oninput="document.getElementById('inv-rent-val').textContent=parseFloat(this.value).toFixed(1)+'%'"></div>
+      <div class="field"><label>Horizonte temporal <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Años que mantendrás la inversión sin retirar. El interés compuesto necesita tiempo: a 20+ años el efecto es exponencial.</span></span></label><div class="range-val" id="inv-years-val">20 años</div><input type="range" id="inv-years" min="1" max="50" value="20" oninput="document.getElementById('inv-years-val').textContent=this.value+' años'"></div>
+      <div class="field"><label>Inflación anual estimada <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">La inflación reduce el poder adquisitivo. En España la media histórica es 2-3%. Úsala para ver la rentabilidad real neta.</span></span></label><div class="range-val" id="inv-inf-val">2.5%</div><input type="range" id="inv-inf" min="0" max="6" step="0.5" value="2.5" oninput="document.getElementById('inv-inf-val').textContent=parseFloat(this.value).toFixed(1)+'%'"></div>
+      <div class="field"><label>Impuesto plusvalías (19–28% en España) <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">En España las ganancias de capital tributan al 19% (hasta 6.000€), 21% (6.000-50.000€) y 28% (más de 300.000€).</span></span></label><div class="range-val" id="inv-tax-val">19%</div><input type="range" id="inv-tax" min="0" max="28" step="1" value="19" oninput="document.getElementById('inv-tax-val').textContent=this.value+'%'"></div>
       <button class="btn-calc" onclick="calcInversion()">Calcular inversión</button>
     </div>
     <div>
@@ -456,11 +460,11 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
   <div class="calc-grid">
     <div class="card">
       <div class="card-title">⚙️ Tu meta</div>
-      <div class="field"><label>¿Para qué quieres ahorrar?</label><div class="input-wrap"><select id="a-meta-tipo" onchange="updateMetaTipo()"><option value="libre">Meta personalizada</option><option value="entrada_piso">Entrada para piso (20% + 10% gastos)</option><option value="coche">Coche nuevo (20.000 €)</option><option value="emergencia">Fondo de emergencia (6 meses gastos)</option><option value="viaje">Viaje o vacaciones</option></select></div></div>
-      <div class="field"><label>Objetivo de ahorro</label><div class="input-wrap"><input type="number" id="a-objetivo" value="50000" min="100"><span class="unit">€</span></div></div>
-      <div class="field"><label>Ahorro actual disponible</label><div class="input-wrap"><input type="number" id="a-actual" value="5000" min="0"><span class="unit">€</span></div></div>
-      <div class="field"><label>¿Cuánto puedes ahorrar al mes?</label><div class="input-wrap"><input type="number" id="a-mensual" value="400" min="1"><span class="unit">€/mes</span></div></div>
-      <div class="field"><label>Rentabilidad del ahorro</label><div class="range-val" id="a-rent-val">1.0%</div><input type="range" id="a-rent" min="0" max="6" step="0.5" value="1" oninput="document.getElementById('a-rent-val').textContent=parseFloat(this.value).toFixed(1)+'%'"></div>
+      <div class="field"><label>¿Para qué quieres ahorrar? <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">El objetivo condiciona la estrategia: un fondo de emergencia requiere liquidez inmediata; una entrada para piso puede rentabilizarse a corto plazo.</span></span></label><div class="input-wrap"><select id="a-meta-tipo" onchange="updateMetaTipo()"><option value="libre">Meta personalizada</option><option value="entrada_piso">Entrada para piso (20% + 10% gastos)</option><option value="coche">Coche nuevo (20.000 €)</option><option value="emergencia">Fondo de emergencia (6 meses gastos)</option><option value="viaje">Viaje o vacaciones</option></select></div></div>
+      <div class="field"><label>Objetivo de ahorro <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">La cantidad que quieres tener ahorrada. Para una entrada de piso, calcula el 30% del precio del inmueble (20% entrada + 10% gastos).</span></span></label><div class="input-wrap"><input type="number" id="a-objetivo" value="50000" min="100"><span class="unit">€</span></div></div>
+      <div class="field"><label>Ahorro actual disponible <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Lo que ya tienes ahorrado hoy como punto de partida. Si empiezas desde cero, pon 0.</span></span></label><div class="input-wrap"><input type="number" id="a-actual" value="5000" min="0"><span class="unit">€</span></div></div>
+      <div class="field"><label>¿Cuánto puedes ahorrar al mes? <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Tu capacidad de ahorro mensual real. Constancia es clave: mejor 200€/mes siempre que 1.000€/mes solo a veces.</span></span></label><div class="input-wrap"><input type="number" id="a-mensual" value="400" min="1"><span class="unit">€/mes</span></div></div>
+      <div class="field"><label>Rentabilidad del ahorro <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Rentabilidad anual de tu ahorro. Cuenta de ahorro: 2-3%. Fondo monetario: 3-4%. Inversión conservadora: 4-6%.</span></span></label><div class="range-val" id="a-rent-val">1.0%</div><input type="range" id="a-rent" min="0" max="6" step="0.5" value="1" oninput="document.getElementById('a-rent-val').textContent=parseFloat(this.value).toFixed(1)+'%'"></div>
       <button class="btn-calc" onclick="calcAhorro()">Calcular</button>
     </div>
     <div>
@@ -490,11 +494,11 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
         ¿Dónde encontrarlos? En la <em>oferta vinculante</em> que el banco está obligado a darte. Exígela antes de firmar.
       </div>
 
-      <div class="field"><label>Importe solicitado</label><div class="input-wrap"><input type="number" id="pr-importe" value="15000" min="500"><span class="unit">€</span></div></div>
+      <div class="field"><label>Importe solicitado <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">La cantidad que pedirás prestada. El coste de los intereses aumenta significativamente con el importe.</span></span></label><div class="input-wrap"><input type="number" id="pr-importe" value="15000" min="500"><span class="unit">€</span></div></div>
       <div class="field"><label>TIN anual <span class="tooltip-wrap"><span class="tooltip-icon">?</span><span class="tooltip-text">Tipo de Interés Nominal. Es el porcentaje que el banco aplica sobre la deuda pendiente cada año. No incluye comisiones. Úsalo para calcular la cuota mensual.</span></span></label><div class="range-val" id="pr-tin-val">7.0%</div><input type="range" id="pr-tin" min="1" max="30" step="0.25" value="7" oninput="document.getElementById('pr-tin-val').textContent=parseFloat(this.value).toFixed(2)+'%'"></div>
-      <div class="field"><label>Plazo</label><div class="range-val" id="pr-meses-val">48 meses (4 años)</div><input type="range" id="pr-meses" min="6" max="120" step="6" value="48" oninput="updatePlazoLabel()"></div>
-      <div class="field"><label>Comisión de apertura</label><div class="range-val" id="pr-com-val">1.00%</div><input type="range" id="pr-com" min="0" max="4" step="0.25" value="1" oninput="document.getElementById('pr-com-val').textContent=parseFloat(this.value).toFixed(2)+'%'"></div>
-      <div class="field"><label>Seguro de vida vinculado</label><div class="input-wrap"><input type="number" id="pr-seguro" value="0" min="0" placeholder="0 si no lo tienes"><span class="unit">€/año</span></div></div>
+      <div class="field"><label>Plazo <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Meses para devolver el préstamo. A más plazo, cuota mensual más baja pero mucho más intereses en total.</span></span></label><div class="range-val" id="pr-meses-val">48 meses (4 años)</div><input type="range" id="pr-meses" min="6" max="120" step="6" value="48" oninput="updatePlazoLabel()"></div>
+      <div class="field"><label>Comisión de apertura <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Porcentaje del importe que cobra el banco al conceder el préstamo. Añade coste real aunque parezca pequeño.</span></span></label><div class="range-val" id="pr-com-val">1.00%</div><input type="range" id="pr-com" min="0" max="4" step="0.25" value="1" oninput="document.getElementById('pr-com-val').textContent=parseFloat(this.value).toFixed(2)+'%'"></div>
+      <div class="field"><label>Seguro de vida vinculado <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Algunos préstamos exigen un seguro de vida o de paro como condición. Es coste real que incrementa la TAE efectiva.</span></span></label><div class="input-wrap"><input type="number" id="pr-seguro" value="0" min="0" placeholder="0 si no lo tienes"><span class="unit">€/año</span></div></div>
       <button class="btn-calc" onclick="calcPrestamo()">Calcular préstamo</button>
     </div>
     <div>
@@ -517,9 +521,9 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
   <div class="calc-grid">
     <div class="card">
       <div class="card-title">⚙️ Tu contrato</div>
-      <div class="field"><label>Salario bruto anual</label><div class="input-wrap"><input type="number" id="s-bruto" value="30000" min="0"><span class="unit">€</span></div></div>
-      <div class="field"><label>Número de pagas</label><div class="input-wrap"><select id="s-pagas"><option value="12">12 pagas</option><option value="14" selected>14 pagas</option></select></div></div>
-      <div class="field"><label>Comunidad Autónoma</label><div class="input-wrap"><select id="s-ccaa">
+      <div class="field"><label>Salario bruto anual <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Tu retribución bruta anual total antes de retenciones. Lo encuentras en la última nómina del año o en tu contrato.</span></span></label><div class="input-wrap"><input type="number" id="s-bruto" value="30000" min="0"><span class="unit">€</span></div></div>
+      <div class="field"><label>Número de pagas <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Total de pagas al año. Lo habitual son 14 (12 ordinarias + 2 extras). Algunos convenios tienen 12 pero con el salario extra prorrateado.</span></span></label><div class="input-wrap"><select id="s-pagas"><option value="12">12 pagas</option><option value="14" selected>14 pagas</option></select></div></div>
+      <div class="field"><label>Comunidad Autónoma <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Donde tienes tu domicilio fiscal el 31 de diciembre. Puede suponer hasta 4 puntos de diferencia en el IRPF.</span></span></label><div class="input-wrap"><select id="s-ccaa">
         <option value="mad">Madrid</option>
         <option value="and">Andalucía</option>
         <option value="cat">Cataluña</option>
@@ -538,11 +542,11 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
         <option value="ast">Asturias</option>
         <option value="cnt">Cantabria</option>
       </select></div></div>
-      <div class="field"><label>Situación familiar</label><div class="input-wrap"><select id="s-familia"><option value="soltero">Soltero/a sin hijos</option><option value="casado">Casado/a sin hijos</option><option value="hijo1">1 hijo</option><option value="hijo2">2 hijos</option><option value="hijo3p">3 o más hijos</option></select></div></div>
+      <div class="field"><label>Situación familiar <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">Tu estado civil y número de hijos. Afecta al mínimo personal y familiar, que reduce la base imponible del IRPF.</span></span></label><div class="input-wrap"><select id="s-familia"><option value="soltero">Soltero/a sin hijos</option><option value="casado">Casado/a sin hijos</option><option value="hijo1">1 hijo</option><option value="hijo2">2 hijos</option><option value="hijo3p">3 o más hijos</option></select></div></div>
       <div class="toggle-row"><span>¿Tienes dos o más pagadores?</span><label class="toggle"><input type="checkbox" id="s-2pagadores"><span class="toggle-slider"></span></label></div>
       <div class="section-sub">Discapacidad</div>
       <div class="dis-section">
-        <div class="field"><label style="color:var(--blue)">Grado de discapacidad</label><div class="input-wrap"><select id="s-dis"><option value="0">Sin discapacidad</option><option value="33">33%–64% (mínimo personal +3.000 €; reducción trabajo +3.500 €)</option><option value="65">65% o superior (mínimo personal +9.000 €; reducción trabajo +7.750 €)</option></select></div></div>
+        <div class="field"><label style="color:var(--blue)">Grado de discapacidad <span class="tooltip-wrap"><span class="tooltip-icon">ⓘ</span><span class="tooltip-text">La discapacidad reconocida reduce el IRPF: mínimo por discapacidad de 3.000€ (33%) o 9.000€ (65%).</span></span></label><div class="input-wrap"><select id="s-dis"><option value="0">Sin discapacidad</option><option value="33">33%–64% (mínimo personal +3.000 €; reducción trabajo +3.500 €)</option><option value="65">65% o superior (mínimo personal +9.000 €; reducción trabajo +7.750 €)</option></select></div></div>
         <div class="toggle-row"><span>¿Necesitas ayuda de terceros / movilidad reducida?</span><label class="toggle"><input type="checkbox" id="s-dis-mov"><span class="toggle-slider"></span></label></div>
       </div>
       <button class="btn-calc" onclick="calcSalario()">Calcular salario neto</button>
@@ -1166,17 +1170,6 @@ window.addEventListener('load',()=>{
   calcHipoteca();
 });
 </script>
-<footer style="position:relative;z-index:1;text-align:center;padding:36px 20px;
-  border-top:1px solid #2a3f5f;color:#4c6885;font-size:12px;line-height:1.9">
-  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-bottom:10px">
-    <a href="/aviso-legal.html" style="color:#8ca4bf;text-decoration:none;transition:color .2s">Aviso legal</a>
-    <a href="/privacidad.html" style="color:#8ca4bf;text-decoration:none;transition:color .2s">Privacidad</a>
-    <a href="/cookies.html" style="color:#8ca4bf;text-decoration:none;transition:color .2s">Cookies</a>
-    <a href="/terminos.html" style="color:#8ca4bf;text-decoration:none;transition:color .2s">Términos de uso</a>
-  </div>
-  <p style="color:#4c6885">© 2026 Calculadoras Financieras España · Datos actualizados enero 2026</p>
-  <p style="margin-top:4px;font-size:11px;color:#2a3f5f">Resultados orientativos. Consulta siempre con un profesional para decisiones importantes.</p>
-</footer>
 <div id="cb" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;
 background:#162336;border-top:2px solid #2a3f5f;padding:18px 24px;align-items:center;
 gap:16px;flex-wrap:wrap;box-shadow:0 -4px 32px rgba(0,0,0,.6)">

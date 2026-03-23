@@ -1,0 +1,147 @@
+name: 🧪 Deploy a Cloudflare Pages DEV
+
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Qué desplegar'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - hub
+          - simular-hipoteca
+          - calculadora-irpf
+          - calculadora-finiquito
+          - calculadora-pension
+          - calculadora-inversion
+          - calculadora-ahorro
+          - calculadora-prestamo
+          - calculadora-salario
+
+jobs:
+  deploy-dev:
+    name: Deploy todos los sites (DEV)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ── Hub dev ──────────────────────────────────────────────────────────
+      - name: Deploy Hub DEV
+        if: ${{ github.event.inputs.target == 'all' || github.event.inputs.target == 'hub' || github.event_name == 'push' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy . --project-name=calculadoras-financieras-dev --branch=dev --commit-dirty=true
+
+      # ── Simular Hipoteca dev ─────────────────────────────────────────────
+      - name: Deploy Simular Hipoteca DEV
+        if: ${{ github.event.inputs.target == 'all' || github.event.inputs.target == 'simular-hipoteca' || github.event_name == 'push' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy apps/simular-hipoteca --project-name=simular-hipoteca-dev --branch=dev --commit-dirty=true
+
+      # ── IRPF dev ─────────────────────────────────────────────────────────
+      - name: Deploy Calculadora IRPF DEV
+        if: ${{ github.event.inputs.target == 'all' || github.event.inputs.target == 'calculadora-irpf' || github.event_name == 'push' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy apps/calculadora-irpf --project-name=calculadora-irpf-dev --branch=dev --commit-dirty=true
+
+      # ── Finiquito dev ────────────────────────────────────────────────────
+      - name: Deploy Calculadora Finiquito DEV
+        if: ${{ github.event.inputs.target == 'all' || github.event.inputs.target == 'calculadora-finiquito' || github.event_name == 'push' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy apps/calculadora-finiquito --project-name=calculadora-finiquito-dev --branch=dev --commit-dirty=true
+
+      # ── Pensión dev ──────────────────────────────────────────────────────
+      - name: Deploy Calculadora Pensión DEV
+        if: ${{ github.event.inputs.target == 'all' || github.event.inputs.target == 'calculadora-pension' || github.event_name == 'push' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy apps/calculadora-pension --project-name=calculadora-pension-dev --branch=dev --commit-dirty=true
+
+      # ── Inversión dev ────────────────────────────────────────────────────
+      - name: Deploy Calculadora Inversión DEV
+        if: ${{ github.event.inputs.target == 'all' || github.event.inputs.target == 'calculadora-inversion' || github.event_name == 'push' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy apps/calculadora-inversion --project-name=calculadora-inversion-dev --branch=dev --commit-dirty=true
+
+      # ── Ahorro dev ───────────────────────────────────────────────────────
+      - name: Deploy Calculadora Ahorro DEV
+        if: ${{ github.event.inputs.target == 'all' || github.event.inputs.target == 'calculadora-ahorro' || github.event_name == 'push' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy apps/calculadora-ahorro --project-name=calculadora-ahorro-dev --branch=dev --commit-dirty=true
+
+      # ── Préstamo dev ─────────────────────────────────────────────────────
+      - name: Deploy Calculadora Préstamo DEV
+        if: ${{ github.event.inputs.target == 'all' || github.event.inputs.target == 'calculadora-prestamo' || github.event_name == 'push' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy apps/calculadora-prestamo --project-name=calculadora-prestamo-dev --branch=dev --commit-dirty=true
+
+      # ── Salario dev ──────────────────────────────────────────────────────
+      - name: Deploy Calculadora Salario DEV
+        if: ${{ github.event.inputs.target == 'all' || github.event.inputs.target == 'calculadora-salario' || github.event_name == 'push' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages deploy apps/calculadora-salario --project-name=calculadora-salario-dev --branch=dev --commit-dirty=true
+
+      # ── Notificar éxito ──────────────────────────────────────────────────
+      - name: Notificar deploy DEV completado
+        if: success()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=format:"%s")
+          COMMIT_SHA=$(git log -1 --pretty=format:"%h")
+          MSG="🧪 <b>Deploy DEV completado</b>%0A📦 <code>${COMMIT_SHA}</code> ${COMMIT_MSG}%0A%0A🔗 Verificar:%0A• https://calculadoras-financieras-dev.pages.dev%0A• https://simular-hipoteca-dev.pages.dev%0A• https://calculadora-irpf-dev.pages.dev"
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "parse_mode=HTML" \
+            -d "text=${MSG}" || true
+
+      # ── Notificar fallo ──────────────────────────────────────────────────
+      - name: Notificar fallo deploy DEV
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "parse_mode=HTML" \
+            -d "text=🚨 <b>Deploy DEV FALLIDO</b>%0Ahttps://github.com/calculadoras-financieras/calculadoras-financieras/actions" || true

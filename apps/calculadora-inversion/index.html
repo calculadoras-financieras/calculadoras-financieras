@@ -185,7 +185,7 @@ body::before{content:'';position:fixed;inset:0;
   pointer-events:none;z-index:0}
 
 /* Crosslinks nav */
-.cl-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px;overflow-x:auto;justify-content:center}
+.cl-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px;overflow-x:auto}
 .cl-bar::-webkit-scrollbar{display:none}
 .cl{display:inline-flex;align-items:center;padding:7px 14px;font-size:12px;color:var(--text-dim);text-decoration:none;border:1.5px solid var(--border);border-radius:8px;transition:all .2s;white-space:nowrap;font-family:'DM Sans',sans-serif;font-weight:600;background:var(--surface2)}
 .cl:hover{color:var(--text);border-color:var(--gold);background:rgba(0,229,168,.08)}
@@ -443,33 +443,6 @@ body::before{content:'';position:fixed;inset:0;
 
 
 <!-- ── Footer ────────────────────────────── -->
-<!-- BLOG INVERSIÓN -->
-<section style="max-width:1100px;margin:0 auto;padding:0 20px 60px">
-  <h2 style="font-size:1.3rem;font-weight:700;color:var(--text,#f0f6ff);margin:40px 0 20px;display:flex;align-items:center;gap:10px">
-    <span style="color:var(--gold,#00e5a8)">📝</span> Guías y artículos sobre inversión
-  </h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px">
-    <a href="blog/interes-compuesto-dinero-crece.html" style="display:block;background:var(--surface,#253545);border:1px solid var(--border,#3d5470);border-radius:12px;padding:20px;text-decoration:none;transition:border-color .2s,transform .2s;color:inherit" onmouseover="this.style.borderColor='var(--gold,#00e5a8)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border,#3d5470)';this.style.transform=''">
-      <div style="font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold,#00e5a8);margin-bottom:8px">Fundamentos</div>
-      <div style="font-weight:700;color:var(--text,#f0f6ff);margin-bottom:6px;line-height:1.3">Interés compuesto: cómo hacer que tu dinero crezca solo en 2026</div>
-      <div style="font-size:.82rem;color:var(--text-dim,#a8c4d8)">El concepto más poderoso de las finanzas personales explicado</div>
-      <div style="margin-top:12px;font-size:.8rem;color:var(--gold,#00e5a8);font-weight:600">Leer fundamentos →</div>
-    </a>
-    <a href="blog/calcular-rentabilidad-inversion.html" style="display:block;background:var(--surface,#253545);border:1px solid var(--border,#3d5470);border-radius:12px;padding:20px;text-decoration:none;transition:border-color .2s,transform .2s;color:inherit" onmouseover="this.style.borderColor='var(--gold,#00e5a8)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border,#3d5470)';this.style.transform=''">
-      <div style="font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold,#00e5a8);margin-bottom:8px">Guía</div>
-      <div style="font-weight:700;color:var(--text,#f0f6ff);margin-bottom:6px;line-height:1.3">Cómo calcular la rentabilidad de una inversión paso a paso</div>
-      <div style="font-size:.82rem;color:var(--text-dim,#a8c4d8)">Rentabilidad total, anual y comparativa entre escenarios</div>
-      <div style="margin-top:12px;font-size:.8rem;color:var(--gold,#00e5a8);font-weight:600">Leer guía →</div>
-    </a>
-    <a href="blog/simular-inversion-aportaciones-mensuales.html" style="display:block;background:var(--surface,#253545);border:1px solid var(--border,#3d5470);border-radius:12px;padding:20px;text-decoration:none;transition:border-color .2s,transform .2s;color:inherit" onmouseover="this.style.borderColor='var(--gold,#00e5a8)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border,#3d5470)';this.style.transform=''">
-      <div style="font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold,#00e5a8);margin-bottom:8px">Simulación</div>
-      <div style="font-weight:700;color:var(--text,#f0f6ff);margin-bottom:6px;line-height:1.3">Simular inversión con aportaciones periódicas mensuales</div>
-      <div style="font-size:.82rem;color:var(--text-dim,#a8c4d8)">Cómo crece tu capital con aportaciones regulares e interés compuesto</div>
-      <div style="margin-top:12px;font-size:.8rem;color:var(--gold,#00e5a8);font-weight:600">Leer simulación →</div>
-    </a>
-  </div>
-</section>
-<!-- FIN BLOG INVERSIÓN -->
 <footer style="text-align:center;padding:28px 20px;border-top:1px solid var(--border,#30363d);color:var(--text-muted,#484f58);font-size:.8rem;line-height:1.9">
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;margin-bottom:8px">
     <a href="aviso-legal.html" style="color:var(--text-dim,#8b949e);text-decoration:none">Aviso legal</a>

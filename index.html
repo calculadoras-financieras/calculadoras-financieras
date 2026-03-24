@@ -132,6 +132,11 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
 .cf-site-card{display:flex;flex-direction:column;align-items:flex-start;background:var(--surface);border:1.5px solid var(--border);border-radius:14px;padding:22px 20px;text-decoration:none;color:var(--text);transition:all .25s;cursor:pointer}
 .cf-site-card:hover{border-color:var(--gold);background:var(--surface2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,229,168,.12)}
 .cf-site-arrow{margin-top:auto;padding-top:12px;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.04em}
+.site-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 13px;font-size:12px;font-weight:600;border:1.5px solid var(--border);border-radius:20px;background:transparent;color:var(--text-dim);text-decoration:none;transition:all .2s;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.site-pill:hover{border-color:var(--gold);color:var(--gold);background:rgba(0,229,168,.08)}
+#micrositios-hub{border-bottom:1px solid var(--border);padding:10px 16px;background:var(--surface)}
+#micrositios-hub .pills-wrap{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+#micrositios-hub .pills-label{font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;padding:0 4px;flex-shrink:0}
 </style>
 
 <meta name="robots" content="index, follow, max-snippet:-1">
@@ -161,60 +166,17 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
 </head>
 <body>
 
-<div class="cf-related-section" id="micrositios-hub" style="margin-top:0;border-top:none;border-bottom:1px solid var(--border)">
-  <div class="cf-related-inner">
-    <h2 class="cf-related-title" style="font-family:'Playfair Display',serif">Suite de Calculadoras Especializadas</h2>
-    <p class="cf-related-sub">Cada micrositio incluye calculadora avanzada, guía actualizada 2026 y blog de referencia en España</p>
-    <div class="cf-sites-grid">
-      <a href="https://simular-hipoteca.es" class="cf-site-card">
-        <span class="cf-site-icon">🏠</span>
-        <div class="cf-site-title">Simulador de Hipoteca</div>
-        <div class="cf-site-desc">Cuota mensual, amortización real, efectos de la discapacidad y comparativa de tipos</div>
-        <div class="cf-site-arrow">Abrir calculadora →</div>
-      </a>
-      <a href="https://calculadora-irpf.es" class="cf-site-card">
-        <span class="cf-site-icon">📋</span>
-        <div class="cf-site-title">Calculadora IRPF 2026</div>
-        <div class="cf-site-desc">Tramos reales por comunidad autónoma, situación familiar y deducciones actualizadas</div>
-        <div class="cf-site-arrow">Abrir calculadora →</div>
-      </a>
-      <a href="https://calculadora-finiquito.es" class="cf-site-card">
-        <span class="cf-site-icon">📄</span>
-        <div class="cf-site-title">Calculadora de Finiquito</div>
-        <div class="cf-site-desc">Finiquito y liquidación según causa de baja, historial salarial y días pendientes</div>
-        <div class="cf-site-arrow">Abrir calculadora →</div>
-      </a>
-      <a href="https://calculadora-pension.es" class="cf-site-card">
-        <span class="cf-site-icon">👴</span>
-        <div class="cf-site-title">Calculadora de Pensión</div>
-        <div class="cf-site-desc">Estimación de pensión de jubilación, tasa de sustitución y brecha de ingresos</div>
-        <div class="cf-site-arrow">Abrir calculadora →</div>
-      </a>
-      <a href="https://calculadora-inversion.es" class="cf-site-card">
-        <span class="cf-site-icon">📈</span>
-        <div class="cf-site-title">Calculadora de Inversión</div>
-        <div class="cf-site-desc">Capital final, rentabilidad real descontando inflación y comparativa de escenarios</div>
-        <div class="cf-site-arrow">Abrir calculadora →</div>
-      </a>
-      <a href="https://calculadora-ahorro.es" class="cf-site-card">
-        <span class="cf-site-icon">🏦</span>
-        <div class="cf-site-title">Calculadora de Ahorro</div>
-        <div class="cf-site-desc">Plazo para alcanzar tu meta, entrada para piso, fondo de emergencia o jubilación</div>
-        <div class="cf-site-arrow">Abrir calculadora →</div>
-      </a>
-      <a href="https://calculadora-prestamo.es" class="cf-site-card">
-        <span class="cf-site-icon">💳</span>
-        <div class="cf-site-title">Calculadora de Préstamo</div>
-        <div class="cf-site-desc">Cuota, TAE real con comisiones, coste total y tabla de amortización</div>
-        <div class="cf-site-arrow">Abrir calculadora →</div>
-      </a>
-      <a href="https://calculadora-salario.com" class="cf-site-card">
-        <span class="cf-site-icon">💰</span>
-        <div class="cf-site-title">Calculadora Salario Neto</div>
-        <div class="cf-site-desc">Bruto a neto, IRPF, Seguridad Social y coste real para la empresa por CCAA</div>
-        <div class="cf-site-arrow">Abrir calculadora →</div>
-      </a>
-    </div>
+<div id="micrositios-hub">
+  <div class="pills-wrap">
+    <span class="pills-label">🧮 Sites:</span>
+    <a href="https://simular-hipoteca.es" class="site-pill">🏠 Hipoteca</a>
+    <a href="https://calculadora-irpf.es" class="site-pill">📋 IRPF</a>
+    <a href="https://calculadora-finiquito.es" class="site-pill">📄 Finiquito</a>
+    <a href="https://calculadora-pension.es" class="site-pill">👴 Pensión</a>
+    <a href="https://calculadora-inversion.es" class="site-pill">📈 Inversión</a>
+    <a href="https://calculadora-ahorro.es" class="site-pill">🏦 Ahorro</a>
+    <a href="https://calculadora-prestamo.es" class="site-pill">💳 Préstamo</a>
+    <a href="https://calculadora-salario.com" class="site-pill">💰 Salario</a>
   </div>
 </div>
 <header>
@@ -563,6 +525,79 @@ footer{position:relative;z-index:1;text-align:center;padding:36px 20px;border-to
 </div>
 
 </main>
+<!-- ARTÍCULOS DESTACADOS HUB -->
+<section style="max-width:1100px;margin:0 auto;padding:0 20px 60px">
+  <h2 style="font-size:1.3rem;font-weight:700;color:var(--text);margin:40px 0 8px;display:flex;align-items:center;gap:10px">
+    <span style="color:var(--gold)">📚</span> Guías y artículos financieros
+  </h2>
+  <p style="font-size:.85rem;color:var(--text-dim);margin-bottom:24px">Los más leídos de cada calculadora especializada</p>
+
+  <!-- Hipoteca -->
+  <div style="margin-bottom:28px">
+    <div style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🏠</span> Hipoteca</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px">
+      <a href="https://simular-hipoteca.es/blog/como-calcular-cuota-hipoteca-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-weight:700;font-size:.88rem;color:var(--text);margin-bottom:4px;line-height:1.3">Cómo calcular tu cuota de hipoteca paso a paso en 2026</div>
+        <div style="font-size:.78rem;color:var(--gold);font-weight:600;margin-top:8px">Leer guía →</div>
+      </a>
+      <a href="https://simular-hipoteca.es/blog/hipoteca-fija-vs-variable.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-weight:700;font-size:.88rem;color:var(--text);margin-bottom:4px;line-height:1.3">Hipoteca fija vs variable: qué te conviene según tu perfil</div>
+        <div style="font-size:.78rem;color:var(--gold);font-weight:600;margin-top:8px">Leer comparativa →</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- IRPF -->
+  <div style="margin-bottom:28px">
+    <div style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📋</span> IRPF</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px">
+      <a href="https://calculadora-irpf.es/blog/guia-calculadora-irpf-2025.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-weight:700;font-size:.88rem;color:var(--text);margin-bottom:4px;line-height:1.3">Guía completa para usar la calculadora IRPF 2025/2026</div>
+        <div style="font-size:.78rem;color:var(--gold);font-weight:600;margin-top:8px">Leer guía →</div>
+      </a>
+      <a href="https://calculadora-irpf.es/blog/tramos-irpf-2025-tipos-limites.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-weight:700;font-size:.88rem;color:var(--text);margin-bottom:4px;line-height:1.3">Tramos IRPF 2025: tipos, límites y ejemplos prácticos</div>
+        <div style="font-size:.78rem;color:var(--gold);font-weight:600;margin-top:8px">Leer referencia →</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Salario + Finiquito + Pensión -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-bottom:28px">
+    <a href="https://calculadora-salario.com/blog/como-calcular-salario-neto-espana-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">💰 Salario</div>
+      <div style="font-weight:700;font-size:.88rem;color:var(--text);margin-bottom:4px;line-height:1.3">Cómo calcular tu salario neto en España en 2026</div>
+      <div style="font-size:.78rem;color:var(--gold);font-weight:600;margin-top:8px">Leer guía →</div>
+    </a>
+    <a href="https://calculadora-finiquito.es/blog/como-calcular-finiquito-espana.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">📄 Finiquito</div>
+      <div style="font-weight:700;font-size:.88rem;color:var(--text);margin-bottom:4px;line-height:1.3">Cómo calcular tu finiquito paso a paso en España (Guía 2026)</div>
+      <div style="font-size:.78rem;color:var(--gold);font-weight:600;margin-top:8px">Leer guía →</div>
+    </a>
+    <a href="https://calculadora-pension.es/blog/como-calcular-pension-jubilacion-espana.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">👴 Pensión</div>
+      <div style="font-weight:700;font-size:.88rem;color:var(--text);margin-bottom:4px;line-height:1.3">Cómo calcular tu pensión de jubilación en España (Guía 2026)</div>
+      <div style="font-size:.78rem;color:var(--gold);font-weight:600;margin-top:8px">Leer guía →</div>
+    </a>
+    <a href="https://calculadora-inversion.es/blog/interes-compuesto-dinero-crece.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">📈 Inversión</div>
+      <div style="font-weight:700;font-size:.88rem;color:var(--text);margin-bottom:4px;line-height:1.3">Interés compuesto: cómo hacer que tu dinero crezca solo en 2026</div>
+      <div style="font-size:.78rem;color:var(--gold);font-weight:600;margin-top:8px">Leer guía →</div>
+    </a>
+    <a href="https://calculadora-ahorro.es/blog/regla-ahorro-50-30-20.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">🏦 Ahorro</div>
+      <div style="font-weight:700;font-size:.88rem;color:var(--text);margin-bottom:4px;line-height:1.3">La regla 50/30/20: cómo organizar tu sueldo para ahorrar en 2026</div>
+      <div style="font-size:.78rem;color:var(--gold);font-weight:600;margin-top:8px">Leer estrategia →</div>
+    </a>
+    <a href="https://calculadora-prestamo.es/blog/calcular-cuota-prestamo-personal.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px">💳 Préstamo</div>
+      <div style="font-weight:700;font-size:.88rem;color:var(--text);margin-bottom:4px;line-height:1.3">Cómo calcular la cuota de un préstamo personal en 2026</div>
+      <div style="font-size:.78rem;color:var(--gold);font-weight:600;margin-top:8px">Leer guía →</div>
+    </a>
+  </div>
+</section>
+<!-- FIN ARTÍCULOS DESTACADOS HUB -->
+
 <footer style="text-align:center;padding:28px 20px;border-top:1px solid var(--border,#30363d);color:var(--text-muted,#484f58);font-size:.8rem;line-height:1.9">
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;margin-bottom:8px">
     <a href="/legal/aviso-legal.html" style="color:var(--text-dim,#8b949e);text-decoration:none">Aviso legal</a>

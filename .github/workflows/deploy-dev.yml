@@ -32,14 +32,15 @@ on:
 #  DEV   → rama dev   → proyectos CF: simular-hipoteca-dev, calculadora-irpf-dev, …
 #           URLs: simular-hipoteca-dev.pages.dev, calculadora-irpf-dev.pages.dev, …
 #
-# NOTA IMPORTANTE sobre --branch=main en deploy DEV:
-#   El flag --branch en wrangler es solo la etiqueta que CF Pages usa para
-#   determinar si el deploy es "producción" o "preview".
-#   production_branch en CF Pages = "main" (por defecto).
-#   → Con --branch=main el deploy va al slot de PRODUCCIÓN del proyecto -dev.
-#   → Esto hace que simular-hipoteca-dev.pages.dev muestre siempre el último deploy.
-#   El CONTENIDO desplegado viene del checkout del runner (rama dev de git),
-#   no del flag --branch. El flag es solo una etiqueta interna de CF Pages.
+# REGLA CRÍTICA sobre el flag --branch en wrangler pages deploy:
+#   CF Pages clasifica cada deploy como "Production" o "Preview" según si
+#   el valor de --branch coincide con production_branch del proyecto.
+#
+#   Los proyectos *-dev tienen production_branch = "dev" (seteado via API PATCH).
+#   → --branch=dev  → deploy PRODUCTION → sirve en *-dev.pages.dev  ✓ CORRECTO
+#   → --branch=main → deploy PREVIEW    → *-dev.pages.dev NO se actualiza  ✗ MAL
+#
+#   NUNCA cambiar --branch=dev a --branch=main en este workflow.
 # ─────────────────────────────────────────────────────────────────────────────
 
 jobs:

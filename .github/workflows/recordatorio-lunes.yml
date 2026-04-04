@@ -1,0 +1,17 @@
+name: 📅 Recordatorio lunes 06/04
+on:
+  schedule:
+    - cron: '0 13 6 4 *'   # 06 abril, 13:00 UTC = 15:00 España
+jobs:
+  recordatorio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar recordatorio por Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "parse_mode=HTML" \
+            -d "text=📅 <b>RECORDATORIO LUNES 15:00</b>%0A%0A⚠️ <b>Tarea 1 — Zoho Mail DNS</b>%0AConfigurar registros MX y SPF en Cloudflare DNS para calculadoras-financieras.es.%0A→ En Zoho: clicar 'View MX configuration details'%0A→ En Cloudflare: añadir MX + TXT SPF con los valores de Zoho%0A%0A⚠️ <b>Tarea 2 — AdSense</b>%0ARevisar estado en ads.google.com%0ACompletar configuración de anuncios con Claude%0AEstrategia de monetización por site%0A%0A💬 Abrir Claude en claude.ai para continuar"

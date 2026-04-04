@@ -64,7 +64,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy . --project-name=calculadoras-financieras-dev --branch=main --commit-dirty=true
+          command: pages deploy . --project-name=calculadoras-financieras-dev --branch=dev --commit-dirty=true
 
       # ── Simular Hipoteca dev ─────────────────────────────────────────────
       - name: Deploy Simular Hipoteca DEV
@@ -73,7 +73,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/simular-hipoteca --project-name=simular-hipoteca-dev --branch=main --commit-dirty=true
+          command: pages deploy apps/simular-hipoteca --project-name=simular-hipoteca-dev --branch=dev --commit-dirty=true
 
       # ── IRPF dev ─────────────────────────────────────────────────────────
       - name: Deploy Calculadora IRPF DEV
@@ -82,7 +82,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-irpf --project-name=calculadora-irpf-dev --branch=main --commit-dirty=true
+          command: pages deploy apps/calculadora-irpf --project-name=calculadora-irpf-dev --branch=dev --commit-dirty=true
 
       # ── Finiquito dev ────────────────────────────────────────────────────
       - name: Deploy Calculadora Finiquito DEV
@@ -91,7 +91,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-finiquito --project-name=calculadora-finiquito-dev --branch=main --commit-dirty=true
+          command: pages deploy apps/calculadora-finiquito --project-name=calculadora-finiquito-dev --branch=dev --commit-dirty=true
 
       # ── Pensión dev ──────────────────────────────────────────────────────
       - name: Deploy Calculadora Pensión DEV
@@ -100,7 +100,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-pension --project-name=calculadora-pension-dev --branch=main --commit-dirty=true
+          command: pages deploy apps/calculadora-pension --project-name=calculadora-pension-dev --branch=dev --commit-dirty=true
 
       # ── Inversión dev ────────────────────────────────────────────────────
       - name: Deploy Calculadora Inversión DEV
@@ -109,7 +109,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-inversion --project-name=calculadora-inversion-dev --branch=main --commit-dirty=true
+          command: pages deploy apps/calculadora-inversion --project-name=calculadora-inversion-dev --branch=dev --commit-dirty=true
 
       # ── Ahorro dev ───────────────────────────────────────────────────────
       - name: Deploy Calculadora Ahorro DEV
@@ -118,7 +118,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-ahorro --project-name=calculadora-ahorro-dev --branch=main --commit-dirty=true
+          command: pages deploy apps/calculadora-ahorro --project-name=calculadora-ahorro-dev --branch=dev --commit-dirty=true
 
       # ── Préstamo dev ─────────────────────────────────────────────────────
       - name: Deploy Calculadora Préstamo DEV
@@ -127,7 +127,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-prestamo --project-name=calculadora-prestamo-dev --branch=main --commit-dirty=true
+          command: pages deploy apps/calculadora-prestamo --project-name=calculadora-prestamo-dev --branch=dev --commit-dirty=true
 
       # ── Salario dev ──────────────────────────────────────────────────────
       - name: Deploy Calculadora Salario DEV
@@ -136,7 +136,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-salario --project-name=calculadora-salario-dev --branch=main --commit-dirty=true
+          command: pages deploy apps/calculadora-salario --project-name=calculadora-salario-dev --branch=dev --commit-dirty=true
 
       # ── Notificar éxito ──────────────────────────────────────────────────
       - name: Notificar deploy DEV completado

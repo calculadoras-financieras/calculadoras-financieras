@@ -10,7 +10,7 @@
   {
     "id": "task-secrets-cf",
     "title": "Añadir secrets Cloudflare en GitHub",
-    "description": "CF_API_TOKEN y CF_ACCOUNT_ID en github.com/calculadoras-financieras/calculadoras-financieras/settings/secrets/actions — necesario para que deploy.yml y deploy-dev.yml funcionen automáticamente",
+    "description": "CF_API_TOKEN y CF_ACCOUNT_ID en settings/secrets/actions",
     "dueDate": "2026-03-23",
     "priority": "alta",
     "completed": true
@@ -26,7 +26,7 @@
   {
     "id": "task-enlazado-interno",
     "title": "Enlazado interno en los 88 artículos del blog",
-    "description": "Nav bar sticky + breadcrumb actualizado + sección artículos relacionados + link de vuelta al blog en todos los artículos de los 8 microsites.",
+    "description": "Nav bar sticky + breadcrumb + artículos relacionados + link al blog en todos los artículos.",
     "dueDate": "2026-04-04",
     "priority": "alta",
     "completed": true
@@ -34,47 +34,63 @@
   {
     "id": "task-sitemap-index",
     "title": "Crear sitemap_index.xml global en el hub",
-    "description": "Sitemap index en calculadoras-financieras.es/sitemap_index.xml apuntando a los 9 sitemaps de la suite. Referenciado en robots.txt del hub.",
+    "description": "Sitemap index en calculadoras-financieras.es apuntando a los 9 sitemaps.",
     "dueDate": "2026-04-04",
     "priority": "media",
     "completed": true
   },
   {
-    "id": "task-ver-todos-blog",
-    "title": "Añadir botón 'Ver todos los artículos' en index de cada microsite",
-    "description": "Enlace a blog/index.html desde la sección de artículos destacados en cada microsite.",
-    "dueDate": "2026-04-04",
-    "priority": "media",
+    "id": "task-search-console-verificar",
+    "title": "Verificar los 9 dominios en Google Search Console",
+    "description": "COMPLETADO. Dominios verificados y sitemaps enviados correctamente en los 9 sites.",
+    "dueDate": "2026-04-07",
+    "priority": "alta",
     "completed": true
   },
   {
     "id": "task-search-console-sitemaps",
-    "title": "⚠️ PENDIENTE: Reenviar sitemaps en Google Search Console",
-    "description": "ACCIÓN MANUAL REQUERIDA. Ir a search.google.com/search-console → cada uno de los 9 dominios → Sitemaps → reenviar sitemap.xml. También reenviar sitemap_index.xml en calculadoras-financieras.es. Sin esto Google no indexa los artículos correctamente.",
+    "title": "Reenviar sitemaps en Google Search Console",
+    "description": "COMPLETADO. sitemap.xml enviado en los 9 dominios. sitemap_index.xml enviado en calculadoras-financieras.es.",
     "dueDate": "2026-04-07",
+    "priority": "alta",
+    "completed": true
+  },
+  {
+    "id": "task-zoho-dns",
+    "title": "⚠️ LUNES 06/04 15:00 — Configurar DNS Zoho Mail en Cloudflare",
+    "description": "ACCIÓN MANUAL REQUERIDA. Cloudflare no tiene los registros MX ni SPF apuntando a Zoho, por lo que el correo @calculadoras-financieras.es no funciona correctamente. PASOS: 1) En Zoho Mail clicar 'View MX configuration details' → copiar los valores exactos. 2) En Cloudflare → DNS → calculadoras-financieras.es → añadir registro MX (mx.zoho.eu prioridad 10) y registro TXT SPF (v=spf1 include:zoho.eu ~all). Usar los valores exactos que muestra Zoho, no los de este texto.",
+    "dueDate": "2026-04-06T15:00:00",
     "priority": "alta",
     "completed": false
   },
   {
-    "id": "task-search-console-verificar",
-    "title": "⚠️ PENDIENTE: Verificar los 9 dominios en Google Search Console",
-    "description": "ACCIÓN MANUAL REQUERIDA. Si algún dominio no está verificado en GSC, añadir el registro TXT DNS en Cloudflare. Comprobar cobertura de indexación y errores de rastreo.",
-    "dueDate": "2026-04-07",
+    "id": "task-adsense-lunes",
+    "title": "⚠️ LUNES 06/04 15:00 — Revisar AdSense con Claude: descomentar código y verificar estado",
+    "description": "REVISIÓN PENDIENTE CON CLAUDE. El código AdSense está COMENTADO en todos los HTMLs (buscar '<!-- ADSENSE PENDIENTE APROBACIÓN'). Google necesita ver el código activo para completar la revisión. Temas a revisar el lunes: 1) Descomentar el bloque AdSense en index.html del hub y simular-hipoteca.es al menos. 2) Verificar estado de la solicitud en ads.google.com. 3) Configurar ubicaciones de anuncios y formatos. 4) Estrategia de monetización por site.",
+    "dueDate": "2026-04-06T15:00:00",
     "priority": "alta",
     "completed": false
   },
   {
-    "id": "task-adsense",
-    "title": "⚠️ PENDIENTE: Activar AdSense cuando se apruebe la cuenta",
-    "description": "Cuenta solicitada el 16/03/2026. Cuando Google apruebe, descomentar código AdSense en todos los index.html buscando '<!-- ADSENSE PENDIENTE APROBACIÓN'.",
-    "dueDate": "2026-04-15",
+    "id": "task-adsense-descomentar",
+    "title": "Descomentar código AdSense en hub y simular-hipoteca (INMEDIATO)",
+    "description": "Para que Google pueda verificar la implementación, hay que descomentar el bloque AdSense. Buscar en index.html de calculadoras-financieras y simular-hipoteca el comentario '<!-- ADSENSE PENDIENTE APROBACIÓN' y descomentar. Hacer push a main. Claude Code tiene el prompt para hacer esto.",
+    "dueDate": "2026-04-04",
+    "priority": "alta",
+    "completed": false
+  },
+  {
+    "id": "task-contraste-legibilidad",
+    "title": "Mejorar contraste y legibilidad en todos los sites (en progreso DEV)",
+    "description": "El contraste entre algunas letras y el fondo es insuficiente. Claude Code está aplicando mejoras en DEV: aumentar luminosidad de textos secundarios, mejorar contraste en inputs, labels, badges y elementos de navegación. Verificar en DEV antes de pasar a prod.",
+    "dueDate": "2026-04-05",
     "priority": "alta",
     "completed": false
   },
   {
     "id": "task-og-images",
     "title": "Crear Open Graph images personalizadas por site",
-    "description": "Una og-image.jpg por microsite (1200x630px) con el nombre de la calculadora. Mejora el CTR al compartir en redes sociales y WhatsApp.",
+    "description": "Una og-image.jpg por microsite (1200x630px). Mejora CTR en redes sociales.",
     "dueDate": "2026-04-20",
     "priority": "media",
     "completed": false

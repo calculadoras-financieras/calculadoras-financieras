@@ -1,0 +1,20 @@
+name: 📊 Recordatorio actualización datos trimestrales
+on:
+  schedule:
+    - cron: '0 8 1 1,4,7,10 *'
+  workflow_dispatch:
+jobs:
+  recordatorio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recordatorio trimestral
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          TRIMESTRE=$(date +%q)
+          curl -s -X POST \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "parse_mode=HTML" \
+            -d "text=📊 <b>Actualización trimestral de datos — Q${TRIMESTRE}</b>%0A%0ARevisar y actualizar en el repo:%0A%0A🏠 <b>simular-hipoteca:</b>%0A• euribor-[mes]-[año].html — crear artículo nuevo con Euríbor actual%0A• hipotecas-para-jovenes: revisar condiciones ICO%0A%0A📋 <b>calculadora-irpf:</b>%0A• Tramos IRPF vigentes (BOE)%0A• irpf-[año]-novedades.html si hay cambios%0A%0A💰 <b>calculadora-salario:</b>%0A• SMI actualizado (BOE)%0A• smi-[año].html con nueva cuantía%0A%0A👴 <b>calculadora-pension:</b>%0A• Pensión máxima y mínima (BOE enero)%0A• pension-maxima-[año].html%0A%0A⚡ Ejecutar con Claude Code: generar artículos + actualizar sitemaps + push a dev"

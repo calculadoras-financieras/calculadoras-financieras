@@ -6,19 +6,19 @@
 /* ── Variables globales ───────────────────────────────────── */
 :root {
   /* Fondos */
-  --bg:        #0d1117;
-  --surface:   #161b22;
-  --surface-2: #1c2128;
-  --surface-3: #21262d;
+  --bg:        #1b2838;
+  --surface:   #253545;
+  --surface-2: #2e4055;
+  --surface-3: #2e4055;
 
   /* Bordes */
-  --border:       #30363d;
-  --border-light: #3d444d;
+  --border:       #3d5470;
+  --border-light: #4a6080;
 
   /* Colores de marca */
-  --primary:       #00c896;
-  --primary-dim:   rgba(0,200,150,.12);
-  --primary-hover: #00a87d;
+  --primary:       #00e5a8;
+  --primary-dim:   rgba(0,229,168,0.14);
+  --primary-hover: #33ffca;
   --accent:        #d4a843;
   --accent-dim:    rgba(212,168,67,.12);
 
@@ -92,7 +92,7 @@ p  { margin: 0 0 .9em; color: var(--text-dim); }
 /* ── Header ───────────────────────────────────────────────── */
 .cf-header {
   position: relative;
-  background: linear-gradient(160deg, #0d1117 0%, #111820 50%, #0d1117 100%);
+  background: linear-gradient(160deg, #1b2838 0%, #1f3048 50%, #1b2838 100%);
   border-bottom: 1px solid var(--border);
   padding: 40px 24px 32px;
   text-align: center;
@@ -134,7 +134,7 @@ p  { margin: 0 0 .9em; color: var(--text-dim); }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(13,17,23,.92);
+  background: rgba(10,10,15,.93);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);

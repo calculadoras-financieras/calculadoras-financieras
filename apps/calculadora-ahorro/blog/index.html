@@ -106,12 +106,11 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans
 a{color:inherit;text-decoration:none}
 
 /* Cross-site nav */
-.cl-bar{background:rgba(10,10,15,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);
-    display:flex;overflow-x:auto;padding:0 12px;white-space:nowrap;scrollbar-width:none}
+.cl-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px;overflow-x:auto;justify-content:center;position:sticky;top:0;z-index:100}
 .cl-bar::-webkit-scrollbar{display:none}
-.cl{display:inline-flex;align-items:center;gap:5px;padding:10px 14px;font-size:13px;font-weight:500;
-    color:var(--text-muted);border-bottom:2px solid transparent;transition:.2s;flex-shrink:0}
-.cl:hover,.cl.active{color:var(--gold);border-bottom-color:var(--gold)}
+.cl{display:inline-flex;align-items:center;padding:7px 14px;font-size:12px;color:var(--text-muted);text-decoration:none;border:1.5px solid var(--border);border-radius:8px;transition:all .2s;white-space:nowrap;font-family:'DM Sans',sans-serif;font-weight:600;background:var(--surface2)}
+.cl:hover{color:var(--text);border-color:var(--gold);background:rgba(0,229,168,.08)}
+.cl.active{color:var(--gold);border-color:var(--gold);background:rgba(0,229,168,.1)}
 
 /* Header */
 header{padding:48px 24px 36px;text-align:center;border-bottom:1px solid var(--border);

@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /scripts/
 Sitemap: https://calculadoras-financieras.es/sitemap.xml
+Sitemap: https://calculadoras-financieras.es/sitemap_index.xml

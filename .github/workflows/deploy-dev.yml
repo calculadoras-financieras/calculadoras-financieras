@@ -23,6 +23,25 @@ on:
           - calculadora-prestamo
           - calculadora-salario
 
+# ─────────────────────────────────────────────────────────────────────────────
+# ARQUITECTURA DE ENTORNOS:
+#
+#  PROD  → rama main  → proyectos CF: simular-hipoteca, calculadora-irpf, …
+#           URLs: simular-hipoteca.es, calculadora-irpf.es, …
+#
+#  DEV   → rama dev   → proyectos CF: simular-hipoteca-dev, calculadora-irpf-dev, …
+#           URLs: simular-hipoteca-dev.pages.dev, calculadora-irpf-dev.pages.dev, …
+#
+# NOTA IMPORTANTE sobre --branch=main en deploy DEV:
+#   El flag --branch en wrangler es solo la etiqueta que CF Pages usa para
+#   determinar si el deploy es "producción" o "preview".
+#   production_branch en CF Pages = "main" (por defecto).
+#   → Con --branch=main el deploy va al slot de PRODUCCIÓN del proyecto -dev.
+#   → Esto hace que simular-hipoteca-dev.pages.dev muestre siempre el último deploy.
+#   El CONTENIDO desplegado viene del checkout del runner (rama dev de git),
+#   no del flag --branch. El flag es solo una etiqueta interna de CF Pages.
+# ─────────────────────────────────────────────────────────────────────────────
+
 jobs:
   deploy-dev:
     name: Deploy todos los sites (DEV)
@@ -30,94 +49,13 @@ jobs:
     timeout-minutes: 30
 
     steps:
-      - name: Checkout código
+      - name: Checkout código (rama dev)
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      # ── Crear proyectos en Cloudflare si no existen ───────────────────────
-      - name: Crear proyectos CF Pages (si no existen)
-        env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-        run: |
-          PROJECTS=(
-            "calculadoras-financieras-dev"
-            "simular-hipoteca-dev"
-            "calculadora-irpf-dev"
-            "calculadora-finiquito-dev"
-            "calculadora-pension-dev"
-            "calculadora-inversion-dev"
-            "calculadora-ahorro-dev"
-            "calculadora-prestamo-dev"
-            "calculadora-salario-dev"
-          )
-
-          for PROJECT in "${PROJECTS[@]}"; do
-            echo "→ Comprobando proyecto: $PROJECT"
-            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-              "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/pages/projects/${PROJECT}" \
-              -H "Authorization: Bearer ${CF_API_TOKEN}")
-
-            if [ "$HTTP_STATUS" = "200" ]; then
-              echo "  ✓ Ya existe: $PROJECT"
-            else
-              echo "  + Creando: $PROJECT"
-              RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
-                "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/pages/projects" \
-                -H "Authorization: Bearer ${CF_API_TOKEN}" \
-                -H "Content-Type: application/json" \
-                --data "{\"name\":\"${PROJECT}\",\"production_branch\":\"dev\"}")
-              STATUS=$(echo "$RESPONSE" | tail -1)
-              BODY=$(echo "$RESPONSE" | head -1)
-              if [ "$STATUS" = "200" ] || [ "$STATUS" = "409" ]; then
-                echo "  ✓ Creado (o ya existía): $PROJECT"
-              else
-                echo "  ✗ Error $STATUS creando $PROJECT:"
-                echo "$BODY" | python3 -c "import sys,json; d=json.load(sys.stdin); [print('   ',e['message']) for e in d.get('errors',[])]" 2>/dev/null || echo "$BODY"
-                exit 1
-              fi
-            fi
-          done
-
-      # ── Fijar production_branch=dev en todos los proyectos -dev ───────────
-      - name: Fijar production_branch=dev en proyectos CF Pages
-        env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-        run: |
-          PROJECTS=(
-            "calculadoras-financieras-dev"
-            "simular-hipoteca-dev"
-            "calculadora-irpf-dev"
-            "calculadora-finiquito-dev"
-            "calculadora-pension-dev"
-            "calculadora-inversion-dev"
-            "calculadora-ahorro-dev"
-            "calculadora-prestamo-dev"
-            "calculadora-salario-dev"
-          )
-
-          for PROJECT in "${PROJECTS[@]}"; do
-            echo "→ PATCH production_branch=dev en $PROJECT"
-            RESPONSE=$(curl -s -w "\n%{http_code}" -X PATCH \
-              "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/pages/projects/${PROJECT}" \
-              -H "Authorization: Bearer ${CF_API_TOKEN}" \
-              -H "Content-Type: application/json" \
-              --data '{"production_branch":"dev"}')
-            STATUS=$(echo "$RESPONSE" | tail -1)
-            BODY=$(echo "$RESPONSE" | head -1)
-            if [ "$STATUS" = "200" ]; then
-              echo "  ✓ OK: $PROJECT"
-            else
-              echo "  ✗ Error $STATUS en $PROJECT:"
-              echo "$BODY" | python3 -c "import sys,json; d=json.load(sys.stdin); [print('   ',e['message']) for e in d.get('errors',[])]" 2>/dev/null || echo "$BODY"
-              exit 1
-            fi
-          done
 
       # ── Hub dev ──────────────────────────────────────────────────────────
       - name: Deploy Hub DEV
@@ -126,7 +64,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy . --project-name=calculadoras-financieras-dev --branch=dev --commit-dirty=true
+          command: pages deploy . --project-name=calculadoras-financieras-dev --branch=main --commit-dirty=true
 
       # ── Simular Hipoteca dev ─────────────────────────────────────────────
       - name: Deploy Simular Hipoteca DEV
@@ -135,7 +73,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/simular-hipoteca --project-name=simular-hipoteca-dev --branch=dev --commit-dirty=true
+          command: pages deploy apps/simular-hipoteca --project-name=simular-hipoteca-dev --branch=main --commit-dirty=true
 
       # ── IRPF dev ─────────────────────────────────────────────────────────
       - name: Deploy Calculadora IRPF DEV
@@ -144,7 +82,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-irpf --project-name=calculadora-irpf-dev --branch=dev --commit-dirty=true
+          command: pages deploy apps/calculadora-irpf --project-name=calculadora-irpf-dev --branch=main --commit-dirty=true
 
       # ── Finiquito dev ────────────────────────────────────────────────────
       - name: Deploy Calculadora Finiquito DEV
@@ -153,7 +91,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-finiquito --project-name=calculadora-finiquito-dev --branch=dev --commit-dirty=true
+          command: pages deploy apps/calculadora-finiquito --project-name=calculadora-finiquito-dev --branch=main --commit-dirty=true
 
       # ── Pensión dev ──────────────────────────────────────────────────────
       - name: Deploy Calculadora Pensión DEV
@@ -162,7 +100,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-pension --project-name=calculadora-pension-dev --branch=dev --commit-dirty=true
+          command: pages deploy apps/calculadora-pension --project-name=calculadora-pension-dev --branch=main --commit-dirty=true
 
       # ── Inversión dev ────────────────────────────────────────────────────
       - name: Deploy Calculadora Inversión DEV
@@ -171,7 +109,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-inversion --project-name=calculadora-inversion-dev --branch=dev --commit-dirty=true
+          command: pages deploy apps/calculadora-inversion --project-name=calculadora-inversion-dev --branch=main --commit-dirty=true
 
       # ── Ahorro dev ───────────────────────────────────────────────────────
       - name: Deploy Calculadora Ahorro DEV
@@ -180,7 +118,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-ahorro --project-name=calculadora-ahorro-dev --branch=dev --commit-dirty=true
+          command: pages deploy apps/calculadora-ahorro --project-name=calculadora-ahorro-dev --branch=main --commit-dirty=true
 
       # ── Préstamo dev ─────────────────────────────────────────────────────
       - name: Deploy Calculadora Préstamo DEV
@@ -189,7 +127,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-prestamo --project-name=calculadora-prestamo-dev --branch=dev --commit-dirty=true
+          command: pages deploy apps/calculadora-prestamo --project-name=calculadora-prestamo-dev --branch=main --commit-dirty=true
 
       # ── Salario dev ──────────────────────────────────────────────────────
       - name: Deploy Calculadora Salario DEV
@@ -198,7 +136,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy apps/calculadora-salario --project-name=calculadora-salario-dev --branch=dev --commit-dirty=true
+          command: pages deploy apps/calculadora-salario --project-name=calculadora-salario-dev --branch=main --commit-dirty=true
 
       # ── Notificar éxito ──────────────────────────────────────────────────
       - name: Notificar deploy DEV completado
@@ -209,7 +147,7 @@ jobs:
         run: |
           COMMIT_MSG=$(git log -1 --pretty=format:"%s")
           COMMIT_SHA=$(git log -1 --pretty=format:"%h")
-          MSG="🧪 <b>Deploy DEV completado</b>%0A📦 <code>${COMMIT_SHA}</code> ${COMMIT_MSG}%0A%0A🔗 Verificar:%0A• https://calculadoras-financieras-dev.pages.dev%0A• https://simular-hipoteca-dev.pages.dev%0A• https://calculadora-irpf-dev.pages.dev"
+          MSG="🧪 <b>Deploy DEV completado</b>%0A📦 <code>${COMMIT_SHA}</code> ${COMMIT_MSG}%0A%0A🔗 Verificar:%0A• https://calculadoras-financieras-dev.pages.dev%0A• https://simular-hipoteca-dev.pages.dev%0A• https://calculadora-irpf-dev.pages.dev%0A• https://calculadora-ahorro-dev.pages.dev"
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d "chat_id=${TELEGRAM_CHAT_ID}" \
             -d "parse_mode=HTML" \
@@ -222,7 +160,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
+          COMMIT_MSG=$(git log -1 --pretty=format:"%s")
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d "chat_id=${TELEGRAM_CHAT_ID}" \
             -d "parse_mode=HTML" \
-            -d "text=🚨 <b>Deploy DEV FALLIDO</b>%0Ahttps://github.com/calculadoras-financieras/calculadoras-financieras/actions" || true
+            -d "text=🚨 <b>Deploy DEV FALLIDO</b>%0A${COMMIT_MSG}%0Ahttps://github.com/calculadoras-financieras/calculadoras-financieras/actions" || true

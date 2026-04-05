@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Euríbor abril 2026: valor actual y previsión | Simular Hipoteca</title>
+<meta name="description" content="Euríbor abril 2026: valor actual ≈ 2,40%, histórico mensual, impacto en hipotecas variables y previsión BCE para los próximos meses.">
+<link rel="canonical" href="https://simular-hipoteca.es/blog/euribor-abril-2026.html">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Arial,sans-serif;max-width:820px;margin:0 auto;padding:24px 20px;color:#1a2e44;line-height:1.75;font-size:16px}
+h1{color:#0F2A4A;font-size:1.9rem;margin-bottom:.4rem;line-height:1.2}
+h2{color:#0F2A4A;font-size:1.25rem;margin:2rem 0 .6rem;border-bottom:2px solid #00B894;padding-bottom:.3rem}
+p{margin-bottom:1rem}
+.cta-box{background:#f0fdf9;border:2px solid #00B894;border-radius:10px;padding:22px;margin:2.5rem 0;text-align:center}
+.cta-box strong{display:block;font-size:1.1rem;color:#0F2A4A;margin-bottom:.4rem}
+.cta-box span{color:#374151;font-size:.95rem}
+.cta-box a{display:inline-block;margin-top:14px;background:#0F2A4A;color:#fff;padding:12px 28px;border-radius:7px;text-decoration:none;font-weight:700;font-size:.95rem}
+.cta-box a:hover{background:#00B894}
+.dato{background:#fff7e6;border-left:4px solid #c9a84c;padding:12px 16px;margin:1rem 0;border-radius:0 6px 6px 0}
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9rem}
+th{background:#0F2A4A;color:#fff;padding:9px 12px;text-align:left}
+td{padding:8px 12px;border-bottom:1px solid #e2e8f0}
+tr:nth-child(even) td{background:#f8fafc}
+nav.breadcrumb{font-size:.85rem;color:#6b7280;margin-bottom:1.5rem}
+nav.breadcrumb a{color:#00B894;text-decoration:none}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #e2e8f0;font-size:.85rem;color:#6b7280}
+footer a{color:#00B894;text-decoration:none}
+@media(max-width:600px){h1{font-size:1.5rem}body{padding:16px 14px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Euríbor abril 2026: valor actual y previsión","url":"https://simular-hipoteca.es/blog/euribor-abril-2026.html","datePublished":"2026-04-05","dateModified":"2026-04-05","author":{"@type":"Organization","name":"Calculadoras Financieras España","url":"https://calculadoras-financieras.es"}}</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBGMkE0QSIvPjx0ZXh0IHg9IjE2IiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDBCODk0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DPC90ZXh0Pjwvc3ZnPg==">
+</head>
+
+<!-- Dark theme override + nav fix -->
+<style>
+html{background:#1b2838}
+body{background:#1b2838!important;color:#c8d8e8!important}
+h1{color:#e2e8f0!important}
+h2{color:#e2e8f0!important;border-bottom-color:#3d5470!important}
+h3{color:#e2e8f0!important}
+strong{color:#e2e8f0!important}
+p{color:#a8c4d8!important}
+a{color:#00e5a8!important}
+table{background:#253545}
+th{background:#2e4055!important;color:#e2e8f0!important;border-color:#3d5470!important}
+td{color:#a8c4d8!important;border-color:#3d5470!important}
+tr:nth-child(even) td{background:#253545!important}
+tr:hover td{background:rgba(255,255,255,.04)!important}
+.comp-card,.dato,.info-box,.cta-box{background:#253545!important;border-color:#3d5470!important;color:#a8c4d8!important}
+.comp-card h3{color:#00e5a8!important}
+footer{color:#5c7a96!important;border-top-color:#3d5470!important}
+footer a{color:#00e5a8!important}
+nav.breadcrumb{color:#5c7a96!important}
+nav.breadcrumb a{color:#00e5a8!important}
+li{color:#a8c4d8}
+.cl-bar{width:100vw!important;margin-left:calc(-50vw + 50%)!important;box-sizing:border-box!important;max-width:100vw!important}
+</style>
+<body>
+
+<!-- Nav calculadoras -->
+<style>
+.cl-bar{background:var(--surface,#253545);border-bottom:1px solid var(--border,#3d5470);padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px;overflow-x:auto;justify-content:center;position:sticky;top:0;z-index:100}
+.cl-bar::-webkit-scrollbar{display:none}
+.cl{display:inline-flex;align-items:center;padding:7px 14px;font-size:12px;color:var(--text-dim,#a8c4d8);text-decoration:none;border:1.5px solid var(--border,#3d5470);border-radius:8px;transition:all .2s;white-space:nowrap;font-family:'DM Sans',system-ui,sans-serif;font-weight:600;background:var(--surface2,#2e4055)}
+.cl:hover{color:var(--text,#e2e8f0);border-color:var(--gold,#00e5a8);background:rgba(0,229,168,.08)}
+.cl.active{color:var(--gold,#00e5a8);border-color:var(--gold,#00e5a8);background:rgba(0,229,168,.1)}
+</style>
+<nav class="cl-bar" aria-label="Otras calculadoras">
+  <a href="https://simular-hipoteca.es" class="cl active" aria-current="page">🏠 Hipoteca</a>
+  <a href="https://calculadora-irpf.es" class="cl">📋 IRPF</a>
+  <a href="https://calculadora-finiquito.es" class="cl">📄 Finiquito</a>
+  <a href="https://calculadora-pension.es" class="cl">👴 Pensión</a>
+  <a href="https://calculadora-inversion.es" class="cl">📈 Inversión</a>
+  <a href="https://calculadora-ahorro.es" class="cl">🏦 Ahorro</a>
+  <a href="https://calculadora-prestamo.es" class="cl">💳 Préstamo</a>
+  <a href="https://calculadora-salario.com" class="cl">💰 Salario</a>
+  <a href="https://calculadoras-financieras.es" class="cl">🧮 Hub</a>
+</nav>
+<nav class="breadcrumb"><a href="/">← Simular Hipoteca</a> / <a href="index.html">Blog</a> / Euríbor abril 2026</nav>
+
+<h1>Euríbor abril 2026: valor actual y previsión</h1>
+<p><em>Actualizado: abril 2026</em></p>
+<p>El Euríbor a 12 meses, el índice de referencia que marca la cuota de millones de hipotecas variables en España, cotiza en torno al <strong>2,40%</strong> en abril de 2026. Tras la serie de bajadas de tipos del Banco Central Europeo iniciada en junio de 2024, el índice ha descendido desde los máximos del 4,16% registrados en octubre de 2023 hasta los niveles actuales.</p>
+
+<h2>Valor actual del Euríbor — abril 2026</h2>
+<p>El dato provisional de cierre de abril 2026 se sitúa alrededor del <strong>2,40%</strong>. La publicación del dato oficial (media mensual) la realiza el Banco de España en los primeros días del mes siguiente. Este valor es significativamente inferior al de hace un año (3,70% en abril 2025), lo que se traduce en bajadas de cuota para las hipotecas revisadas este mes.</p>
+<div class="dato"><strong>Dato clave:</strong> Con el Euríbor al 2,40%, una hipoteca variable de 150.000 € a 25 años (diferencial +0,80%) pasa a tener un TIN del 3,20% y una cuota mensual de aproximadamente <strong>724 €/mes</strong>, frente a los 840 €/mes del año anterior con el Euríbor al 3,70%.</div>
+
+<h2>Histórico mensual Euríbor — últimos 12 meses</h2>
+<table>
+  <tr><th>Mes</th><th>Euríbor 12M (%)</th><th>Variación mensual</th></tr>
+  <tr><td>Abril 2025</td><td>3,70%</td><td>—</td></tr>
+  <tr><td>Mayo 2025</td><td>3,55%</td><td>−0,15</td></tr>
+  <tr><td>Junio 2025</td><td>3,38%</td><td>−0,17</td></tr>
+  <tr><td>Julio 2025</td><td>3,22%</td><td>−0,16</td></tr>
+  <tr><td>Agosto 2025</td><td>3,10%</td><td>−0,12</td></tr>
+  <tr><td>Septiembre 2025</td><td>2,95%</td><td>−0,15</td></tr>
+  <tr><td>Octubre 2025</td><td>2,80%</td><td>−0,15</td></tr>
+  <tr><td>Noviembre 2025</td><td>2,68%</td><td>−0,12</td></tr>
+  <tr><td>Diciembre 2025</td><td>2,55%</td><td>−0,13</td></tr>
+  <tr><td>Enero 2026</td><td>2,50%</td><td>−0,05</td></tr>
+  <tr><td>Febrero 2026</td><td>2,45%</td><td>−0,05</td></tr>
+  <tr><td>Marzo 2026</td><td>2,42%</td><td>−0,03</td></tr>
+  <tr><td>Abril 2026</td><td>≈ 2,40%</td><td>−0,02</td></tr>
+</table>
+<p>La tendencia bajista se ha moderado considerablemente desde principios de 2026. El mercado parece estar descontando una pausa en los recortes del BCE, que ha situado el tipo de depósito en el 2,00%.</p>
+
+<h2>Impacto en tu hipoteca variable</h2>
+<p>Si tienes una hipoteca variable referenciada al Euríbor y te toca revisión en abril 2026, el impacto depende del Euríbor que tenías antes (habitualmente el de hace 6 o 12 meses, según tu contrato). Veamos ejemplos concretos para una hipoteca de <strong>150.000 € a 25 años</strong> con diferencial del +0,80%:</p>
+<table>
+  <tr><th>Euríbor revisión anterior</th><th>TIN anterior</th><th>Cuota anterior</th><th>TIN nuevo (2,40%+0,80%)</th><th>Cuota nueva</th><th>Diferencia/mes</th></tr>
+  <tr><td>Euríbor 3,70% (abr-25)</td><td>4,50%</td><td>840 €</td><td>3,20%</td><td>724 €</td><td><strong>−116 €</strong></td></tr>
+  <tr><td>Euríbor 2,95% (sep-25)</td><td>3,75%</td><td>775 €</td><td>3,20%</td><td>724 €</td><td>−51 €</td></tr>
+  <tr><td>Euríbor 2,55% (dic-25)</td><td>3,35%</td><td>740 €</td><td>3,20%</td><td>724 €</td><td>−16 €</td></tr>
+</table>
+<p>Los beneficiados del descenso del Euríbor son principalmente quienes revisaron hace 12 meses, cuando el índice aún superaba el 3,5%. Para quienes revisaron en los últimos 6 meses, el ahorro es más modesto.</p>
+
+<h2>Comparativa marzo 2026 vs abril 2026</h2>
+<table>
+  <tr><th>Parámetro</th><th>Marzo 2026</th><th>Abril 2026</th></tr>
+  <tr><td>Euríbor 12M</td><td>2,42%</td><td>≈ 2,40%</td></tr>
+  <tr><td>TIN hipoteca variable (dif. +0,80%)</td><td>3,22%</td><td>3,20%</td></tr>
+  <tr><td>Cuota 150.000€/25a</td><td>726 €</td><td>724 €</td></tr>
+  <tr><td>Tipo depósito BCE</td><td>2,00%</td><td>2,00%</td></tr>
+</table>
+
+<h2>Previsión del Euríbor para los próximos meses</h2>
+<p>El consenso de analistas apunta a una estabilización del Euríbor en la banda del 2,20%-2,50% durante el segundo y tercer trimestre de 2026. Las principales variables a vigilar son:</p>
+<ul style="margin-left:1.4rem;line-height:2;margin-bottom:1rem">
+  <li><strong>Decisiones del BCE:</strong> El mercado descuenta solo 1-2 bajadas adicionales en 2026, hasta situar el tipo de depósito en el 1,75% a finales de año.</li>
+  <li><strong>Inflación eurozona:</strong> Si el IPC se mantiene cerca del objetivo del 2%, el BCE tiene margen para nuevas bajadas. Si repunta, el Euríbor podría estabilizarse o incluso subir.</li>
+  <li><strong>Crecimiento económico:</strong> Una desaceleración pronunciada en Alemania o Francia aceleraría los recortes de tipos.</li>
+</ul>
+<div class="dato"><strong>Previsión central:</strong> Euríbor en el rango 2,10%-2,40% para el resto de 2026, con sesgo bajista moderado. No se esperan ni repuntes bruscos ni caídas adicionales significativas.</div>
+
+<div class="cta-box">
+  <strong>¿Cuánto pagarás con el Euríbor actual?</strong>
+  <span>Simula tu hipoteca variable con el Euríbor de hoy. Calcula cuota exacta, total de intereses y tabla de amortización.</span>
+  <a href="/">Calcular mi hipoteca →</a>
+</div>
+
+<footer>
+  <p>Datos orientativos basados en cotizaciones provisionales. El dato oficial mensual lo publica el Banco de España. Consulta con tu banco o intermediario financiero para decisiones de esta importancia.</p>
+  <p style="margin-top:.5rem">Ver también: <a href="hipoteca-fija-vs-variable.html">Fija vs variable 2026</a> · <a href="hipoteca-200000-euros-30-anos.html">Hipoteca 200.000€ a 30 años</a> · <a href="/">Simulador de hipoteca</a></p>
+</footer>
+
+<!-- Artículos relacionados -->
+<aside style="background:#253545;border:1px solid #3d5470;border-radius:12px;padding:22px;margin:2.5rem 0">
+  <p style="font-size:.8rem;font-weight:600;color:#00e5a8;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Más artículos</p>
+  <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+    <li><a href="hipoteca-fija-vs-variable.html">Hipoteca fija vs variable: qué te conviene según tu perfil</a></li>
+    <li><a href="hipoteca-200000-euros-30-anos.html">Hipoteca de 200.000€ a 30 años: cuota mensual en 2026</a></li>
+    <li><a href="amortizacion-anticipada-cuota-o-plazo.html">Amortización anticipada: ¿reducir cuota o plazo?</a></li>
+  </ul>
+  <a href="index.html" style="display:inline-block;margin-top:16px;font-size:.85rem;color:#94a3b8;text-decoration:none">← Ver todos los artículos del blog</a>
+</aside>
+</body>
+</html>

@@ -97,7 +97,7 @@ main{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:36px 20p
 label{display:block;font-size:11px;font-weight:600;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
 .input-wrap{position:relative}
 .unit{position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--text-muted);pointer-events:none}
-input[type=number],input[type=text],select{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 42px 11px 13px;color:#e8f4ff!important;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;outline:none;transition:border-color .2s;-moz-appearance:textfield}
+input[type=number],input[type=text],select{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 42px 11px 13px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;outline:none;transition:border-color .2s;-moz-appearance:textfield}
 input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
 input:focus,select:focus{border-color:var(--gold)}
 select{appearance:none;padding-right:13px;cursor:pointer}
@@ -127,7 +127,8 @@ input[type=range]::-webkit-slider-thumb{appearance:none;width:17px;height:17px;b
 table{width:100%;border-collapse:collapse;font-size:12px}
 th{background:var(--surface2);padding:9px 12px;text-align:right;font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border)}
 th:first-child{text-align:left}
-td{padding:8px 12px;text-align:right;border-bottom:1px solid rgba(42,42,61,.4);color:var(--text-dim)}tr:nth-child(even) td{background:rgba(255,255,255,.04)}
+td{padding:8px 12px;text-align:right;border-bottom:1px solid rgba(42,42,61,.4);color:var(--text-dim)}
+tr:nth-child(even) td{background:rgba(255,255,255,.04)}
 td:first-child{text-align:left;color:var(--text-muted);font-size:11px}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:rgba(255,255,255,.02)}
@@ -1117,7 +1118,7 @@ function calcSalario(){
 window.addEventListener('load',()=>{
   updateEntrada();
   calcHipoteca();
-
+});
 </script>
 
 <script src="/assets/ux-tooltips.js"></script>

@@ -905,3 +905,86 @@ tr:hover td { background: rgba(255,255,255,.02); }
 /* ── Footer nav links ─────────────────────────────────────── */
 footer a { color: var(--text-dim); text-decoration: none; transition: color var(--t); }
 footer a:hover { color: var(--primary); }
+
+
+/*
+  ════════════════════════════════════════════════════
+  REGLA DE DESARROLLO: TODO EL CÓDIGO NUEVO DEBE SER
+  RESPONSIVE POR DEFECTO.
+  
+  Checklist antes de hacer commit:
+  ✓ ¿Funciona en 375px (iPhone SE)?
+  ✓ ¿Las tablas tienen overflow-x: auto?
+  ✓ ¿Los inputs tienen min-height: 44px y font-size: 16px?
+  ✓ ¿Los botones tienen min-height: 48px?
+  ✓ ¿Ningún elemento tiene width fijo en px > 320px?
+  ✓ ¿El texto es legible sin zoom (mínimo 14px)?
+  ════════════════════════════════════════════════════
+*/
+
+/* ── Responsive global — mobile-first ──────────────────── */
+
+/* Tablas: scroll horizontal en móvil */
+table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+thead, tbody, tr { display: table; width: 100%; }
+thead { display: table-header-group; }
+tbody { display: table-row-group; }
+
+/* Imágenes y vídeos: nunca salen del contenedor */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Nav tabs: scroll horizontal sin scrollbar visible */
+.nav-wrap, .nav-tabs {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.nav-wrap::-webkit-scrollbar,
+.nav-tabs::-webkit-scrollbar { display: none; }
+.tab-btn { flex-shrink: 0; }
+
+/* Inputs y selects: altura mínima para touch */
+input[type=number],
+input[type=text],
+input[type=email],
+select,
+textarea {
+  min-height: 44px;
+  font-size: 16px; /* evita zoom automático en iOS */
+}
+.btn-calc, .cf-btn { min-height: 48px; }
+
+/* Grid calculadora: 1 columna en móvil */
+@media (max-width: 720px) {
+  .calc-grid, .cf-calc-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .result-grid, .cf-result-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .cf-compare {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Tipografía fluida en móvil */
+@media (max-width: 480px) {
+  h1 { font-size: clamp(1.4rem, 5vw, 1.8rem) !important; }
+  h2 { font-size: clamp(1.1rem, 4vw, 1.4rem) !important; }
+  body { font-size: 15px; }
+  .cf-main, main { padding: 16px 14px 60px !important; }
+  .cf-card, .card { padding: 16px !important; }
+}
+
+/* Nav cross-site (cl-bar): pills más pequeños en móvil */
+@media (max-width: 480px) {
+  .cl { padding: 6px 10px !important; font-size: 11px !important; }
+}

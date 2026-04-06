@@ -69,7 +69,7 @@
     "description": "Cuando Google apruebe AdSense (estado actual: aprobación solicitada en los 9 sites), obtener los data-ad-slot IDs reales de cada posición en ads.google.com → Anuncios → Por unidad de anuncio. Luego dar prompt a Claude Code para descomentar los bloques ins y sustituir XXXXXXXXXX por los IDs reales en todos los index.html.",
     "dueDate": "2026-04-06T15:00:00",
     "priority": "alta",
-    "completed": false
+    "completed": true
   },
   {
     "id": "task-adsense-descomentar",

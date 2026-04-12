@@ -5,13 +5,16 @@
 **NUNCA usar `git push origin` ni `git push` a secas — da 403.**
 **SIEMPRE usar la URL completa con el PAT embebido.**
 
-El PAT (token GitHub Personal Access Token con scope `repo`) se guarda en
-`/root/.git-pat` — nunca lo pongas en texto en archivos del repo.
+El PAT (token GitHub Personal Access Token con scope `repo`) NO persiste entre
+sesiones CCR. Al inicio de cada sesión nueva hay que configurarlo:
 
 ```bash
+echo -n "EL_PAT_QUE_PROPORCIONE_DAVID" > /root/.git-pat && chmod 600 /root/.git-pat
 PAT=$(cat /root/.git-pat)
-REPO="https://${PAT}@github.com/calculadoras-financieras/calculadoras-financieras.git"
 ```
+
+David debe proporcionar el PAT al inicio de cada sesión si no está en `/root/.git-pat`.
+El PAT actual es el que termina en `...LtDJZ` (scope: repo, org: calculadoras-financieras).
 
 ### Push a dev (el más habitual):
 ```bash

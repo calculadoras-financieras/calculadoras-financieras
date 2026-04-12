@@ -57,11 +57,11 @@
   },
   {
     "id": "task-zoho-dns",
-    "title": "⚠️ LUNES 06/04 15:00 — Configurar DNS Zoho Mail en Cloudflare",
-    "description": "ACCIÓN MANUAL REQUERIDA. Cloudflare no tiene los registros MX ni SPF apuntando a Zoho, por lo que el correo @calculadoras-financieras.es no funciona correctamente. PASOS: 1) En Zoho Mail clicar 'View MX configuration details' → copiar los valores exactos. 2) En Cloudflare → DNS → calculadoras-financieras.es → añadir registro MX (mx.zoho.eu prioridad 10) y registro TXT SPF (v=spf1 include:zoho.eu ~all). Usar los valores exactos que muestra Zoho, no los de este texto.",
+    "title": "Configurar DNS Zoho Mail en Cloudflare",
+    "description": "COMPLETADO. MX records (mx/mx2/mx3.zoho.eu) y SPF (v=spf1 include:zoho.eu ~all) configurados en Cloudflare. Email contacto@calculadoras-financieras.es operativo.",
     "dueDate": "2026-04-06T15:00:00",
     "priority": "alta",
-    "completed": false
+    "completed": true
   },
   {
     "id": "task-adsense-lunes",
@@ -81,19 +81,19 @@
   },
   {
     "id": "task-contraste-legibilidad",
-    "title": "Mejorar contraste y legibilidad en todos los sites (en progreso DEV)",
-    "description": "El contraste entre algunas letras y el fondo es insuficiente. Claude Code está aplicando mejoras en DEV: aumentar luminosidad de textos secundarios, mejorar contraste en inputs, labels, badges y elementos de navegación. Verificar en DEV antes de pasar a prod.",
+    "title": "Mejorar contraste y legibilidad en todos los sites",
+    "description": "COMPLETADO. Mejoras de contraste aplicadas: luminosidad de textos secundarios, inputs, labels, badges y navegación.",
     "dueDate": "2026-04-05",
     "priority": "alta",
-    "completed": false
+    "completed": true
   },
   {
     "id": "task-og-images",
     "title": "Crear Open Graph images personalizadas por site",
-    "description": "Una og-image.jpg por microsite (1200x630px). Mejora CTR en redes sociales.",
+    "description": "COMPLETADO. 9 og-image.jpg personalizadas (1200x630px) con título, dominio y branding. Meta tags og:image añadidos en todos los index.html.",
     "dueDate": "2026-04-20",
     "priority": "media",
-    "completed": false
+    "completed": true
   },
   {
     "id": "task-iahorro",

@@ -1,20 +1,40 @@
 # CLAUDE.md — Instrucciones permanentes del proyecto
 
-## PUSH A GITHUB — REGLA CRÍTICA
+> Este archivo es leído automáticamente por Claude Code al inicio de cada sesión.
 
-**NUNCA usar `git push origin` ni `git push` a secas — da 403.**
-**SIEMPRE usar la URL completa con el PAT embebido.**
+---
 
-El PAT (token GitHub Personal Access Token con scope `repo`) NO persiste entre
-sesiones CCR. Al inicio de cada sesión nueva hay que configurarlo:
+## ⚡ INICIO DE SESIÓN — LO PRIMERO QUE HACE CLAUDE
+
+Al arrancar cualquier sesión nueva, Claude debe ejecutar esto antes de cualquier otra cosa:
 
 ```bash
-echo -n "EL_PAT_QUE_PROPORCIONE_DAVID" > /root/.git-pat && chmod 600 /root/.git-pat
-PAT=$(cat /root/.git-pat)
+# 1. Verificar si el PAT está disponible
+if [ ! -f /root/.git-pat ]; then
+  echo "⚠️  FALTA EL PAT. David debe ejecutar:"
+  echo 'echo -n "ghp_TOKEN_AQUI" > /root/.git-pat && chmod 600 /root/.git-pat'
+fi
+
+# 2. Posicionarse en el repo y sincronizar
+cd /home/user/calculadoras-financieras
+PAT=$(cat /root/.git-pat 2>/dev/null)
+git fetch "https://${PAT}@github.com/calculadoras-financieras/calculadoras-financieras.git" 2>/dev/null
+git checkout dev
+git reset --hard origin/dev
 ```
 
-David debe proporcionar el PAT al inicio de cada sesión si no está en `/root/.git-pat`.
-El PAT actual es el que termina en `...LtDJZ` (scope: repo, org: calculadoras-financieras).
+Si `/root/.git-pat` no existe, pedirle el PAT a David antes de continuar.
+
+---
+
+## PUSH A GITHUB — REGLA CRÍTICA
+
+**NUNCA usar `git push origin` — da 403. SIEMPRE usar URL completa con PAT.**
+
+El proxy local de Claude Code (CCR) solo tiene permisos de lectura.
+El PAT de GitHub es la única forma de escribir.
+
+**El PAT NO persiste entre sesiones CCR.** Se guarda en `/root/.git-pat` al inicio de cada sesión.
 
 ### Push a dev (el más habitual):
 ```bash
@@ -23,78 +43,55 @@ git push "https://${PAT}@github.com/calculadoras-financieras/calculadoras-financ
 git fetch "https://${PAT}@github.com/calculadoras-financieras/calculadoras-financieras.git" dev:refs/remotes/origin/dev
 ```
 
-### Push a main (solo cuando David lo confirme):
+### Push a main (solo cuando David confirme):
 ```bash
 PAT=$(cat /root/.git-pat)
 git push "https://${PAT}@github.com/calculadoras-financieras/calculadoras-financieras.git" HEAD:main
 git fetch "https://${PAT}@github.com/calculadoras-financieras/calculadoras-financieras.git" main:refs/remotes/origin/main
 ```
 
-### Push de rama de trabajo claude/:
+### Push de rama claude/:
 ```bash
 PAT=$(cat /root/.git-pat)
-git push "https://${PAT}@github.com/calculadoras-financieras/calculadoras-financieras.git" HEAD:claude/nombre-rama
-git fetch "https://${PAT}@github.com/calculadoras-financieras/calculadoras-financieras.git" claude/nombre-rama:refs/remotes/origin/claude/nombre-rama
+RAMA="claude/nombre-rama"
+git push "https://${PAT}@github.com/calculadoras-financieras/calculadoras-financieras.git" HEAD:${RAMA}
+git fetch "https://${PAT}@github.com/calculadoras-financieras/calculadoras-financieras.git" ${RAMA}:refs/remotes/origin/${RAMA}
 ```
 
 El `git fetch` después de cada push actualiza el tracking local y evita que
-el stop-hook se queje de commits "sin publicar".
+el stop-hook bloquee el cierre de sesión.
 
 ---
 
-## SECUENCIA COMPLETA DE TRABAJO (inicio de sesión)
+## VERIFICAR DEPLOY EN CLOUDFLARE PAGES
 
-```bash
-cd /home/user/calculadoras-financieras
-PAT=$(cat /root/.git-pat)
-git config user.email "claude@anthropic.com"
-git config user.name "Claude"
-git fetch "https://${PAT}@github.com/calculadoras-financieras/calculadoras-financieras.git"
-git checkout dev
-git reset --hard origin/dev
-# ... hacer cambios ...
-git add -A
-git commit -m "descripción del cambio"
-git push "https://${PAT}@github.com/calculadoras-financieras/calculadoras-financieras.git" HEAD:dev
-git fetch "https://${PAT}@github.com/calculadoras-financieras/calculadoras-financieras.git" dev:refs/remotes/origin/dev
-```
+El push a `dev` dispara `deploy-dev.yml` automáticamente (~2-3 min).
 
----
+- **Workflows:** `github.com/calculadoras-financieras/calculadoras-financieras/actions`
+- **Hub:** https://calculadoras-financieras-dev.pages.dev
+- **Hipoteca:** https://simular-hipoteca-dev.pages.dev
+- **IRPF:** https://calculadora-irpf-dev.pages.dev
+- **Finiquito:** https://calculadora-finiquito-dev.pages.dev
+- **Pensión:** https://calculadora-pension-dev.pages.dev
+- **Inversión:** https://calculadora-inversion-dev.pages.dev
+- **Ahorro:** https://calculadora-ahorro-dev.pages.dev
+- **Préstamo:** https://calculadora-prestamo-dev.pages.dev
+- **Salario:** https://calculadora-salario-dev.pages.dev
 
-## VERIFICAR DEPLOY EN CLOUDFLARE PAGES (rama dev)
-
-El push a `dev` dispara el workflow `deploy-dev.yml` automáticamente vía GitHub Actions.
-
-### Dónde comprobar:
-1. **Estado del workflow:** `github.com/calculadoras-financieras/calculadoras-financieras/actions`
-2. **URLs de preview dev** (disponibles ~2-3 min después del push):
-
-| Microsite | URL dev |
-|-----------|---------|
-| Hub principal | https://calculadoras-financieras-dev.pages.dev |
-| Hipoteca | https://simular-hipoteca-dev.pages.dev |
-| IRPF | https://calculadora-irpf-dev.pages.dev |
-| Finiquito | https://calculadora-finiquito-dev.pages.dev |
-| Pensión | https://calculadora-pension-dev.pages.dev |
-| Inversión | https://calculadora-inversion-dev.pages.dev |
-| Ahorro | https://calculadora-ahorro-dev.pages.dev |
-| Préstamo | https://calculadora-prestamo-dev.pages.dev |
-| Salario | https://calculadora-salario-dev.pages.dev |
-
-### Flujo completo:
-- `dev` push → GitHub Actions `deploy-dev.yml` → Cloudflare Pages → URLs `*-dev.pages.dev`
-- `main` push → GitHub Actions `deploy.yml` → Cloudflare Pages → URLs de producción (dominios propios)
+Producción (solo tras confirmar dev): dominios propios vía `deploy.yml`.
 
 ---
 
 ## ESTRUCTURA DEL PROYECTO
 
-- **Stack:** 100% HTML/CSS/JS estático, tema oscuro `#1b2838`, sin build step
-- **9 microsites** en `apps/` + hub en raíz
-- **Ramas:** `dev` (preview/testing) → `main` (producción)
-- **Ramas de trabajo:** prefijo `claude/` (ej. `claude/financial-calculator-suite-Nt2yL`)
+- **Stack:** HTML/CSS/JS estático puro, tema oscuro `#1b2838`, sin build step
+- **9 microsites** en `apps/` + hub en raíz del repo
+- **Ramas:** `dev` (preview/testing) → `main` (producción, solo con OK de David)
+- **Ramas de trabajo:** siempre con prefijo `claude/`
 - **Hosting:** Cloudflare Pages (free tier), sin Netlify
+- **Repo GitHub:** `calculadoras-financieras/calculadoras-financieras`
 
 ## REGLA DE MERGE
 
-Nunca mergear directamente a `main` sin que David confirme que el deploy de `dev` está correcto.
+Nunca mergear ni pushear a `main` sin confirmación explícita de David.
+Flujo siempre: rama `claude/` → `dev` (verificar) → `main`.

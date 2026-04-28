@@ -16,3 +16,4 @@ node_modules/
 *.log
 __pycache__/
 .wrangler/
+_scripts/

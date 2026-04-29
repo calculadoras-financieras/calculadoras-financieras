@@ -3,6 +3,9 @@
 scripts/deploy/.credentials
 *.env
 .env*
+# Service account keys de Google Cloud — NUNCA versionar
+calculadoras-financieras-*.json
+*-c82aa6d43933.json
 
 # Deploy logs (locales)
 scripts/deploy/logs/
